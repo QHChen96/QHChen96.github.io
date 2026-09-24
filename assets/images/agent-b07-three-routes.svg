@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="b07-title b07-desc">
+  <title id="b07-title">同一工单的三条路线</title>
+  <desc id="b07-desc">一次模型调用用已备事实起草；固定工作流由程序依次查订单、查规则、写草稿并交人工审核；有边界的 Agent 看结果后在获准的只读工具中选择补查或交人，权限和审核仍由程序把关。</desc>
+  <defs>
+    <marker id="b07-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1 1 L8 4.5 L1 8" fill="none" stroke="#416b5c" stroke-width="2"/></marker>
+  </defs>
+  <rect width="960" height="440" rx="24" fill="#f3f5f0"/>
+  <g font-family="system-ui, 'Microsoft YaHei', sans-serif">
+    <text x="32" y="47" fill="#254d40" font-size="25" font-weight="700">同一张工单，谁握着方向盘？</text>
+    <text x="32" y="76" fill="#5e7064" font-size="17">选哪条路，先看下一步是否需要临场判断。</text>
+
+    <rect x="32" y="101" width="896" height="88" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <text x="53" y="137" fill="#254d40" font-size="22" font-weight="700">① 一次调用</text>
+    <text x="53" y="166" fill="#65766b" font-size="17">事实都已备好</text>
+    <rect x="315" y="119" width="158" height="50" rx="12" fill="#edf3ec"/>
+    <text x="342" y="151" fill="#254d40" font-size="19" font-weight="600">已核实事实</text>
+    <path d="M479 144 H530" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#b07-arrow)"/>
+    <rect x="540" y="119" width="134" height="50" rx="12" fill="#edf3ec"/>
+    <text x="566" y="151" fill="#254d40" font-size="19" font-weight="600">起草文字</text>
+    <rect x="731" y="121" width="172" height="46" rx="23" fill="#f7eadb"/>
+    <text x="751" y="151" fill="#8a5526" font-size="18" font-weight="700">没有下一步</text>
+
+    <rect x="32" y="202" width="896" height="88" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <text x="53" y="239" fill="#254d40" font-size="22" font-weight="700">② 固定工作流</text>
+    <text x="53" y="268" fill="#65766b" font-size="17">程序预先排路</text>
+    <rect x="314" y="220" width="126" height="50" rx="12" fill="#edf3ec"/>
+    <rect x="462" y="220" width="126" height="50" rx="12" fill="#edf3ec"/>
+    <rect x="610" y="220" width="126" height="50" rx="12" fill="#edf3ec"/>
+    <rect x="758" y="220" width="126" height="50" rx="12" fill="#dcebe2"/>
+    <text x="336" y="251" fill="#254d40" font-size="19" font-weight="600">查订单</text>
+    <text x="484" y="251" fill="#254d40" font-size="19" font-weight="600">查规则</text>
+    <text x="632" y="251" fill="#254d40" font-size="19" font-weight="600">写草稿</text>
+    <text x="780" y="251" fill="#254d40" font-size="19" font-weight="600">人工审</text>
+    <path d="M445 245 H455 M593 245 H603 M741 245 H751" fill="none" stroke="#416b5c" stroke-width="2.5" marker-end="url(#b07-arrow)"/>
+
+    <rect x="32" y="303" width="896" height="112" rx="16" fill="#e5efe7" stroke="#9bbba9" stroke-width="2"/>
+    <text x="53" y="340" fill="#254d40" font-size="22" font-weight="700">③ 有边界的 Agent</text>
+    <text x="53" y="369" fill="#566c5e" font-size="17">模型按结果选路</text>
+    <rect x="314" y="331" width="131" height="51" rx="12" fill="#fff"/>
+    <text x="342" y="364" fill="#254d40" font-size="19" font-weight="700">看结果</text>
+    <path d="M450 345 L527 334 M450 369 L527 382" fill="none" stroke="#416b5c" stroke-width="2.5" marker-end="url(#b07-arrow)"/>
+    <rect x="537" y="315" width="135" height="42" rx="11" fill="#fff"/>
+    <rect x="537" y="367" width="135" height="42" rx="11" fill="#fff"/>
+    <text x="563" y="342" fill="#254d40" font-size="18" font-weight="600">补查证据</text>
+    <text x="580" y="394" fill="#254d40" font-size="18" font-weight="600">交人</text>
+    <rect x="715" y="328" width="188" height="59" rx="14" fill="#2b614d"/>
+    <text x="756" y="354" fill="#fff" font-size="19" font-weight="700">程序守门</text>
+    <text x="735" y="376" fill="#dcebe2" font-size="15">只读权限 · 人工审核</text>
+    <path d="M678 361 H705" fill="none" stroke="#416b5c" stroke-width="2.5" marker-end="url(#b07-arrow)"/>
+  </g>
+</svg>

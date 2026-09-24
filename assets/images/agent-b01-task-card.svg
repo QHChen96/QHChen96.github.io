@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">工单 0823 的五格任务卡</title>
+  <desc id="desc">先定输入，再划清允许做、禁止做、交付物和停止条件。Agent 只读查询并写内部草稿；需要退款或证据不足时交人工。</desc>
+  <defs>
+    <style>
+      text { font-family: system-ui, "Microsoft YaHei", sans-serif; }
+      .label { font-size: 19px; font-weight: 750; fill: #254d40; }
+      .body { font-size: 18px; fill: #273b31; }
+      .num { font-size: 17px; font-weight: 750; fill: #6e8d79; }
+    </style>
+  </defs>
+  <rect width="960" height="430" rx="24" fill="#f3f5f0"/>
+  <text x="38" y="49" font-size="23" font-weight="750" fill="#254d40">“解决客户问题”先写成能验收的任务卡</text>
+  <rect x="38" y="71" width="884" height="334" rx="20" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <rect x="55" y="89" width="168" height="36" rx="18" fill="#e1eee6"/>
+  <text x="76" y="113" font-size="17" font-weight="750" fill="#285746">虚构工单 0823</text>
+  <text x="245" y="113" font-size="18" fill="#526b5b">系统显示已签收，客户说没收到，还问能否退款</text>
+  <path d="M55 140H905 M55 193H905 M55 246H905 M55 299H905 M55 352H905" stroke="#e5eae2" stroke-width="1.5"/>
+  <g>
+    <text class="num" x="69" y="175">01</text><text class="label" x="111" y="175">输入</text>
+    <text class="body" x="257" y="175">客户原话＋本轮订单结果＋有效规则</text>
+    <text class="num" x="69" y="228">02</text><text class="label" x="111" y="228">允许做</text>
+    <text class="body" x="257" y="228">只读查询、标出冲突、起草内部回复</text>
+    <text class="num" x="69" y="281">03</text><text class="label" x="111" y="281">禁止做</text>
+    <text class="body" x="257" y="281">自行发消息、改订单、承诺或发起退款</text>
+    <text class="num" x="69" y="334">04</text><text class="label" x="111" y="334">交付物</text>
+    <text class="body" x="257" y="334">有来源的内部处理卡，交客服审核</text>
+  </g>
+  <rect x="55" y="359" width="850" height="36" rx="11" fill="#fff2e8"/>
+  <text x="69" y="384" font-size="17" font-weight="750" fill="#a3542e">05</text>
+  <text x="111" y="384" font-size="19" font-weight="750" fill="#8a4c2c">停止条件</text>
+  <text x="257" y="384" font-size="18" fill="#69483b">查不到、规则冲突、证据不足或需执行退款 → 交人工</text>
+</svg>

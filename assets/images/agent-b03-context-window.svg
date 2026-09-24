@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">同一张工单的两种上下文装法</title>
+  <desc id="desc">左边把旧 FAQ、手册和闲聊都塞进上下文，客户未收货诉求容易被淹没，输出空间也紧。右边按本轮任务选择任务边界、客户原话、查询结果和有效规则，并给输出留空间。</desc>
+  <defs><style>text { font-family: system-ui, "Microsoft YaHei", sans-serif; }</style></defs>
+  <rect width="960" height="430" rx="24" fill="#f3f5f0"/>
+  <text x="38" y="50" font-size="23" font-weight="750" fill="#254d40">上下文窗口有限：给关键证据留座位</text>
+  <rect x="38" y="78" width="426" height="307" rx="20" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <rect x="496" y="78" width="426" height="307" rx="20" fill="#fff" stroke="#b6d0bf" stroke-width="2"/>
+  <text x="62" y="117" font-size="20" font-weight="750" fill="#8a5526">全量硬塞</text>
+  <text x="519" y="117" font-size="20" font-weight="750" fill="#285746">按工单 0823 选材料</text>
+  <rect x="63" y="140" width="376" height="51" rx="10" fill="#e6e8e3"/>
+  <text x="84" y="173" font-size="18" fill="#52625a">三本手册：跨品类规则</text>
+  <rect x="63" y="197" width="376" height="51" rx="10" fill="#e6e8e3"/>
+  <text x="84" y="230" font-size="18" fill="#52625a">两年闲聊：与本单无关</text>
+  <rect x="63" y="254" width="376" height="51" rx="10" fill="#f9e8d6"/>
+  <text x="84" y="287" font-size="18" fill="#8a5526">旧 FAQ：可能误导</text>
+  <rect x="63" y="311" width="285" height="47" rx="10" fill="#fff2e8" stroke="#dda673" stroke-dasharray="5 4"/>
+  <text x="83" y="341" font-size="18" font-weight="700" fill="#8a4c2c">客户“没收到”被挤在后排</text>
+  <rect x="355" y="311" width="84" height="47" rx="10" fill="#f5f6f3" stroke="#cbd5ca"/>
+  <text x="365" y="341" font-size="16" fill="#66746b">输出紧</text>
+  <rect x="519" y="140" width="378" height="42" rx="10" fill="#e1eee6"/>
+  <text x="539" y="168" font-size="18" font-weight="700" fill="#254d40">任务边界：只写内部草稿</text>
+  <rect x="519" y="188" width="378" height="42" rx="10" fill="#e1eee6"/>
+  <text x="539" y="216" font-size="18" font-weight="700" fill="#254d40">客户原话：显示签收，但没收到</text>
+  <rect x="519" y="236" width="378" height="42" rx="10" fill="#e1eee6"/>
+  <text x="539" y="264" font-size="18" font-weight="700" fill="#254d40">本轮查询：有结果才放入</text>
+  <rect x="519" y="284" width="378" height="42" rx="10" fill="#e1eee6"/>
+  <text x="539" y="312" font-size="18" font-weight="700" fill="#254d40">有效规则：相关原文＋版本</text>
+  <rect x="519" y="334" width="378" height="28" rx="10" fill="#254d40"/>
+  <text x="637" y="354" font-size="16" font-weight="700" fill="#fff">为完整输出留空间</text>
+</svg>

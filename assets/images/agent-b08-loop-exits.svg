@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="b08-title b08-desc">
+  <title id="b08-title">Agent 循环的四个出口</title>
+  <desc id="b08-desc">一次运行会看证据、选下一步、调用只读工具，再把结果带回下一轮。每轮检查四种出口：证据齐就交审核，证据缺就停答，工具故障就交人，预算到顶就保存轨迹退出。</desc>
+  <defs>
+    <marker id="b08-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1 1 L8 4.5 L1 8" fill="none" stroke="#416b5c" stroke-width="2"/></marker>
+  </defs>
+  <rect width="960" height="440" rx="24" fill="#f3f5f0"/>
+  <g font-family="system-ui, 'Microsoft YaHei', sans-serif">
+    <text x="32" y="47" fill="#254d40" font-size="25" font-weight="700">每转一圈，都要找出口</text>
+    <text x="32" y="76" fill="#5e7064" font-size="17">勤快不能靠无限重试证明；未知就老实标未知。</text>
+
+    <rect x="86" y="111" width="205" height="101" rx="17" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="377" y="111" width="205" height="101" rx="17" fill="#e5efe7" stroke="#9bbba9" stroke-width="2"/>
+    <rect x="668" y="111" width="205" height="101" rx="17" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <text x="127" y="157" fill="#254d40" font-size="23" font-weight="700">看证据</text>
+    <text x="113" y="185" fill="#65766b" font-size="17">现在查到了什么</text>
+    <text x="418" y="157" fill="#254d40" font-size="23" font-weight="700">选下一步</text>
+    <text x="409" y="185" fill="#65766b" font-size="17">回答、查询或停下</text>
+    <text x="686" y="157" fill="#254d40" font-size="22" font-weight="700">调用只读工具</text>
+    <text x="700" y="185" fill="#65766b" font-size="17">拿到结果或错误</text>
+    <path d="M297 161 H367 M588 161 H658" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#b08-arrow)"/>
+    <path d="M770 218 V251 H189 V219" fill="none" stroke="#416b5c" stroke-width="2.5" marker-end="url(#b08-arrow)"/>
+    <rect x="352" y="236" width="255" height="30" rx="15" fill="#f3f5f0"/>
+    <text x="393" y="258" fill="#416b5c" font-size="17" font-weight="700">结果带回下一轮</text>
+
+    <text x="33" y="294" fill="#254d40" font-size="18" font-weight="700">每轮检查四个出口：</text>
+    <rect x="32" y="309" width="210" height="100" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="261" y="309" width="210" height="100" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="490" y="309" width="210" height="100" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="719" y="309" width="210" height="100" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="44" y="321" width="8" height="75" rx="4" fill="#5b9b72"/>
+    <rect x="273" y="321" width="8" height="75" rx="4" fill="#d9a564"/>
+    <rect x="502" y="321" width="8" height="75" rx="4" fill="#c67e61"/>
+    <rect x="731" y="321" width="8" height="75" rx="4" fill="#8b9c8d"/>
+    <text x="65" y="348" fill="#254d40" font-size="21" font-weight="700">证据齐</text>
+    <text x="65" y="382" fill="#566c5e" font-size="18">草稿交审核</text>
+    <text x="294" y="348" fill="#254d40" font-size="21" font-weight="700">证据缺</text>
+    <text x="294" y="382" fill="#566c5e" font-size="18">停答待核实</text>
+    <text x="523" y="348" fill="#254d40" font-size="21" font-weight="700">工具故障</text>
+    <text x="523" y="382" fill="#566c5e" font-size="18">交人接手</text>
+    <text x="752" y="348" fill="#254d40" font-size="21" font-weight="700">预算到顶</text>
+    <text x="752" y="382" fill="#566c5e" font-size="18">留轨迹退出</text>
+  </g>
+</svg>

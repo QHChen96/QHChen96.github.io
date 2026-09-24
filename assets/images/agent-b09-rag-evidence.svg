@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="b09-title b09-desc">
+  <title id="b09-title">从现行规则到待审答复的 RAG 证据链</title>
+  <desc id="b09-desc">现行售后规则先解析、标明版本并建立索引，旧版 FAQ 被过滤；再按工单 0823 的签收争议检索出带来源的条款，最后只生成先核实签收、不承诺退款的待审草稿。</desc>
+  <defs>
+    <marker id="b09-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#416b5c" stroke-width="2"/></marker>
+  </defs>
+  <rect width="960" height="440" rx="24" fill="#f3f5f0"/>
+  <g font-family="system-ui, 'Microsoft YaHei', sans-serif">
+    <text x="33" y="49" fill="#254d40" font-size="25" font-weight="700">PDF 上传了，证据找对了吗？</text>
+    <text x="33" y="80" fill="#5e7064" font-size="17">入库、检索、写答复，是三件不同的事。</text>
+
+    <rect x="33" y="112" width="276" height="220" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="49" y="129" width="80" height="31" rx="15" fill="#dcebe2"/>
+    <text x="64" y="151" fill="#285746" font-size="18" font-weight="700">① 入库</text>
+    <text x="51" y="195" fill="#254d40" font-size="22" font-weight="700">现行售后规则</text>
+    <text x="51" y="224" fill="#62766a" font-size="17">解析 · 标版本 · 建索引</text>
+    <rect x="50" y="249" width="237" height="52" rx="11" fill="#fff1ec"/>
+    <text x="70" y="281" fill="#9a5745" font-size="18" font-weight="700">旧版 FAQ：挡在外面</text>
+    <path d="M68 291 L274 257" stroke="#b85f4b" stroke-width="3" stroke-linecap="round"/>
+
+    <rect x="342" y="112" width="276" height="220" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="358" y="129" width="80" height="31" rx="15" fill="#dcebe2"/>
+    <text x="373" y="151" fill="#285746" font-size="18" font-weight="700">② 查证</text>
+    <text x="360" y="195" fill="#254d40" font-size="22" font-weight="700">问：签收却没收到</text>
+    <text x="360" y="233" fill="#4e6859" font-size="18">命中签收争议条款</text>
+    <rect x="359" y="258" width="242" height="48" rx="11" fill="#edf3ec"/>
+    <text x="374" y="287" fill="#4f6859" font-size="17">条款位置 · 生效版本</text>
+
+    <rect x="651" y="112" width="276" height="220" rx="18" fill="#e5efe7" stroke="#9bbba9" stroke-width="2"/>
+    <rect x="667" y="129" width="106" height="31" rx="15" fill="#2b614d"/>
+    <text x="682" y="151" fill="#fff" font-size="18" font-weight="700">③ 待审稿</text>
+    <text x="669" y="195" fill="#254d40" font-size="22" font-weight="700">先核实签收</text>
+    <text x="669" y="233" fill="#4e6859" font-size="18">交售后判断</text>
+    <rect x="668" y="258" width="240" height="48" rx="11" fill="#fff"/>
+    <text x="689" y="288" fill="#95583d" font-size="18" font-weight="700">不承诺已退款</text>
+
+    <path d="M314 222 H335 M623 222 H644" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#b09-arrow)"/>
+    <rect x="33" y="351" width="894" height="72" rx="15" fill="#254d40"/>
+    <text x="63" y="396" fill="#fff" font-size="21" font-weight="700">工单问题　→　现行条款与出处　→　证据撑得住的结论</text>
+  </g>
+</svg>

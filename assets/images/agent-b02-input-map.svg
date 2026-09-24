@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">订单号与订单记录的输入来源图</title>
+  <desc id="desc">左边模型只拿到客户说的订单号，订单状态未知。右边应用获准只读查询订单系统，将带查询时间的结果送给模型，模型才能引用系统记录。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#416b5c" stroke-width="1.6"/></marker>
+    <style>text { font-family: system-ui, "Microsoft YaHei", sans-serif; }</style>
+  </defs>
+  <rect width="960" height="430" rx="24" fill="#f3f5f0"/>
+  <text x="38" y="50" font-size="23" font-weight="750" fill="#254d40">订单号只是查询条件，不是订单档案</text>
+  <rect x="38" y="78" width="426" height="303" rx="20" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <rect x="496" y="78" width="426" height="303" rx="20" fill="#fff" stroke="#b6d0bf" stroke-width="2"/>
+  <rect x="58" y="99" width="151" height="34" rx="17" fill="#fff2e8"/>
+  <text x="78" y="122" font-size="18" font-weight="750" fill="#8a5526">只给一个号码</text>
+  <rect x="516" y="99" width="168" height="34" rx="17" fill="#e1eee6"/>
+  <text x="537" y="122" font-size="18" font-weight="750" fill="#285746">完成只读查询</text>
+  <rect x="69" y="161" width="140" height="69" rx="13" fill="#f9e8d6"/>
+  <text x="90" y="188" font-size="16" fill="#8a5526">客户说</text>
+  <text x="91" y="214" font-size="21" font-weight="750" fill="#583e2b">订单 0823</text>
+  <path d="M219 196H264" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="279" y="161" width="154" height="69" rx="13" fill="#edf3ec"/>
+  <text x="311" y="188" font-size="16" fill="#526b5b">模型能看见</text>
+  <text x="305" y="214" font-size="21" font-weight="750" fill="#254d40">只有号码</text>
+  <rect x="69" y="274" width="364" height="64" rx="13" fill="#fff2e8"/>
+  <text x="93" y="313" font-size="21" font-weight="750" fill="#8a4c2c">签收时间／退款状态：未知</text>
+  <rect x="516" y="161" width="114" height="69" rx="13" fill="#edf3ec"/>
+  <text x="535" y="188" font-size="16" fill="#526b5b">应用发起</text>
+  <text x="537" y="214" font-size="19" font-weight="750" fill="#254d40">只读查询</text>
+  <path d="M635 196H675" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="687" y="161" width="205" height="69" rx="13" fill="#dcebe2"/>
+  <text x="716" y="188" font-size="16" fill="#526b5b">订单系统返回</text>
+  <text x="709" y="214" font-size="20" font-weight="750" fill="#254d40">已签收 · 10:15</text>
+  <path d="M790 239V261" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="516" y="274" width="376" height="64" rx="13" fill="#e1eee6"/>
+  <text x="542" y="302" font-size="16" fill="#526b5b">模型据本轮结果写处理卡</text>
+  <text x="542" y="326" font-size="19" font-weight="750" fill="#254d40">系统显示已签收；客户称未收到</text>
+  <text x="42" y="410" font-size="15" fill="#68796f">示意数据均为教学虚构；客户说法与系统记录须分别标明来源。</text>
+</svg>

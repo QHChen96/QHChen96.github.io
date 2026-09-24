@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="b06-title b06-desc">
+  <title id="b06-title">查过订单，请出示查询回执</title>
+  <desc id="b06-desc">工单 0823 的工具调用分为四步：模型提出查询，应用校验并执行只读查询，订单系统返回 Q-01 回执，模型引用回执写草稿。模型直接声称已查而没有执行记录的捷径被划掉。</desc>
+  <defs>
+    <marker id="b06-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#416b5c" stroke-width="2"/></marker>
+  </defs>
+  <rect width="960" height="420" rx="24" fill="#f3f5f0"/>
+  <g font-family="system-ui, 'Microsoft YaHei', sans-serif">
+    <text x="30" y="48" fill="#254d40" font-size="25" font-weight="700">查过订单？请先出示小票</text>
+    <text x="30" y="78" fill="#5e7064" font-size="17">“我查了”是一句话；真的查过，会留下四步记录。</text>
+
+    <rect x="30" y="111" width="192" height="175" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="48" y="128" width="53" height="31" rx="15" fill="#dcebe2"/>
+    <text x="63" y="150" fill="#285746" font-size="18" font-weight="700">①</text>
+    <text x="48" y="195" fill="#254d40" font-size="22" font-weight="700">模型举手</text>
+    <text x="48" y="231" fill="#566c5e" font-size="18">请求查 0823</text>
+    <text x="48" y="258" fill="#566c5e" font-size="17">给出工具和参数</text>
+
+    <rect x="266" y="111" width="192" height="175" rx="18" fill="#e8f1e9" stroke="#9bbba9" stroke-width="2"/>
+    <rect x="284" y="128" width="53" height="31" rx="15" fill="#2b614d"/>
+    <text x="299" y="150" fill="#fff" font-size="18" font-weight="700">②</text>
+    <text x="284" y="195" fill="#254d40" font-size="22" font-weight="700">应用跑腿</text>
+    <text x="284" y="231" fill="#566c5e" font-size="18">校验权限与参数</text>
+    <text x="284" y="258" fill="#566c5e" font-size="17">执行只读查询</text>
+
+    <rect x="502" y="111" width="192" height="175" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="520" y="128" width="53" height="31" rx="15" fill="#dcebe2"/>
+    <text x="535" y="150" fill="#285746" font-size="18" font-weight="700">③</text>
+    <text x="520" y="195" fill="#254d40" font-size="22" font-weight="700">系统回票</text>
+    <text x="520" y="231" fill="#566c5e" font-size="18">Q-01：已签收</text>
+    <text x="520" y="258" fill="#566c5e" font-size="17">有实际查询结果</text>
+
+    <rect x="738" y="111" width="192" height="175" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="756" y="128" width="53" height="31" rx="15" fill="#dcebe2"/>
+    <text x="771" y="150" fill="#285746" font-size="18" font-weight="700">④</text>
+    <text x="756" y="195" fill="#254d40" font-size="22" font-weight="700">模型写稿</text>
+    <text x="756" y="231" fill="#566c5e" font-size="18">引用 Q-01</text>
+    <text x="756" y="258" fill="#566c5e" font-size="17">只写查到的事实</text>
+
+    <path d="M228 198 H258 M464 198 H494 M700 198 H730" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#b06-arrow)"/>
+
+    <rect x="30" y="308" width="900" height="91" rx="17" fill="#fff3ea" stroke="#e8cbb2" stroke-width="2"/>
+    <rect x="47" y="329" width="90" height="45" rx="12" fill="#f5ded3"/>
+    <text x="58" y="358" fill="#a14b37" font-size="20" font-weight="700">假捷径</text>
+    <text x="162" y="359" fill="#874b3c" font-size="21" font-weight="700">模型直接说“已查”</text>
+    <path d="M168 371 L381 321" stroke="#b85f4b" stroke-width="4" stroke-linecap="round"/>
+    <text x="465" y="359" fill="#784536" font-size="21" font-weight="700">没有执行记录 → 不算查过</text>
+  </g>
+</svg>

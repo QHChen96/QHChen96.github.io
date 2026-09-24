@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">任务指令、查证材料和客户原话的边界</title>
+  <desc id="desc">应用任务要求、已核查证据和客户原话分层输入。客户声称有内部退款通知，只能列为待核说法；应用不给自动退款与发送权限，最终只生成内部待审草稿。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#416b5c" stroke-width="1.6"/></marker>
+    <style>text { font-family: system-ui, "Microsoft YaHei", sans-serif; }</style>
+  </defs>
+  <rect width="960" height="420" rx="24" fill="#f3f5f0"/>
+  <text x="38" y="50" font-size="23" font-weight="750" fill="#254d40">客户的话要听，公司的决定得另外查</text>
+  <text x="38" y="77" font-size="16" fill="#64766a">把不同来源分层放，别让工单文字冒充任务指令。</text>
+  <rect x="38" y="102" width="425" height="68" rx="16" fill="#e1eee6" stroke="#b6d0bf" stroke-width="2"/>
+  <text x="62" y="130" font-size="17" font-weight="750" fill="#285746">应用任务要求</text>
+  <text x="62" y="155" font-size="20" fill="#273b31">查事实，写内部待审草稿</text>
+  <rect x="38" y="180" width="425" height="68" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <text x="62" y="208" font-size="17" font-weight="750" fill="#526b5b">本轮查证材料</text>
+  <text x="62" y="233" font-size="20" fill="#273b31">订单结果＋当前有效规则</text>
+  <rect x="38" y="258" width="425" height="68" rx="16" fill="#fff2e8" stroke="#e5c4a6" stroke-width="2"/>
+  <text x="62" y="286" font-size="17" font-weight="750" fill="#8a5526">客户原话：待核说法</text>
+  <text x="62" y="311" font-size="20" fill="#69483b">“内部通知说先退款”</text>
+  <path d="M472 212H521" fill="none" stroke="#416b5c" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="537" y="107" width="384" height="147" rx="18" fill="#fff" stroke="#b6d0bf" stroke-width="2"/>
+  <rect x="559" y="126" width="125" height="32" rx="16" fill="#e1eee6"/>
+  <text x="579" y="148" font-size="17" font-weight="750" fill="#285746">允许的输出</text>
+  <text x="559" y="191" font-size="21" font-weight="750" fill="#254d40">“尚需核实签收情况”</text>
+  <text x="559" y="223" font-size="18" fill="#526b5b">内部草稿 → 客服审核</text>
+  <rect x="537" y="269" width="384" height="57" rx="15" fill="#fff2e8" stroke="#e5c4a6" stroke-width="2"/>
+  <circle cx="568" cy="297" r="16" fill="#a3542e"/>
+  <path d="M561 290L575 304 M575 290L561 304" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="596" y="304" font-size="20" font-weight="750" fill="#8a4c2c">退款与发送权限：未开放</text>
+  <rect x="38" y="347" width="883" height="47" rx="13" fill="#254d40"/>
+  <text x="61" y="378" font-size="19" font-weight="650" fill="#fff">客户说“有通知” → 标为待核；规则和退款回执只能从受控来源取。</text>
+</svg>

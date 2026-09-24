@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" role="img" aria-labelledby="b10-title b10-desc">
+  <title id="b10-title">工单 0823 的五个状态抽屉</title>
+  <desc id="b10-desc">本轮上下文装当前需要读的材料，会话历史记录说过什么，任务状态记录工单办到哪步，长期资料保存现行规则。第五个运行凭据抽屉明确分成检查点所记录的进度和业务回执所证明的外部动作结果。聊天声称已退款不能代替退款回执。</desc>
+  <rect width="960" height="470" rx="24" fill="#f3f5f0"/>
+  <g font-family="system-ui, 'Microsoft YaHei', sans-serif">
+    <text x="32" y="48" fill="#254d40" font-size="25" font-weight="700">Agent 的“记忆”，别全塞一个抽屉</text>
+    <text x="32" y="77" fill="#5e7064" font-size="17">工单 0823 重开时，要取回事实、进度，也要核对真实动作。</text>
+
+    <rect x="32" y="101" width="286" height="126" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="47" y="117" width="64" height="9" rx="4.5" fill="#c7d9cd"/>
+    <text x="50" y="160" fill="#254d40" font-size="22" font-weight="700">① 本轮上下文</text>
+    <text x="50" y="192" fill="#5b6e61" font-size="18">这次真正要读的材料</text>
+
+    <rect x="337" y="101" width="286" height="126" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="352" y="117" width="64" height="9" rx="4.5" fill="#c7d9cd"/>
+    <text x="355" y="160" fill="#254d40" font-size="22" font-weight="700">② 会话历史</text>
+    <text x="355" y="192" fill="#5b6e61" font-size="18">客户和助手说过什么</text>
+
+    <rect x="642" y="101" width="286" height="126" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="657" y="117" width="64" height="9" rx="4.5" fill="#c7d9cd"/>
+    <text x="660" y="160" fill="#254d40" font-size="22" font-weight="700">③ 任务状态</text>
+    <text x="660" y="192" fill="#5b6e61" font-size="18">这张工单办到哪一步</text>
+
+    <rect x="32" y="244" width="286" height="148" rx="16" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="47" y="260" width="64" height="9" rx="4.5" fill="#c7d9cd"/>
+    <text x="50" y="303" fill="#254d40" font-size="22" font-weight="700">④ 长期资料</text>
+    <text x="50" y="335" fill="#5b6e61" font-size="18">现行规则与版本</text>
+    <text x="50" y="365" fill="#5b6e61" font-size="17">按权限重新检索</text>
+
+    <rect x="337" y="244" width="591" height="148" rx="16" fill="#e5efe7" stroke="#9bbba9" stroke-width="2"/>
+    <rect x="352" y="260" width="64" height="9" rx="4.5" fill="#a5c4af"/>
+    <text x="355" y="299" fill="#254d40" font-size="22" font-weight="700">⑤ 运行凭据</text>
+    <rect x="355" y="315" width="258" height="58" rx="11" fill="#fff"/>
+    <rect x="631" y="315" width="278" height="58" rx="11" fill="#fff"/>
+    <text x="374" y="351" fill="#285746" font-size="19" font-weight="700">检查点 = 进度</text>
+    <text x="650" y="351" fill="#285746" font-size="19" font-weight="700">业务回执 = 动作结果</text>
+
+    <rect x="32" y="409" width="896" height="47" rx="12" fill="#fff1ec" stroke="#e8cbb2" stroke-width="1.5"/>
+    <text x="75" y="440" fill="#8d503d" font-size="20" font-weight="700">聊天里说“已退款”　≠　退款系统真的给了成功回执</text>
+  </g>
+</svg>
