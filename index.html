@@ -2,8 +2,8 @@
 layout: default
 ---
 <section class="intro">
-  <p class="eyebrow">个人博客</p>
-  <h1>你好，欢迎来读。</h1>
+  <p class="eyebrow">小陈的职场与 Agent 笔记</p>
+  <h1>领导又提问了？先别慌。</h1>
   <p>{{ site.description | escape }}</p>
 </section>
 
@@ -17,7 +17,7 @@ layout: default
     {% for post in site.posts %}
     <li>
       <article class="post-card">
-        <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y 年 %m 月 %d 日' }}</time>{% if post.category %}<span aria-hidden="true">·</span><span>{{ post.category | escape }}</span>{% endif %}</p>
+        <p class="post-meta"><span>作者：{{ post.author | default: site.author | escape }}</span><span aria-hidden="true">·</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y 年 %m 月 %d 日' }}</time>{% if post.category %}<span aria-hidden="true">·</span><span>{{ post.category | escape }}</span>{% endif %}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
         {% if post.description %}<p class="summary">{{ post.description | escape }}</p>{% endif %}
         <a class="read-link" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title | escape }}》">阅读文章 <span aria-hidden="true">→</span></a>
