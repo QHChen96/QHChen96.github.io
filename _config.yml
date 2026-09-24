@@ -1,0 +1,14 @@
+title: 回去等通知吧
+description: 记录技术、项目与日常思考。
+url: https://QHChen96.github.io
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+permalink: /posts/:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<section class="intro">
+  <p class="eyebrow">个人博客</p>
+  <h1>你好，欢迎来读。</h1>
+  <p>{{ site.description | escape }}</p>
+</section>
+
+<section class="posts-section" aria-labelledby="posts-title">
+  <div class="section-heading">
+    <h2 id="posts-title">最新文章</h2>
+    <span>{{ site.posts.size }} 篇</span>
+  </div>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <article class="post-card">
+        <p class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y 年 %m 月 %d 日' }}</time>{% if post.category %}<span aria-hidden="true">·</span><span>{{ post.category | escape }}</span>{% endif %}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        {% if post.description %}<p class="summary">{{ post.description | escape }}</p>{% endif %}
+        <a class="read-link" href="{{ post.url | relative_url }}" aria-label="阅读《{{ post.title | escape }}》">阅读文章 <span aria-hidden="true">→</span></a>
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">文章正在准备中。</p>
+  {% endif %}
+</section>

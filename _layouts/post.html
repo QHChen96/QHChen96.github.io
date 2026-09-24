@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">← 返回文章列表</a>
+    <p class="eyebrow">文章</p>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y 年 %m 月 %d 日' }}</time>{% if page.category %}<span aria-hidden="true">·</span><span>{{ page.category | escape }}</span>{% endif %}</p>
+  </header>
+  <div class="post-content prose">{{ content }}</div>
+</article>
