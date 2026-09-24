@@ -82,7 +82,7 @@ category: AI
 **小陈：**先别让七个产品一起开晨会。原型能稳定出草稿后，用 n8n 接工单流转和人工审批；[n8n 官方也提供工具调用前人工审批的做法](https://docs.n8n.io/build/integrate-ai/ai-examples/human-in-the-loop-for-tools/)。如果之后要做成自己的客服产品，开发再比较 Agents SDK 和 LangGraph。现在先把这张单答对。
 
 <figure>
-  <img src="{{ '/assets/images/agent-product-map.svg' | relative_url }}" alt="客服 Agent 试点分四段：Dify 生成有依据的内部草稿，n8n 可连接正式工单流程，人工审核后才能发送或处理退款；Codex、Claude Code 和代码框架用于开发阶段" width="960" height="414">
+  <img src="{{ '/assets/images/agent-product-map.svg' | relative_url }}" alt="Dify 先生成内部草稿，从试点第一天就由客服审核；n8n 是试点通过后的可选系统集成；Codex、Claude Code 与代码框架用于开发" width="960" height="414">
   <figcaption>这次的选型图：先验证草稿是否可靠，再接系统；“发送”和“退款”一直有人把关。</figcaption>
 </figure>
 
