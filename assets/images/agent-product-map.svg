@@ -1,34 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 414" role="img" aria-labelledby="title desc">
-  <title id="title">常见 Agent 产品按用途分为三类</title>
-  <desc id="desc">直接使用的编程 Agent 有 Codex 与 Claude Code；可视化搭建平台有 Coze、Dify 和 n8n；代码框架有 OpenAI Agents SDK 与 LangGraph。</desc>
+  <title id="title">客服 Agent 试点从第一天就要有人审核</title>
+  <desc id="desc">Dify 先做内部回复草稿，人工从试点第一天审核，确认后才发送消息或处理退款。试点通过后可选用 n8n 连接工单与订单查询，仍保留人工审批。Codex、Claude Code、OpenAI Agents SDK 和 LangGraph 用于开发与集成。</desc>
   <rect width="960" height="414" rx="24" fill="#f3f5f0"/>
-  <text x="44" y="53" fill="#254d40" font-size="22" font-weight="700" font-family="system-ui, sans-serif">先分清：你是要“用 Agent”，还是“造 Agent”？</text>
   <g font-family="system-ui, sans-serif">
-    <rect x="44" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <rect x="44" y="94" width="270" height="70" rx="19" fill="#dcebe2"/>
-    <path d="M44 145 H314" stroke="#dcebe2" stroke-width="38"/>
-    <text x="67" y="130" fill="#254d40" font-size="18" font-weight="700">直接使用</text>
-    <text x="67" y="153" fill="#4d6757" font-size="13">帮你完成具体任务</text>
-    <text x="67" y="210" fill="#254d40" font-size="19" font-weight="600">Codex</text>
-    <text x="67" y="248" fill="#254d40" font-size="19" font-weight="600">Claude Code</text>
-    <text x="67" y="318" fill="#637268" font-size="13">适合：写代码、改项目、跑测试</text>
+    <text x="44" y="49" fill="#254d40" font-size="23" font-weight="700">明早要上线？先把这道关装上</text>
+    <text x="44" y="76" fill="#647369" font-size="14">第一天就让人审草稿；试点过关后，再考虑接工单系统。</text>
 
-    <rect x="345" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <rect x="345" y="94" width="270" height="70" rx="19" fill="#e8ebdb"/>
-    <path d="M345 145 H615" stroke="#e8ebdb" stroke-width="38"/>
-    <text x="368" y="130" fill="#4c5529" font-size="18" font-weight="700">可视化搭建</text>
-    <text x="368" y="153" fill="#626b47" font-size="13">拖拽节点连接模型与工具</text>
-    <text x="368" y="210" fill="#343b25" font-size="19" font-weight="600">Coze · Dify</text>
-    <text x="368" y="248" fill="#343b25" font-size="19" font-weight="600">n8n</text>
-    <text x="368" y="318" fill="#637268" font-size="13">适合：业务助手、自动化流程</text>
+    <rect x="44" y="101" width="393" height="158" rx="17" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="61" y="119" width="78" height="27" rx="13.5" fill="#dcebe2"/>
+    <text x="75" y="138" fill="#254d40" font-size="13" font-weight="700">先试起来</text>
+    <text x="61" y="178" fill="#254d40" font-size="22" font-weight="700">Dify：做内部草稿</text>
+    <text x="61" y="211" fill="#4a5e51" font-size="15">查政策，整理问题，拟一段回复</text>
+    <text x="61" y="237" fill="#4a5e51" font-size="15">草稿只给客服看</text>
 
-    <rect x="646" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <rect x="646" y="94" width="270" height="70" rx="19" fill="#e8e7ef"/>
-    <path d="M646 145 H916" stroke="#e8e7ef" stroke-width="38"/>
-    <text x="669" y="130" fill="#4a4967" font-size="18" font-weight="700">代码框架</text>
-    <text x="669" y="153" fill="#69677b" font-size="13">自己开发与集成 Agent</text>
-    <text x="669" y="210" fill="#39384f" font-size="18" font-weight="600">OpenAI Agents SDK</text>
-    <text x="669" y="248" fill="#39384f" font-size="19" font-weight="600">LangGraph</text>
-    <text x="669" y="318" fill="#637268" font-size="13">适合：产品开发、复杂控制</text>
+    <path d="M448 180 L478 180 M469 171 L479 180 L469 189" fill="none" stroke="#8da494" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="491" y="101" width="425" height="158" rx="17" fill="#fff" stroke="#958daa" stroke-width="2.5"/>
+    <rect x="508" y="119" width="88" height="27" rx="13.5" fill="#e8e7ef"/>
+    <text x="520" y="138" fill="#4a4967" font-size="13" font-weight="700">从第一天</text>
+    <text x="508" y="178" fill="#39384f" font-size="22" font-weight="700">人工审核：人来拍板</text>
+    <text x="508" y="211" fill="#5a596d" font-size="15">发给客户的消息、退款，都先过人</text>
+    <text x="508" y="237" fill="#5a596d" font-size="15">资料不全，转客服查清楚</text>
+
+    <rect x="44" y="276" width="872" height="55" rx="14" fill="#e8ebdb"/>
+    <text x="61" y="299" fill="#4c5529" font-size="15" font-weight="700">试点过关后，可选 n8n 接入工单与订单查询</text>
+    <text x="61" y="320" fill="#626b47" font-size="13">接系统也要保留人工审批和每一步的记录。</text>
+
+    <rect x="44" y="343" width="872" height="45" rx="13" fill="#e5eae4"/>
+    <text x="61" y="371" fill="#53645a" font-size="14">搭系统的工具：Codex · Claude Code 写代码；OpenAI Agents SDK · LangGraph 做集成与控制</text>
   </g>
 </svg>

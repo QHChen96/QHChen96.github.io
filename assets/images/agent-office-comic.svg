@@ -1,32 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
-  <title id="title">职场周报的三幕小剧场</title>
-  <desc id="desc">第一幕，小陈交周报；第二幕，领导要求既精炼又详细；第三幕，Agent 核对原始记录，整理出有来源的草稿，等待人确认。</desc>
-  <rect width="960" height="390" rx="24" fill="#f3f5f0"/>
-  <text x="42" y="52" fill="#254d40" font-size="23" font-weight="700" font-family="system-ui, sans-serif">周报求生：一份稿子，三种命运</text>
-  <g font-family="system-ui, sans-serif">
-    <rect x="42" y="86" width="270" height="262" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <text x="62" y="121" fill="#567568" font-size="15" font-weight="700">第一幕 · 交稿</text>
-    <rect x="70" y="150" width="214" height="79" rx="13" fill="#eef2ec"/>
-    <text x="87" y="182" fill="#273b31" font-size="18" font-weight="600">“本周进展见附件。”</text>
-    <text x="87" y="207" fill="#65746a" font-size="13">小陈：这次总稳了吧。</text>
-    <circle cx="108" cy="280" r="22" fill="#c8d8c9"/>
-    <path d="M73 333 Q76 301 108 301 Q140 301 143 333" fill="#dcebe2" stroke="#9db9a7" stroke-width="2"/>
-    <text x="160" y="293" fill="#65746a" font-size="13">已发送 v1.docx</text>
+  <title id="title">186 条客服工单，先别让 Agent 自己答应退款</title>
+  <desc id="desc">三格故事：领导要求明早处理 186 条工单；AI 误读过期的“签收异常可退款”规则，向客户承诺退款；小陈要求核对现行规则，只生成草稿，交给客服人工确认后发送。</desc>
+  <rect width="960" height="390" rx="24" fill="#f5f6f2"/>
+  <text x="30" y="47" fill="#213a35" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif" font-size="23" font-weight="700">领导要明早搞定 186 条工单，Agent 差点先答应退款</text>
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif">
+    <rect x="24" y="72" width="292" height="290" rx="19" fill="#ffffff" stroke="#dce5e0" stroke-width="2"/>
+    <rect x="334" y="72" width="292" height="290" rx="19" fill="#fffaf7" stroke="#f0d8cd" stroke-width="2"/>
+    <rect x="644" y="72" width="292" height="290" rx="19" fill="#ffffff" stroke="#d4e7dd" stroke-width="2"/>
 
-    <rect x="345" y="86" width="270" height="262" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <text x="365" y="121" fill="#a36b3c" font-size="15" font-weight="700">第二幕 · 领导批注</text>
-    <rect x="373" y="150" width="214" height="91" rx="13" fill="#fff0df"/>
-    <text x="388" y="181" fill="#70451e" font-size="18" font-weight="600">“再精炼一点，</text>
-    <text x="388" y="207" fill="#70451e" font-size="18" font-weight="600">细节也要更全。”</text>
-    <text x="373" y="290" fill="#906644" font-size="15">小陈：好的，马上改。</text>
-    <text x="373" y="317" fill="#906644" font-size="13">内心：这两句能同时成立吗？</text>
+    <rect x="42" y="89" width="104" height="28" rx="14" fill="#e6f1eb"/>
+    <text x="54" y="108" fill="#2f6a4e" font-size="13" font-weight="700">01 · 领导催单</text>
+    <circle cx="73" cy="161" r="22" fill="#f3cfac"/>
+    <path d="M52 155 Q55 129 73 132 Q91 129 94 155 Q83 145 73 146 Q62 145 52 155" fill="#364c46"/>
+    <path d="M43 221 Q45 187 73 186 Q101 187 103 221" fill="#496a75"/>
+    <path d="M73 189 L67 207 L73 214 L79 207 Z" fill="#f7ece2"/>
+    <rect x="108" y="136" width="185" height="92" rx="13" fill="#e9f0ed"/>
+    <path d="M108 171 L97 178 L108 184" fill="#e9f0ed"/>
+    <text x="125" y="165" fill="#213a35" font-size="16" font-weight="700">明早之前，</text>
+    <text x="125" y="189" fill="#213a35" font-size="17" font-weight="700">186 条工单</text>
+    <text x="125" y="213" fill="#213a35" font-size="16" font-weight="700">都给我回了！</text>
+    <rect x="45" y="262" width="249" height="75" rx="12" fill="#f4f7f4" stroke="#dce5e0"/>
+    <rect x="60" y="274" width="36" height="48" rx="6" fill="#dce9e0"/>
+    <path d="M68 287 H87 M68 296 H87 M68 305 H81" stroke="#81a18c" stroke-width="3" stroke-linecap="round"/>
+    <text x="111" y="291" fill="#587368" font-size="13">客服队列</text>
+    <text x="111" y="319" fill="#2b6049" font-size="18" font-weight="700">待处理 × 186</text>
 
-    <rect x="648" y="86" width="270" height="262" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
-    <text x="668" y="121" fill="#4e5f91" font-size="15" font-weight="700">第三幕 · Agent 搭把手</text>
-    <rect x="676" y="150" width="214" height="91" rx="13" fill="#e9edf8"/>
-    <text x="692" y="180" fill="#37466e" font-size="17" font-weight="600">先查记录，再做摘要。</text>
-    <text x="692" y="207" fill="#37466e" font-size="17" font-weight="600">风险附依据，请你审核。</text>
-    <text x="676" y="290" fill="#5f6a83" font-size="15">小陈：终于有据可改。</text>
-    <text x="676" y="317" fill="#5f6a83" font-size="13">最终发送键，仍在你手里。</text>
+    <rect x="352" y="89" width="104" height="28" rx="14" fill="#fde9df"/>
+    <text x="364" y="108" fill="#ad4c39" font-size="13" font-weight="700">02 · AI 误答</text>
+    <rect x="354" y="136" width="112" height="105" rx="12" fill="#fff2ea" stroke="#efc6b5"/>
+    <text x="368" y="158" fill="#b75c43" font-size="12" font-weight="700">过期规则</text>
+    <text x="368" y="186" fill="#794637" font-size="20" font-weight="700">可退款</text>
+    <path d="M368 197 H449" stroke="#d77060" stroke-width="3" stroke-linecap="round"/>
+    <text x="368" y="224" fill="#9e6e5d" font-size="12">旧文件，已失效</text>
+    <path d="M474 189 H494" stroke="#dc735c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M489 183 L496 189 L489 195" fill="none" stroke="#dc735c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="501" y="138" width="105" height="90" rx="13" fill="#fbe0d7"/>
+    <text x="514" y="164" fill="#853b30" font-size="12" font-weight="700">AI 写的草稿</text>
+    <text x="514" y="190" fill="#6e3029" font-size="15" font-weight="700">“放心，</text>
+    <text x="514" y="212" fill="#6e3029" font-size="15" font-weight="700">可以退！”</text>
+    <rect x="354" y="260" width="252" height="77" rx="12" fill="#fff3ed" stroke="#f0d2c7"/>
+    <circle cx="375" cy="284" r="11" fill="#d86650"/>
+    <text x="371" y="289" fill="#fff" font-size="14" font-weight="700">!</text>
+    <text x="394" y="287" fill="#9e4232" font-size="15" font-weight="700">现行规则：先核实</text>
+    <text x="369" y="318" fill="#895b50" font-size="13">回答很顺，依据却过期了。</text>
+
+    <rect x="662" y="89" width="113" height="28" rx="14" fill="#e3f2e9"/>
+    <text x="674" y="108" fill="#2d714d" font-size="13" font-weight="700">03 · 小陈把关</text>
+    <circle cx="692" cy="163" r="22" fill="#f3cfac"/>
+    <path d="M672 157 Q675 132 692 133 Q710 132 713 157 Q701 149 692 149 Q683 149 672 157" fill="#3b4b46"/>
+    <path d="M660 220 Q664 187 692 187 Q720 187 724 220" fill="#5d8e77"/>
+    <rect x="728" y="137" width="187" height="90" rx="13" fill="#e4f1e8"/>
+    <path d="M728 173 L717 181 L728 188" fill="#e4f1e8"/>
+    <text x="744" y="163" fill="#245b3d" font-size="15" font-weight="700">先查现行规则，</text>
+    <text x="744" y="188" fill="#245b3d" font-size="15" font-weight="700">只出草稿。</text>
+    <text x="744" y="213" fill="#245b3d" font-size="15" font-weight="700">我看过才能发。</text>
+    <rect x="664" y="260" width="252" height="77" rx="12" fill="#f1f7f3" stroke="#cfe3d5"/>
+    <text x="678" y="284" fill="#527462" font-size="13">查政策 → 草稿 → 客服审核</text>
+    <rect x="678" y="297" width="222" height="27" rx="8" fill="#2e7550"/>
+    <text x="719" y="316" fill="#fff" font-size="13" font-weight="700">发送键仍在人手里</text>
   </g>
 </svg>
