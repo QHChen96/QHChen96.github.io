@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Agent 的工作循环</title>
+  <desc id="desc">用户给出目标，Agent 结合模型、指令和上下文选择工具。工具返回结果后，Agent 检查是否完成，再继续行动或交付结果。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9" fill="none" stroke="#496c60" stroke-width="1.7"/></marker>
+  </defs>
+  <rect width="960" height="420" rx="24" fill="#f3f5f0"/>
+  <text x="44" y="53" fill="#254d40" font-size="22" font-weight="700" font-family="system-ui, sans-serif">一个 Agent 如何完成任务</text>
+  <text x="44" y="80" fill="#65746a" font-size="14" font-family="system-ui, sans-serif">关键不是“会聊天”，而是能根据反馈决定下一步</text>
+
+  <rect x="44" y="130" width="176" height="126" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <text x="68" y="175" fill="#254d40" font-size="17" font-weight="700" font-family="system-ui, sans-serif">① 用户目标</text>
+  <text x="68" y="206" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">“整理这周的项目</text>
+  <text x="68" y="228" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">进展并给出摘要”</text>
+
+  <rect x="302" y="130" width="284" height="126" rx="18" fill="#dcebe2" stroke="#94b7a5" stroke-width="2"/>
+  <text x="327" y="175" fill="#254d40" font-size="17" font-weight="700" font-family="system-ui, sans-serif">② Agent 决策</text>
+  <text x="327" y="206" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">模型 + 指令 + 当前上下文</text>
+  <text x="327" y="228" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">判断下一步该做什么</text>
+
+  <rect x="668" y="130" width="248" height="126" rx="18" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+  <text x="693" y="175" fill="#254d40" font-size="17" font-weight="700" font-family="system-ui, sans-serif">③ 调用工具</text>
+  <text x="693" y="206" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">搜索、读取文件、调用 API</text>
+  <text x="693" y="228" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">或执行代码</text>
+
+  <path d="M224 193 H287" fill="none" stroke="#496c60" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M590 193 H653" fill="none" stroke="#496c60" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M793 270 V311 Q793 328 776 328 H462" fill="none" stroke="#496c60" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M430 327 H329 Q312 327 312 310 V271" fill="none" stroke="#496c60" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="541" y="313" fill="#4d5d54" font-size="14" font-family="system-ui, sans-serif">工具返回真实结果</text>
+  <rect x="302" y="348" width="284" height="44" rx="13" fill="#254d40"/>
+  <text x="344" y="376" fill="#fff" font-size="15" font-weight="600" font-family="system-ui, sans-serif">检查 → 继续 / 交付</text>
+</svg>

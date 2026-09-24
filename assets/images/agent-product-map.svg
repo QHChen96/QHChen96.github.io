@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 414" role="img" aria-labelledby="title desc">
+  <title id="title">常见 Agent 产品按用途分为三类</title>
+  <desc id="desc">直接使用的编程 Agent 有 Codex 与 Claude Code；可视化搭建平台有 Coze、Dify 和 n8n；代码框架有 OpenAI Agents SDK 与 LangGraph。</desc>
+  <rect width="960" height="414" rx="24" fill="#f3f5f0"/>
+  <text x="44" y="53" fill="#254d40" font-size="22" font-weight="700" font-family="system-ui, sans-serif">先分清：你是要“用 Agent”，还是“造 Agent”？</text>
+  <g font-family="system-ui, sans-serif">
+    <rect x="44" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="44" y="94" width="270" height="70" rx="19" fill="#dcebe2"/>
+    <path d="M44 145 H314" stroke="#dcebe2" stroke-width="38"/>
+    <text x="67" y="130" fill="#254d40" font-size="18" font-weight="700">直接使用</text>
+    <text x="67" y="153" fill="#4d6757" font-size="13">帮你完成具体任务</text>
+    <text x="67" y="210" fill="#254d40" font-size="19" font-weight="600">Codex</text>
+    <text x="67" y="248" fill="#254d40" font-size="19" font-weight="600">Claude Code</text>
+    <text x="67" y="318" fill="#637268" font-size="13">适合：写代码、改项目、跑测试</text>
+
+    <rect x="345" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="345" y="94" width="270" height="70" rx="19" fill="#e8ebdb"/>
+    <path d="M345 145 H615" stroke="#e8ebdb" stroke-width="38"/>
+    <text x="368" y="130" fill="#4c5529" font-size="18" font-weight="700">可视化搭建</text>
+    <text x="368" y="153" fill="#626b47" font-size="13">拖拽节点连接模型与工具</text>
+    <text x="368" y="210" fill="#343b25" font-size="19" font-weight="600">Coze · Dify</text>
+    <text x="368" y="248" fill="#343b25" font-size="19" font-weight="600">n8n</text>
+    <text x="368" y="318" fill="#637268" font-size="13">适合：业务助手、自动化流程</text>
+
+    <rect x="646" y="94" width="270" height="268" rx="19" fill="#fff" stroke="#d8e0d7" stroke-width="2"/>
+    <rect x="646" y="94" width="270" height="70" rx="19" fill="#e8e7ef"/>
+    <path d="M646 145 H916" stroke="#e8e7ef" stroke-width="38"/>
+    <text x="669" y="130" fill="#4a4967" font-size="18" font-weight="700">代码框架</text>
+    <text x="669" y="153" fill="#69677b" font-size="13">自己开发与集成 Agent</text>
+    <text x="669" y="210" fill="#39384f" font-size="18" font-weight="600">OpenAI Agents SDK</text>
+    <text x="669" y="248" fill="#39384f" font-size="19" font-weight="600">LangGraph</text>
+    <text x="669" y="318" fill="#637268" font-size="13">适合：产品开发、复杂控制</text>
+  </g>
+</svg>

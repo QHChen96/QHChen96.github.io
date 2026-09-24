@@ -60,6 +60,14 @@ h1, h2, h3 { line-height: 1.35; letter-spacing: -.025em; }
 .prose pre { max-width: 100%; overflow-x: auto; padding: 18px; border-radius: 8px; background: #eceee9; font-size: 14px; line-height: 1.6; }
 .prose code { overflow-wrap: anywhere; }
 .prose blockquote { margin: 24px 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); color: var(--muted); }
+.prose figure { margin: 30px 0 36px; }
+.prose figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: #f3f5f0; }
+.prose figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; text-align: center; }
+.prose table { display: block; width: max-content; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 22px 0 30px; font-size: 14px; }
+.prose th, .prose td { min-width: 120px; padding: 11px 13px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.prose th { background: #ecefe9; color: var(--text); font-weight: 700; }
+.prose tr:nth-child(even) td { background: #f1f2ee; }
+.article-note { margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 .site-footer { display: flex; justify-content: space-between; gap: 16px; padding: 26px 0 36px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 .site-footer a { color: var(--muted); text-decoration: none; }
 @media (max-width: 560px) {
