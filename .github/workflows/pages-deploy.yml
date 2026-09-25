@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - chirpy-theme
+      - second-ten-posts
     paths-ignore:
       - .gitignore
       - README.md
