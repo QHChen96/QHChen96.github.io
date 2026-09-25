@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f6f8f7"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dde7e3"/>
+<rect x="39" y="39" width="7" height="41" rx="3" fill="#3c678d"/>
+<text x="60" y="68" text-anchor="start" fill="#203d3a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">演示截图的背面</text>
+<text x="60" y="98" text-anchor="start" fill="#667d77" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">从一句好答案，展开一条可复盘的运行轨迹</text>
+<rect x="42" y="151" width="155" height="150" rx="16" fill="#edf3f9" stroke="#afc7db" stroke-width="2"/>
+<text x="60" y="188" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">演示截图</text>
+<text x="60" y="222" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">“答对了”</text>
+<text x="60" y="251" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">仅看到结尾</text>
+<path d="M206 226 H237" fill="none" stroke="#829fb8" stroke-width="4" stroke-linecap="round"/><path d="M233 218 L245 226 L233 234" fill="none" stroke="#829fb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="258" y="153" width="121" height="145" rx="16" fill="#f3f6f9" stroke="#becfdd" stroke-width="2"/>
+<text x="276" y="190" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">输入</text>
+<text x="276" y="224" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">本单吗</text>
+<rect x="391" y="153" width="121" height="145" rx="16" fill="#f3f6f9" stroke="#becfdd" stroke-width="2"/>
+<text x="409" y="190" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">证据</text>
+<text x="409" y="224" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">现行吗</text>
+<rect x="524" y="153" width="121" height="145" rx="16" fill="#f3f6f9" stroke="#becfdd" stroke-width="2"/>
+<text x="542" y="190" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">调用</text>
+<text x="542" y="224" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">真执行吗</text>
+<rect x="657" y="153" width="121" height="145" rx="16" fill="#f3f6f9" stroke="#becfdd" stroke-width="2"/>
+<text x="675" y="190" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">答复</text>
+<text x="675" y="224" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">有依据吗</text>
+<rect x="790" y="153" width="121" height="145" rx="16" fill="#f3f6f9" stroke="#becfdd" stroke-width="2"/>
+<text x="808" y="190" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">交接</text>
+<text x="808" y="224" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">有人接吗</text>
+<rect x="258" y="323" width="653" height="48" rx="12" fill="#eaf3ef" stroke="#bdd7ca" stroke-width="2"/>
+<text x="584" y="354" text-anchor="middle" fill="#276653" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700">正常 · 缺证据 · 冲突 · 超时 · 越权 · 注入：逐条回放</text>
+</svg>

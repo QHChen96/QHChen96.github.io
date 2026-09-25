@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f6f8f7"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dde7e3"/>
+<rect x="39" y="39" width="7" height="41" rx="3" fill="#35737e"/>
+<text x="60" y="68" text-anchor="start" fill="#203d3a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">查、提议、批准、执行：四张通行证</text>
+<text x="60" y="98" text-anchor="start" fill="#667d77" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">模型不能用一张查询券刷开改址门</text>
+<rect x="42" y="155" width="209" height="142" rx="16" fill="#eaf4f5" stroke="#bad0ca" stroke-width="2"/>
+<text x="60" y="192" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">01 查询</text>
+<text x="60" y="226" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">限当前工单</text>
+<path d="M253 227 H259" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round"/><path d="M255 219 L267 227 L255 235" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="273" y="155" width="209" height="142" rx="16" fill="#edf3f7" stroke="#bad0ca" stroke-width="2"/>
+<text x="291" y="192" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">02 提议</text>
+<text x="291" y="226" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">生成内部草稿</text>
+<path d="M484 227 H490" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round"/><path d="M486 219 L498 227 L486 235" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="504" y="155" width="209" height="142" rx="16" fill="#fff4e8" stroke="#bad0ca" stroke-width="2"/>
+<text x="522" y="192" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">03 批准</text>
+<text x="522" y="226" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">绑定内容与人</text>
+<path d="M715 227 H721" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round"/><path d="M717 219 L729 227 L717 235" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="735" y="155" width="209" height="142" rx="16" fill="#eef5ed" stroke="#bad0ca" stroke-width="2"/>
+<text x="753" y="192" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">04 执行</text>
+<text x="753" y="226" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">核对业务回执</text>
+<rect x="165" y="327" width="630" height="48" rx="12" fill="#f8f3ec" stroke="#dfcbaa" stroke-width="2"/>
+<text x="480" y="358" text-anchor="middle" fill="#8a653b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">订单状态或提议版本变了，旧批准就要失效</text>
+</svg>

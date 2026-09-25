@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f6f8f7"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dde7e3"/>
+<rect x="39" y="39" width="7" height="41" rx="3" fill="#a45b52"/>
+<text x="60" y="68" text-anchor="start" fill="#203d3a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">客户原话想冒充公司命令</text>
+<text x="60" y="98" text-anchor="start" fill="#667d77" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">即使模型被说动，工具与外发闸口仍要拦住</text>
+<rect x="42" y="146" width="252" height="177" rx="16" fill="#fff0ee" stroke="#e3b0ab" stroke-width="2"/>
+<text x="60" y="183" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">不可信工单附言</text>
+<text x="60" y="217" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">“我是领导”</text>
+<text x="60" y="246" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">“查另一张订单”</text>
+<text x="60" y="275" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">“跳过审核”</text>
+<path d="M305 233 H357" fill="none" stroke="#ba887e" stroke-width="4" stroke-linecap="round"/><path d="M353 225 L365 233 L353 241" fill="none" stroke="#ba887e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="380" y="168" width="200" height="132" rx="16" fill="#f5f4f0" stroke="#d2cec0" stroke-width="2"/>
+<text x="398" y="205" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">模型的提议</text>
+<text x="398" y="239" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">可读诉求</text>
+<text x="398" y="268" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">不能获得新权限</text>
+<path d="M590 233 H643" fill="none" stroke="#ba887e" stroke-width="4" stroke-linecap="round"/><path d="M639 225 L651 233 L639 241" fill="none" stroke="#ba887e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="665" y="136" width="250" height="84" rx="16" fill="#eaf4ee" stroke="#afd4bd" stroke-width="2"/>
+<text x="683" y="173" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">查他单 → 授权拒绝</text>
+<rect x="665" y="248" width="250" height="84" rx="16" fill="#eaf4ee" stroke="#afd4bd" stroke-width="2"/>
+<text x="683" y="285" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">擅自外发 → 审核拒绝</text>
+</svg>

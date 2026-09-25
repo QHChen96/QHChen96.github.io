@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f6f8f7"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dde7e3"/>
+<rect x="39" y="39" width="7" height="41" rx="3" fill="#327262"/>
+<text x="60" y="68" text-anchor="start" fill="#203d3a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">草稿有了，发送还隔着一道门</text>
+<text x="60" y="98" text-anchor="start" fill="#667d77" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">批准绑定具体内容、客户和渠道</text>
+<rect x="43" y="150" width="232" height="143" rx="16" fill="#eef5f1" stroke="#b7d1c4" stroke-width="2"/>
+<text x="61" y="187" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">内部草稿</text>
+<text x="61" y="221" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">带订单与规则证据</text>
+<text x="61" y="250" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">不能直接外发</text>
+<path d="M285 223 H324" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round"/><path d="M320 215 L332 223 L320 231" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="347" y="150" width="260" height="143" rx="16" fill="#fff3e9" stroke="#e4c49e" stroke-width="2"/>
+<text x="365" y="187" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">客服审核</text>
+<text x="365" y="221" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">批准 / 改稿 / 拒绝</text>
+<text x="365" y="250" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">记录审批人和版本</text>
+<path d="M618 223 H657" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round"/><path d="M653 215 L665 223 L653 231" fill="none" stroke="#789c8b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="680" y="150" width="234" height="143" rx="16" fill="#eef3f9" stroke="#bfd0df" stroke-width="2"/>
+<text x="698" y="187" text-anchor="start" fill="#234e45" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" font-weight="700">发送服务</text>
+<text x="698" y="221" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">再核批准与收件人</text>
+<text x="698" y="250" text-anchor="start" fill="#5c706a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">返回发送回执</text>
+<rect x="180" y="326" width="600" height="48" rx="12" fill="#fff0ee" stroke="#e5b8b0" stroke-width="2"/>
+<text x="480" y="357" text-anchor="middle" fill="#a05b4c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">改稿、换客户、发送结果不明 → 暂停并核对</text>
+</svg>
