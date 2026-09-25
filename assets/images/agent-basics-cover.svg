@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" role="img" aria-labelledby="title desc">
+  <title id="title">万能 Agent 先画边界</title>
+  <desc id="desc">把领导的万能需求拆成明确任务卡，写清输入、能做、不能做和停止条件</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e7eef6"/><stop offset="1" stop-color="#e6eee8"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#2c4054" flood-opacity=".13"/></filter>
+  </defs>
+  <rect width="1200" height="740" fill="url(#bg)"/>
+  <circle cx="1060" cy="115" r="190" fill="#d6e3f0"/>
+  <circle cx="145" cy="684" r="200" fill="#d5e7da"/>
+  <rect x="68" y="62" width="1064" height="616" rx="36" fill="#fffefd" filter="url(#shadow)"/>
+  <rect x="120" y="114" width="195" height="46" rx="23" fill="#315c7b"/>
+  <text x="218" y="145" text-anchor="middle" fill="#fff" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" font-weight="700">Agent 基础 · B01</text>
+  <text x="121" y="247" fill="#233d53" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="63" font-weight="800">领导要“万能 Agent”？</text>
+  <text x="121" y="331" fill="#233d53" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="63" font-weight="800">先给它画条线</text>
+  <text x="122" y="398" fill="#5a7180" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="27">一张任务卡，省下十场扯皮会</text>
+  <rect x="121" y="458" width="954" height="137" rx="20" fill="#f1f6f3" stroke="#afcbc0" stroke-width="2"/>
+  <path d="M359 459v135m239-135v135m239-135v135" stroke="#c6dad1" stroke-width="2"/>
+  <g fill="#2d6c59" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <text x="240" y="515">输入</text><text x="478" y="515">能做</text><text x="716" y="515">不能做</text><text x="955" y="515">何时停</text>
+  </g>
+  <g fill="#657e74" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="20" text-anchor="middle">
+    <text x="240" y="557">工单与规则</text><text x="478" y="557">查证、起草</text><text x="716" y="557">擅自退款</text><text x="955" y="557">证据不足交人</text>
+  </g>
+</svg>

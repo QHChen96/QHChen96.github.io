@@ -1,9 +1,15 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导一句‘做个万能 Agent’，小陈差点连客户家门牌号都要管"
 description: "领导要 AI 一口气查件、回话、退款。小陈用一张虚构工单，把任务拆成能做、不能做、何时交人的任务卡。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
+pin: true
+image:
+  path: /assets/images/agent-basics-cover.svg
+  alt: 将万能 Agent 需求拆成输入、权限、交付物和停止条件
 series: agents-basics
 series_order: 1
 date: 2026-09-25 00:01:00 +0800

@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导把 PDF 拖进去，就以为 Agent 背熟了公司制度"
 description: "政策文件上传了，Agent 却还在凭印象说退款。小陈用工单 0823 把最小 RAG 证据链走通。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 9
 date: 2026-09-25 00:09:00 +0800

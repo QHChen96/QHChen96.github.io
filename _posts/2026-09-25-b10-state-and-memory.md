@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "刚才还记得订单，换个窗口就让我重新报：Agent 失忆了吗？"
 description: "聊天记录、任务状态、长期知识和检查点不是同一个抽屉。小陈把工单 0823 的订单事实与执行回执放回正确位置。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 10
 date: 2026-09-25 00:10:00 +0800

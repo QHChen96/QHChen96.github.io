@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "Agent 查了三轮还在查，领导的预算先下班了"
 description: "订单查询一超时，Agent 就反复点同一个工具。小陈把循环、退出条件和人工交接写成一张能执行的运行规则。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 8
 date: 2026-09-25 00:08:00 +0800

@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导画了四个框就说 Agent 上线了，小陈问：下一步谁选的？"
 description: "同一张签收争议工单，为什么有的步骤交给固定流程，有的才需要 Agent？小陈用一张决策卡把钱和责任算明白。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 7
 date: 2026-09-25 00:07:00 +0800

@@ -1,9 +1,15 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导让我明早上线客服 Agent，测试第一句就敢答应退款"
 description: "186 条工单等着处理，Agent 却拿过期规则答应退款。小陈用一张工单讲清 Agent、工作流和七款产品，并交出能落地的试点方案。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
+pin: true
+image:
+  path: /assets/images/agent-overview-cover.svg
+  alt: 领导催上线客服 Agent，小陈用工单查清误答退款的风险
 ---
 
 **领导：**客服还压着 186 条工单。隔壁都用 Agent 了，咱们明早也上一个：查订单、回消息、该退钱就退钱。最好别再招人。

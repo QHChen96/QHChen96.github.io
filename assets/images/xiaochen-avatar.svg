@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">小陈的头像</title>
+  <desc id="desc">米白色圆形底上，一位穿绿色衬衫的职场人抱着写有待核实的文件。</desc>
+  <circle cx="80" cy="80" r="79" fill="#f3f1e8"/>
+  <circle cx="80" cy="60" r="29" fill="#d9aa83"/>
+  <path d="M48 60c1-24 15-38 35-38 18 0 31 14 31 34-8-5-13-13-17-17-13 9-28 15-49 21z" fill="#253f37"/>
+  <path d="M21 150c6-33 28-51 59-51s53 18 59 51" fill="#2d6552"/>
+  <path d="M62 103l18 20 18-20" fill="#f9f9f3"/>
+  <rect x="91" y="103" width="45" height="34" rx="4" transform="rotate(-10 91 103)" fill="#fff" stroke="#c9d7c7" stroke-width="2"/>
+  <path d="M101 113h25M102 120h19" transform="rotate(-10 101 113)" stroke="#6f8d7f" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="124" cy="131" r="10" fill="#d99469"/>
+  <path d="M121 131l2 2 4-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

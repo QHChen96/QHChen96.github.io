@@ -1,0 +1,76 @@
+# Chirpy 中文界面文案；保留主题字段，并增加本站的基础入门栏目。
+layout:
+  post: 文章
+  category: 分类
+  tag: 标签
+
+tabs:
+  home: 首页
+  agents-basics: 基础入门
+  基础入门: 基础入门
+  categories: 分类
+  tags: 标签
+  archives: 归档
+  about: 关于
+
+search:
+  hint: 搜索
+  cancel: 取消
+  no_results: 搜索结果为空
+
+panel:
+  lastmod: 最近更新
+  trending_tags: 热门标签
+  toc: 文章内容
+
+copyright:
+  license:
+    template:
+    name:
+    link:
+  brief: 版权所有。
+  verbose: 本站文章版权归作者小陈所有。
+
+meta: 本站采用 :PLATFORM 主题 :THEME
+
+not_found:
+  statement: 抱歉，这个页面不存在，或地址已经改变。
+
+notification:
+  update_found: 发现新内容
+  update: 更新
+
+theme:
+  light: 浅色
+  dark: 深色
+  system: 跟随系统
+
+post:
+  written_by: 作者
+  posted: 发表于
+  updated: 更新于
+  words: 字
+  pageview_measure: 次浏览
+  read_time:
+    unit: 分钟
+    prompt: 阅读
+  edit: 编辑此文
+  relate_posts: 相关文章
+  share: 分享
+  button:
+    next: 下一篇
+    previous: 上一篇
+    copy_code:
+      succeed: 已复制！
+    share_link:
+      title: 分享链接
+      succeed: 链接已复制！
+
+df:
+  post:
+    strftime: "%Y/%m/%d"
+    dayjs: "YYYY/MM/DD"
+
+categories:
+  category_measure: 个分类
+  post_measure: 篇文章

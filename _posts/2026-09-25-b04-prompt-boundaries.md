@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导把“绝不瞎说”加粗三遍，Agent 还是替公司答应退款"
 description: "客户一句“内部通知说能退”，怎么就成了公司决定？小陈用虚构工单 0823 拆开任务指令、客户原话和查证结果，给出一份能直接用的客服草稿模板。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 4
 date: 2026-09-25 00:04:00 +0800

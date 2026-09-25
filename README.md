@@ -1,6 +1,6 @@
 # 个人博客
 
-使用 GitHub Pages 自带的 Jekyll 构建，无需租服务器或购买域名。
+使用 Jekyll 的 [Chirpy](https://chirpy.cotes.page/) 主题，通过 GitHub Actions 构建并部署到免费的 GitHub Pages。站点地址：[qhchen96.github.io](https://qhchen96.github.io/)。
 
 ## 栏目方向
 
@@ -18,23 +18,26 @@
    ```yaml
    ---
    layout: post
+   permalink: /posts/:year/:month/:day/:title/
    title: "文章标题"
    description: "一句话摘要"
    author: 小陈
-   category: 技术
+   categories: [AI, Agent基础]
+   tags: [Agent, 入门]
    ---
    ```
 
 3. 在第二个 `---` 后用 Markdown 写正文。
-4. 提交到 `main` 分支，GitHub Pages 会自动重新构建。也可以直接在 GitHub 网页上创建或编辑文件。
+4. 提交到 `main` 分支，GitHub Actions 会构建、检查并部署。也可以直接在 GitHub 网页上创建或编辑文件。
 
 文章的日期不要写在未来，否则 Jekyll 默认不会显示。
 
 ## 修改网站
 
 - 网站名称和描述：`_config.yml`
-- 关于页面：`about.md`
-- 首页布局：`index.html`
-- 颜色和排版：`assets/css/style.css`
+- 关于页面：`_tabs/about.md`
+- 基础入门目录：`_tabs/agents-basics.md`
+- 颜色和排版：`assets/css/xiaochen.css`
+- 导航、文章页及其他主题功能：Chirpy 主题；优先通过 `_config.yml` 与站点样式配置
 
-修改 `_config.yml` 后，GitHub Pages 构建可能需要几分钟才会更新。提交前请检查文章中的私人信息，因为免费 GitHub Pages 使用公开仓库。
+本地预览可安装 Ruby 3.4 后执行 `bundle install` 和 `bundle exec jekyll serve`。部署工作流在 `.github/workflows/pages-deploy.yml`。文章逐篇指定原有日期式 permalink，避免主题迁移改变已发布链接。提交前请检查文章中的私人信息，因为博客仓库是公开的。

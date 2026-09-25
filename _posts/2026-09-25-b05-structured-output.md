@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "Agent 把退款表填得像年终总结，财务却说：这笔钱谁退的？"
 description: "JSON 字段一个没少，退款却根本没有回执。小陈借虚构工单 0823 讲清结构化输出能管什么、事实校验该怎么补，以及一张能给客服使用的处理卡。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 5
 date: 2026-09-25 00:05:00 +0800

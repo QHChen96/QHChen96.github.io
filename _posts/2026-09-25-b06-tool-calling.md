@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "Agent 说“我查过订单了”，日志一看：它压根没出办公室"
 description: "模型说自己查过，不代表订单系统真被查询。小陈用虚构工单 0823 走一遍工具调用往返，交出一张能核对“谁提议、谁执行、谁收到回执”的最短轨迹。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 6
 date: 2026-09-25 00:06:00 +0800

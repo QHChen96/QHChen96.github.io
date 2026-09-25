@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导把整本手册塞进对话框，客户的问题被挤到门外"
 description: "把三本手册全喂给模型，未必更懂工单。小陈用一份上下文清单，把虚构工单 0823 的必要材料留下，把过期和无关材料清出去。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 3
 date: 2026-09-25 00:03:00 +0800

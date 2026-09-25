@@ -1,9 +1,11 @@
 ---
 layout: post
+permalink: /posts/:year/:month/:day/:title/
 title: "领导说‘订单号都给它了’，模型却说‘我看不见订单’"
 description: "订单号不是订单记录。小陈用虚构工单 0823 说明模型、业务应用和订单系统各看见什么，杜绝凭空编物流状态。"
 author: 小陈
-category: AI
+categories: [AI, Agent基础]
+tags: [Agent, 入门]
 series: agents-basics
 series_order: 2
 date: 2026-09-25 00:02:00 +0800
