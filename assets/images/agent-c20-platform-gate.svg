@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#756c9c"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">两条平台路线，同一张难题卷</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">不是比按钮数量：五道业务硬门必须留下证据</text>
+<rect x="45" y="145" width="258" height="150" rx="14" fill="#f1eef8" stroke="#d0c5e2" stroke-width="2"/>
+<text x="61" y="179" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">Dify 试点</text>
+<text x="61" y="211" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">同一规则 / 同一假接口</text>
+<text x="61" y="237" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">留运行与人工审核证据</text>
+<rect x="657" y="145" width="258" height="150" rx="14" fill="#edf3f9" stroke="#c2cfe1" stroke-width="2"/>
+<text x="673" y="179" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">Coze 试点</text>
+<text x="673" y="211" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">同一规则 / 同一假接口</text>
+<text x="673" y="237" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">留运行与人工审核证据</text>
+<rect x="325" y="166" width="53" height="104" rx="12" fill="#eaf5ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="351" y="224" text-anchor="middle" fill="#2a705b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700">证据</text>
+<rect x="383" y="166" width="53" height="104" rx="12" fill="#eaf5ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="409" y="224" text-anchor="middle" fill="#2a705b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700">权限</text>
+<rect x="441" y="166" width="53" height="104" rx="12" fill="#eaf5ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="467" y="224" text-anchor="middle" fill="#2a705b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700">审批</text>
+<rect x="499" y="166" width="53" height="104" rx="12" fill="#eaf5ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="525" y="224" text-anchor="middle" fill="#2a705b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700">数据</text>
+<rect x="557" y="166" width="53" height="104" rx="12" fill="#eaf5ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="583" y="224" text-anchor="middle" fill="#2a705b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="700">迁移</text>
+<path d="M305 218 L309 218" stroke="#9889b6" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M304 210 L316 218 L304 226" fill="none" stroke="#9889b6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M613 218 L639 218" stroke="#9889b6" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M634 210 L646 218 L634 226" fill="none" stroke="#9889b6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="212" y="325" width="536" height="48" rx="12" fill="#fff1eb" stroke="#e2beaa" stroke-width="2"/>
+<text x="480" y="356" text-anchor="middle" fill="#955d4b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">任一高风险门没过 → 停止生产选型</text>
+</svg>

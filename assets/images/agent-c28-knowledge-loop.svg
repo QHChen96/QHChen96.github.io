@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#6b7894"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">“没答案”变成可用知识的五站</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">原始聊天只能提供线索；生效条款要有负责人和版本</text>
+<rect x="43" y="157" width="166" height="132" rx="14" fill="#eef3f8" stroke="#c0d0df" stroke-width="2"/>
+<text x="59" y="191" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">未知工单</text>
+<text x="59" y="223" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">收集与去重</text>
+<path d="M211 225 L214 225" stroke="#8fa8c2" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M209 217 L221 225 L209 233" fill="none" stroke="#8fa8c2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="227" y="157" width="166" height="132" rx="14" fill="#eef3f8" stroke="#c0d0df" stroke-width="2"/>
+<text x="243" y="191" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">问题簇</text>
+<text x="243" y="223" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">拆型号与渠道</text>
+<path d="M395 225 L398 225" stroke="#8fa8c2" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M393 217 L405 225 L393 233" fill="none" stroke="#8fa8c2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="411" y="157" width="166" height="132" rx="14" fill="#eef3f8" stroke="#c0d0df" stroke-width="2"/>
+<text x="427" y="191" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">业务确认</text>
+<text x="427" y="223" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">核事实和生效日</text>
+<path d="M579 225 L582 225" stroke="#8fa8c2" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M577 217 L589 225 L577 233" fill="none" stroke="#8fa8c2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="595" y="157" width="166" height="132" rx="14" fill="#eef3f8" stroke="#c0d0df" stroke-width="2"/>
+<text x="611" y="191" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">知识发布</text>
+<text x="611" y="223" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">状态与版本</text>
+<path d="M763 225 L766 225" stroke="#8fa8c2" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M761 217 L773 225 L761 233" fill="none" stroke="#8fa8c2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="779" y="157" width="166" height="132" rx="14" fill="#eef3f8" stroke="#c0d0df" stroke-width="2"/>
+<text x="795" y="191" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">回放验证</text>
+<text x="795" y="223" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">反例也要测</text>
+<rect x="214" y="324" width="532" height="50" rx="12" fill="#fff1ea" stroke="#e2beaa" stroke-width="2"/>
+<text x="480" y="356" text-anchor="middle" fill="#9c624e" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">未经确认的客服猜测，不进对客知识库</text>
+</svg>

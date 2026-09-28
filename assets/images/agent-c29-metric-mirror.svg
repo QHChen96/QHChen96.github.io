@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#9a6b55"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">看板的 90%，客户的三次求助</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">同案跨渠道复联，要回算第一次“已解决”</text>
+<rect x="45" y="148" width="290" height="175" rx="14" fill="#fff2e9" stroke="#e1c2ac" stroke-width="2"/>
+<text x="61" y="182" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">漂亮看板</text>
+<text x="61" y="214" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">“机器人解决率 90%”</text>
+<text x="61" y="240" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">口径：没转人工</text>
+<text x="61" y="266" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">没看到客户后续</text>
+<path d="M345 235 L392 235" stroke="#ba8e77" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M387 227 L399 235 L387 243" fill="none" stroke="#ba8e77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="415" y="148" width="499" height="175" rx="14" fill="#edf4f8" stroke="#bdd0df" stroke-width="2"/>
+<text x="431" y="182" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">真实客户旅程</text>
+<text x="431" y="214" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">App：显示签收却没收到</text>
+<text x="431" y="240" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">微信：同单再次追问</text>
+<text x="431" y="266" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">电话：第三次投诉</text>
+<text x="431" y="292" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">回看：原问题并未解决</text>
+<rect x="248" y="342" width="464" height="39" rx="10" fill="#eaf4ee" stroke="#b6d5bf" stroke-width="2"/>
+<text x="480" y="368" text-anchor="middle" fill="#2b7057" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700">看复联、结案证据、接手时长与风险事件</text>
+</svg>

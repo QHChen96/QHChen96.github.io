@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#8c7045"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">三秒草稿背后的完整账</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">以下分钟数为演示：每单节约，要扣审核、维护与复联</text>
+<text x="56" y="168" text-anchor="start" fill="#4d5e54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">旧流程人工</text>
+<rect x="240" y="139" width="535" height="46" rx="8" fill="#d9e4dc" stroke="#d9e4dc" stroke-width="2"/>
+<text x="790" y="168" text-anchor="start" fill="#4d5e54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700">8 分/单</text>
+<text x="56" y="241" text-anchor="start" fill="#4d5e54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">试点人工</text>
+<rect x="240" y="211" width="301" height="46" rx="8" fill="#b7d9ce" stroke="#b7d9ce" stroke-width="2"/>
+<text x="555" y="241" text-anchor="start" fill="#4d5e54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700">4.5 分/单</text>
+<rect x="56" y="297" width="380" height="77" rx="14" fill="#fff1e9" stroke="#e1bca9" stroke-width="2"/>
+<text x="72" y="331" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">月度再扣</text>
+<text x="72" y="363" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">维护 40 小时 + 补救 12 小时</text>
+<rect x="463" y="297" width="442" height="77" rx="14" fill="#edf3f8" stroke="#bdd0dd" stroke-width="2"/>
+<text x="479" y="331" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">不能直接叫“省一人”</text>
+<text x="479" y="363" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">还要算技术费、质量和业务波动</text>
+</svg>

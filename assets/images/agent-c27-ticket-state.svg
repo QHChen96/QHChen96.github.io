@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#47778d"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">已回复，只是路上的一个事件</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">签收争议：物流没回、客户没获处理结论，就不能关单</text>
+<rect x="43" y="172" width="166" height="116" rx="14" fill="#edf4f8" stroke="#bdd0dc" stroke-width="2"/>
+<text x="59" y="206" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">受理</text>
+<text x="59" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">待分配</text>
+<path d="M210 231 L214 231" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M209 223 L221 231 L209 239" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="227" y="172" width="166" height="116" rx="14" fill="#edf4f8" stroke="#bdd0dc" stroke-width="2"/>
+<text x="243" y="206" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">接手</text>
+<text x="243" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">处理中</text>
+<path d="M394 231 L398 231" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M393 223 L405 231 L393 239" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="411" y="172" width="166" height="116" rx="14" fill="#edf4f8" stroke="#bdd0dc" stroke-width="2"/>
+<text x="427" y="206" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">回复</text>
+<text x="427" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">消息已发</text>
+<path d="M578 231 L582 231" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M577 223 L589 231 L577 239" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="595" y="172" width="166" height="116" rx="14" fill="#edf4f8" stroke="#bdd0dc" stroke-width="2"/>
+<text x="611" y="206" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">核查</text>
+<text x="611" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">待内部</text>
+<path d="M762 231 L766 231" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M761 223 L773 231 L761 239" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="779" y="172" width="166" height="116" rx="14" fill="#edf4f8" stroke="#bdd0dc" stroke-width="2"/>
+<text x="795" y="206" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">结案</text>
+<text x="795" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">凭依据</text>
+<rect x="220" y="326" width="520" height="46" rx="11" fill="#fff0ed" stroke="#e2b5ac" stroke-width="2"/>
+<text x="480" y="356" text-anchor="middle" fill="#9d5e51" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">客户再来 → 重开原单，重新指定责任人</text>
+</svg>

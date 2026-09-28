@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#6d6f9a"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">空白转接 vs 带证据交接</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">入队、接手、处理完成，是三次不同的回执</text>
+<rect x="45" y="150" width="263" height="180" rx="14" fill="#fff0ed" stroke="#e1b6ab" stroke-width="2"/>
+<text x="61" y="184" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">只转工单号</text>
+<text x="61" y="216" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">0823</text>
+<text x="61" y="242" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">客服重新问订单号</text>
+<text x="61" y="268" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">客户再讲一遍</text>
+<path d="M318 240 L356 240" stroke="#b88e9f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M351 232 L363 240 L351 248" fill="none" stroke="#b88e9f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="379" y="137" width="537" height="206" rx="14" fill="#edf5f0" stroke="#b9d5c1" stroke-width="2"/>
+<text x="395" y="171" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">完整交接卡</text>
+<text x="395" y="203" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">诉求 + 已核事实 + 来源与时间</text>
+<text x="395" y="229" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">已做动作 + 未决项 + 下一步责任人</text>
+<text x="395" y="255" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">卡片版本 3，接手回执确认</text>
+<text x="395" y="281" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">证据变动时标差异，不覆盖旧版</text>
+</svg>
