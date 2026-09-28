@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#8b5a75"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">一张截图，五个停靠站</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">逐站确认：真的只留下处理这单所需的信息？</text>
+<rect x="42" y="163" width="166" height="127" rx="14" fill="#f8eff4" stroke="#d9bccc" stroke-width="2"/>
+<text x="58" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">上传</text>
+<text x="58" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">原图受控</text>
+<path d="M210 226 L212 226" stroke="#ac849b" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M207 218 L219 226 L207 234" fill="none" stroke="#ac849b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="222" y="163" width="166" height="127" rx="14" fill="#f8eff4" stroke="#d9bccc" stroke-width="2"/>
+<text x="238" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">裁剪</text>
+<text x="238" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">去地址</text>
+<path d="M390 226 L392 226" stroke="#ac849b" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M387 218 L399 226 L387 234" fill="none" stroke="#ac849b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="402" y="163" width="166" height="127" rx="14" fill="#f8eff4" stroke="#d9bccc" stroke-width="2"/>
+<text x="418" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">识别</text>
+<text x="418" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">去手机号</text>
+<path d="M570 226 L572 226" stroke="#ac849b" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M567 218 L579 226 L567 234" fill="none" stroke="#ac849b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="582" y="163" width="166" height="127" rx="14" fill="#f8eff4" stroke="#d9bccc" stroke-width="2"/>
+<text x="598" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">模型</text>
+<text x="598" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">仅必要描述</text>
+<path d="M750 226 L752 226" stroke="#ac849b" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M747 218 L759 226 L747 234" fill="none" stroke="#ac849b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="762" y="163" width="166" height="127" rx="14" fill="#f8eff4" stroke="#d9bccc" stroke-width="2"/>
+<text x="778" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">日志</text>
+<text x="778" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">只记关联 ID</text>
+<rect x="165" y="328" width="630" height="47" rx="11" fill="#fff0e9" stroke="#e4c1ae" stroke-width="2"/>
+<text x="480" y="359" text-anchor="middle" fill="#985f46" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700">测试图逐站抓包：手机号、地址不该出现的地方，一处都不能有</text>
+</svg>

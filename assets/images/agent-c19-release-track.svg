@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#5d6f9a"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">新规则的发布轨道</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">打包版本 → 回放 → 影子 → 灰度 → 放量；异常整包回滚</text>
+<rect x="43" y="158" width="166" height="120" rx="14" fill="#edf3f9" stroke="#bdcce1" stroke-width="2"/>
+<text x="59" y="192" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">打包</text>
+<text x="59" y="225" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">规则+配置</text>
+<path d="M211 218 L214 218" stroke="#94a9c8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M209 210 L221 218 L209 226" fill="none" stroke="#94a9c8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="227" y="158" width="166" height="120" rx="14" fill="#edf3f9" stroke="#bdcce1" stroke-width="2"/>
+<text x="243" y="192" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">回放</text>
+<text x="243" y="225" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">难题集</text>
+<path d="M395 218 L398 218" stroke="#94a9c8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M393 210 L405 218 L393 226" fill="none" stroke="#94a9c8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="411" y="158" width="166" height="120" rx="14" fill="#edf3f9" stroke="#bdcce1" stroke-width="2"/>
+<text x="427" y="192" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">影子</text>
+<text x="427" y="225" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">不外发</text>
+<path d="M579 218 L582 218" stroke="#94a9c8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M577 210 L589 218 L577 226" fill="none" stroke="#94a9c8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="595" y="158" width="166" height="120" rx="14" fill="#edf3f9" stroke="#bdcce1" stroke-width="2"/>
+<text x="611" y="192" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">灰度</text>
+<text x="611" y="225" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">人审核</text>
+<path d="M763 218 L766 218" stroke="#94a9c8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M761 210 L773 218 L761 226" fill="none" stroke="#94a9c8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="779" y="158" width="166" height="120" rx="14" fill="#edf3f9" stroke="#bdcce1" stroke-width="2"/>
+<text x="795" y="192" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">放量</text>
+<text x="795" y="225" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">监控红线</text>
+<rect x="270" y="320" width="420" height="52" rx="11" fill="#fff0eb" stroke="#e1b6ab" stroke-width="2"/>
+<text x="480" y="352" text-anchor="middle" fill="#a45d4e" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">发现错引 / 越权 → 停放量，回滚整包</text>
+</svg>

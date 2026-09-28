@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#87733e"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">一张工单的技术账单</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">费用、耗时分开算；省钱后还要守住质量</text>
+<text x="55" y="171" text-anchor="start" fill="#465d55" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">模型调用</text>
+<rect x="193" y="145" width="325" height="42" rx="8" fill="#eadbb6" stroke="#eadbb6" stroke-width="2"/>
+<text x="210" y="172" text-anchor="start" fill="#445b52" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">8 次规划与润色</text>
+<text x="55" y="237" text-anchor="start" fill="#465d55" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">检索 + 工具</text>
+<rect x="193" y="211" width="235" height="42" rx="8" fill="#c7d9e9" stroke="#c7d9e9" stroke-width="2"/>
+<text x="210" y="238" text-anchor="start" fill="#445b52" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">重复检索和查单</text>
+<text x="55" y="303" text-anchor="start" fill="#465d55" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">失败重试</text>
+<rect x="193" y="277" width="165" height="42" rx="8" fill="#e8c7b8" stroke="#e8c7b8" stroke-width="2"/>
+<text x="210" y="304" text-anchor="start" fill="#445b52" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">还要等超时</text>
+<rect x="680" y="150" width="233" height="184" rx="14" fill="#edf5ee" stroke="#bcd5bf" stroke-width="2"/>
+<text x="696" y="184" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">优化后再验</text>
+<text x="696" y="217" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">固定问题走流程</text>
+<text x="696" y="244" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">限步、按版本缓存</text>
+<text x="696" y="271" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">看 p50 / p95</text>
+<text x="696" y="298" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">错引越权不能升</text>
+</svg>

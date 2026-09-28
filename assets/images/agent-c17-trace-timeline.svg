@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#436e90"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">一条误答，七步追到旧规则</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">每一步带关联 ID；记录版本，不留客户明文</text>
+<rect x="45" y="173" width="113" height="88" rx="14" fill="#eef4f8" stroke="#bfd1df" stroke-width="2"/>
+<text x="101" y="218" text-anchor="middle" fill="#335d70" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">输入</text>
+<path d="M160 218 L164 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M159 210 L171 218 L159 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="175" y="173" width="113" height="88" rx="14" fill="#fff0eb" stroke="#dfa897" stroke-width="2"/>
+<text x="231" y="218" text-anchor="middle" fill="#a45544" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">检索</text>
+<path d="M290 218 L294 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M289 210 L301 218 L289 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="305" y="173" width="113" height="88" rx="14" fill="#eef4f8" stroke="#bfd1df" stroke-width="2"/>
+<text x="361" y="218" text-anchor="middle" fill="#335d70" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">工具</text>
+<path d="M420 218 L424 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M419 210 L431 218 L419 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="435" y="173" width="113" height="88" rx="14" fill="#fff0eb" stroke="#dfa897" stroke-width="2"/>
+<text x="491" y="218" text-anchor="middle" fill="#a45544" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">决策</text>
+<path d="M550 218 L554 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M549 210 L561 218 L549 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="565" y="173" width="113" height="88" rx="14" fill="#eef4f8" stroke="#bfd1df" stroke-width="2"/>
+<text x="621" y="218" text-anchor="middle" fill="#335d70" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">草稿</text>
+<path d="M680 218 L684 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M679 210 L691 218 L679 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="695" y="173" width="113" height="88" rx="14" fill="#eef4f8" stroke="#bfd1df" stroke-width="2"/>
+<text x="751" y="218" text-anchor="middle" fill="#335d70" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">审核</text>
+<path d="M810 218 L814 218" stroke="#8aa7b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M809 210 L821 218 L809 226" fill="none" stroke="#8aa7b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="825" y="173" width="113" height="88" rx="14" fill="#eef4f8" stroke="#bfd1df" stroke-width="2"/>
+<text x="881" y="218" text-anchor="middle" fill="#335d70" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">发送</text>
+<rect x="225" y="312" width="510" height="55" rx="12" fill="#fff0eb" stroke="#dfa897" stroke-width="2"/>
+<text x="480" y="346" text-anchor="middle" fill="#a45544" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" font-weight="700">检索放进失效 FAQ → 决策误套条款</text>
+</svg>

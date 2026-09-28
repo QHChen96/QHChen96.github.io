@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - second-ten-posts
+      - third-ten-posts
     paths-ignore:
       - .gitignore
       - README.md

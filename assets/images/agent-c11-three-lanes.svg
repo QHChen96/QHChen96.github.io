@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#4d6e97"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">同一入口，三条处理路</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">发票入口 / 状态异常 / 身份争议，权限不一样</text>
+<rect x="43" y="138" width="874" height="65" rx="14" fill="#edf3f9" stroke="#b9cce0" stroke-width="2"/>
+<text x="60" y="178" text-anchor="start" fill="#294f54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">固定流程</text>
+<text x="238" y="178" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">问下载入口</text>
+<text x="510" y="178" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">帮助页 → 给步骤</text>
+<text x="900" y="178" text-anchor="end" fill="#7c6657" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700">不查订单、不碰退款</text>
+<rect x="43" y="219" width="874" height="65" rx="14" fill="#edf5ee" stroke="#b8d4bd" stroke-width="2"/>
+<text x="60" y="259" text-anchor="start" fill="#294f54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">限步 Agent</text>
+<text x="238" y="259" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">已付款却待开具</text>
+<text x="510" y="259" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">查本单状态 → 草稿</text>
+<text x="900" y="259" text-anchor="end" fill="#7c6657" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700">只读工具，冲突转人</text>
+<rect x="43" y="300" width="874" height="65" rx="14" fill="#fff2e9" stroke="#e7c2aa" stroke-width="2"/>
+<text x="60" y="340" text-anchor="start" fill="#294f54" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">人工接手</text>
+<text x="238" y="340" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">疑似他人订单</text>
+<text x="510" y="340" text-anchor="start" fill="#2f514c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="500">身份核验 → 人工</text>
+<text x="900" y="340" text-anchor="end" fill="#7c6657" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="15" font-weight="700">不自动查他单</text>
+</svg>

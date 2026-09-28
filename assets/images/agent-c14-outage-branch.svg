@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#557596"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">查单接口断线后的两条路</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">查询有结果才说物流；超时只说可确认的事实</text>
+<rect x="44" y="163" width="210" height="148" rx="14" fill="#edf3f9" stroke="#bfcede" stroke-width="2"/>
+<text x="60" y="197" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">客户查订单</text>
+<text x="60" y="230" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">工单已收到</text>
+<text x="60" y="257" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">请求订单系统</text>
+<path d="M264 237 L303 237" stroke="#80a493" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M298 229 L310 237 L298 245" fill="none" stroke="#80a493" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="326" y="137" width="260" height="93" rx="14" fill="#edf6ee" stroke="#b5d6bc" stroke-width="2"/>
+<text x="342" y="171" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">查到回执</text>
+<text x="342" y="204" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">按真实订单状态答复</text>
+<rect x="326" y="260" width="260" height="93" rx="14" fill="#fff1ec" stroke="#e0bdaf" stroke-width="2"/>
+<text x="342" y="294" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">超时或报错</text>
+<text x="342" y="327" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">限次重试，仍失败则停</text>
+<path d="M595 181 L646 181" stroke="#80a493" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M641 173 L653 181 L641 189" fill="none" stroke="#80a493" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M595 307 L646 307" stroke="#c38b77" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M641 299 L653 307 L641 315" fill="none" stroke="#c38b77" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="669" y="137" width="244" height="93" rx="14" fill="#edf6ee" stroke="#b5d6bc" stroke-width="2"/>
+<text x="685" y="171" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">正常答复</text>
+<text x="685" y="204" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">附订单查询时间</text>
+<rect x="669" y="260" width="244" height="93" rx="14" fill="#fff1ec" stroke="#e0bdaf" stroke-width="2"/>
+<text x="685" y="294" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">故障交接</text>
+<text x="685" y="327" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">标未知 → 人工 → 补查</text>
+</svg>

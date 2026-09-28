@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#9a6652"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">同一事件来了三次，只发一次</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">回执未知：核对渠道，不靠换键重发</text>
+<rect x="47" y="145" width="235" height="50" rx="10" fill="#fff0e9" stroke="#e5c1af" stroke-width="2"/>
+<text x="66" y="177" text-anchor="start" fill="#8f5942" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700">事件 0823 · 第 1 次投递</text>
+<path d="M282 170 L348 239" stroke="#d6b39e" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="47" y="211" width="235" height="50" rx="10" fill="#fff0e9" stroke="#e5c1af" stroke-width="2"/>
+<text x="66" y="243" text-anchor="start" fill="#8f5942" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700">事件 0823 · 第 2 次投递</text>
+<path d="M282 236 L348 239" stroke="#d6b39e" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="47" y="277" width="235" height="50" rx="10" fill="#fff0e9" stroke="#e5c1af" stroke-width="2"/>
+<text x="66" y="309" text-anchor="start" fill="#8f5942" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17" font-weight="700">事件 0823 · 第 3 次投递</text>
+<path d="M282 302 L348 239" stroke="#d6b39e" stroke-width="2" fill="none" stroke-linecap="round"/>
+<rect x="355" y="171" width="244" height="139" rx="14" fill="#edf5ee" stroke="#bad6c1" stroke-width="2"/>
+<text x="371" y="205" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">去重闸口</text>
+<text x="371" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">event_id 相同</text>
+<text x="371" y="265" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">业务幂等键相同</text>
+<text x="371" y="292" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">只保留一项动作</text>
+<path d="M608 240 L653 240" stroke="#80a493" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M648 232 L660 240 L648 248" fill="none" stroke="#80a493" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="675" y="171" width="240" height="139" rx="14" fill="#edf3f9" stroke="#bfcddd" stroke-width="2"/>
+<text x="691" y="205" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">发送状态</text>
+<text x="691" y="238" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">成功：记回执</text>
+<text x="691" y="265" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">未知：暂停核对</text>
+<text x="691" y="292" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">明确失败：同键限次重试</text>
+</svg>

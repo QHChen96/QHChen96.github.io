@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img">
+<rect width="960" height="430" rx="22" fill="#f4f7f6"/>
+<rect x="20" y="20" width="920" height="390" rx="18" fill="#fff" stroke="#dce5e1"/>
+<rect x="42" y="40" width="7" height="42" rx="3" fill="#796787"/>
+<text x="63" y="69" text-anchor="start" fill="#203e3b" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">多 Agent 的交接成本</text>
+<text x="63" y="99" text-anchor="start" fill="#697e79" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">同一批工单对照：质量、时延、调用和责任</text>
+<rect x="43" y="142" width="265" height="166" rx="14" fill="#edf5ef" stroke="#bbd7c1" stroke-width="2"/>
+<text x="59" y="176" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">方案 A · 单 Agent</text>
+<text x="59" y="209" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">一位负责人</text>
+<text x="59" y="236" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">工具受限</text>
+<text x="59" y="263" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">交接点少</text>
+<rect x="348" y="142" width="265" height="166" rx="14" fill="#eef3f9" stroke="#bdd0e2" stroke-width="2"/>
+<text x="364" y="176" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">方案 B · 固定路由</text>
+<text x="364" y="209" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">规则分流</text>
+<text x="364" y="236" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">局部查证</text>
+<text x="364" y="263" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">人工裁决</text>
+<rect x="652" y="142" width="265" height="166" rx="14" fill="#f4f0f8" stroke="#d2c4df" stroke-width="2"/>
+<text x="668" y="176" text-anchor="start" fill="#245449" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">方案 C · 多 Agent</text>
+<text x="668" y="209" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">多次交接</text>
+<text x="668" y="236" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">证据须带版本</text>
+<text x="668" y="263" text-anchor="start" fill="#57736a" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="16" font-weight="500">冲突仍要负责人</text>
+<rect x="155" y="332" width="650" height="43" rx="11" fill="#fff1eb" stroke="#e1bba9" stroke-width="2"/>
+<text x="480" y="360" text-anchor="middle" fill="#94634c" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18" font-weight="700">只有任务可独立、交接清楚、同题对照胜出，才增加角色</text>
+</svg>
