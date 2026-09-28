@@ -166,4 +166,8 @@ date: 2026-09-28 00:21:00 +0800
 
 **小陈：**可用来编排重复步骤和接异构系统，[Webhook](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook)和[错误处理](https://docs.n8n.io/build/flow-logic/handle-errors-gracefully)都有官方说明。它不该成为唯一业务账本。今天先把责任表和接口契约定下，再换哪款编排工具都不会把工单主人换没了。
 
+**领导：**n8n 节点显示执行成功，工单系统却没建待办，谁负责补？
+
+**小陈：**按业务请求 ID 查工单系统回执；编排平台节点成功可能只代表请求已发，不能证明待办落库。结果未知时挂异常队列，由值班人核对，避免新建一张重复工单。接口契约要写成功语义、错误码、重试与去重，监控同时看节点状态和业务完成状态。客户关心的是有人继续处理，不是画布上哪块变绿。
+
 <p class="article-note">作者：小陈。系统与工单 0823 为虚构演示，接口字段是本文建议的业务契约。n8n 功能参见 <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook">官方 Webhook 文档</a>与<a href="https://docs.n8n.io/build/flow-logic/handle-errors-gracefully">错误处理文档</a>。核对日期：2026 年 9 月 28 日。图为原创。</p>

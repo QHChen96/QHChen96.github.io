@@ -146,4 +146,8 @@ date: 2026-09-28 00:10:00 +0800
 
 <p class="article-note">延伸核对：<a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html#data-to-exclude">OWASP Logging Cheat Sheet：Data to exclude</a>列出通常不应直接记录在日志中的敏感数据；<a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint">OpenAI API Data controls</a>展示训练用途、滥用监测日志与应用状态留存是不同维度。本文不设定企业统一留存期限。</p>
 
+**领导：**客服把截图贴进工单，Agent 分析完，截图的副本会留在哪些地方？
+
+**小陈：**要沿上传、解析、模型请求、追踪日志、审核卡和备份逐处盘点，别只看主数据库。能用受控链接引用就少复制原图；需要留证时按工单权限、期限和删除流程管理。上线前用虚构手机号和地址跑一遍数据去向，检查普通日志和错误告警是否也存了明文。客户给我们截图是为了解决问题，不是许可它在十个系统里安家。
+
 <p class="article-note">作者：小陈。截图和工单均为虚构演示；保留期限须由企业按自身业务与适用要求确定。日志处理参考 <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Logging Cheat Sheet</a>。核对日期：2026 年 9 月 28 日。示意图为原创绘制。</p>

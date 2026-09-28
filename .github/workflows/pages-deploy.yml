@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - longform-rewrite-basics
+      - longform-rewrite-basics-rest
     paths-ignore:
       - .gitignore
       - README.md

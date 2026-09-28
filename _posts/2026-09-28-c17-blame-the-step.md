@@ -146,4 +146,8 @@ date: 2026-09-28 00:17:00 +0800
 
 这张工单的结论也留在原案：客户是否收到更正、是否仍需要人工处理、何时复核。技术修复上线了，不代表客户那张错误答复就自动消失。
 
+**领导：**追踪里只有模型输出和最终短信，中间缺工具授权记录，还能归因吗？
+
+**小陈：**只能缩小怀疑范围，不能编造缺失的事实。先从订单服务与发送平台补回执，确认实际读取和外发；缺的关联链明确记为观测缺口，修追踪传播后再复测。日志不能为了完整而复制客户全文，关键是用同一工单和调用 ID 串起授权、证据、草稿、审核与发送。缺一环时报告不确定性，比指着模型截图定责可靠。
+
 <p class="article-note">作者：小陈。事件与轨迹内容为虚构演示，不代表真实故障。追踪能力参考 <a href="https://openai.github.io/openai-agents-python/tracing/">OpenAI Agents SDK 官方文档</a>；日志最小化参考 <a href="https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html">OWASP Logging Cheat Sheet</a>。核对日期：2026 年 9 月 28 日。示意图为原创绘制。</p>
