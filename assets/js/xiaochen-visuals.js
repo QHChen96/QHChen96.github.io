@@ -91,8 +91,94 @@
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  function setupCaseReplay(figure) {
+    const panel = figure.querySelector('[data-xc-replay-panel]');
+    const buttons = [...figure.querySelectorAll('[data-xc-replay-step]')];
+    if (!panel || buttons.length !== 3) return () => {};
+
+    const snapshots = [
+      {
+        label: '周一 09:01 · App 首次回复',
+        old: ['旧看板：App 会话没有转人工，于是被写成“机器人解决”。', '机器人只说了“正在核查”；客户的问题还没有结案证据。'],
+        linked: ['穿透同案：这里只能确认“已回复”，不能确认“已解决”。', 'case 0823 仍在等待包裹调查；回复事件不能替代结案事件。'],
+      },
+      {
+        label: '周一 18:00 · 微信再次追问',
+        old: ['旧看板：微信另起一条会话，App 那次“已解决”没有回算。', '如果按渠道工单计数，客户的第二次求助会伪装成另一个新问题。'],
+        linked: ['穿透同案：同一包裹再次追问，应回挂 case 0823。', '经身份和订单归属核验后，这次联系成为原问题的复联证据。'],
+      },
+      {
+        label: '周二 10:00 · 电话升级投诉',
+        old: ['旧看板：电话又成第三条记录，App 的漂亮数字仍留在报表里。', '没有跨渠道 case，投诉与首次“解决”看起来毫无关系。'],
+        linked: ['穿透同案：第三次联系证明原签收争议还没有闭环。', 'App、微信、电话挂到同一个 case 后，先前那次“已解决”必须回算。'],
+      },
+    ];
+
+    let activeStep = 2;
+    const label = panel.querySelector('[data-xc-replay-label]');
+    const head = panel.querySelector('[data-xc-replay-head]');
+    const detail = panel.querySelector('[data-xc-replay-detail]');
+    function render() {
+      const snapshot = snapshots[activeStep];
+      const view = figure.dataset.view === 'old' ? snapshot.old : snapshot.linked;
+      label.textContent = snapshot.label;
+      head.textContent = view[0];
+      detail.textContent = view[1];
+      buttons.forEach((button, index) => {
+        button.setAttribute('aria-pressed', String(index === activeStep));
+      });
+    }
+
+    buttons.forEach((button, index) => {
+      button.disabled = false;
+      button.addEventListener('click', () => {
+        activeStep = index;
+        render();
+      });
+    });
+    render();
+    return render;
+  }
+
+  function setupCohortLab(lab) {
+    const slider = lab.querySelector('[data-xc-cohort-slider]');
+    const dots = [...lab.querySelectorAll('.xc-cohort-lab__dot')];
+    const dotsImage = lab.querySelector('[data-xc-cohort-dots]');
+    if (!slider || dots.length !== 100 || !dotsImage) return;
+
+    const overlapOutput = lab.querySelector('[data-xc-cohort-overlap]');
+    const numeratorOutput = lab.querySelector('[data-xc-cohort-numerator]');
+    const shareOutput = lab.querySelector('[data-xc-cohort-share]');
+    const explanation = lab.querySelector('[data-xc-cohort-explanation]');
+    function render() {
+      const overlap = Math.min(20, Math.max(0, Number(slider.value)));
+      const outside = 20 - overlap;
+      const matureCandidates = 76 - overlap;
+      const share = (matureCandidates / 80 * 100).toFixed(2).replace(/\.?0+$/, '');
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('is-immature', index < overlap || (index >= 76 && index < 76 + outside));
+      });
+      overlapOutput.textContent = `${overlap} 个`;
+      numeratorOutput.textContent = `76 − ${overlap} = ${matureCandidates}`;
+      shareOutput.textContent = `${matureCandidates} ÷ 80 = ${share}%`;
+      explanation.textContent = `另外 ${outside} 个未成熟案例落在候选之外。${share}% 只是这个假设下的成熟候选占比；待核复联、结案证据和数据水位还会继续改变最终完成数。`;
+      dotsImage.setAttribute('aria-label', `一百个案例点：七十六个候选、十四个不合格、十个人工；二十个未成熟案例里有${overlap}个在候选中，成熟候选为${matureCandidates}个`);
+      slider.setAttribute('aria-valuetext', `${overlap} 个未成熟案例落在候选里，成熟候选占比 ${share}%`);
+      slider.style.setProperty('--xc-range-progress', `${overlap * 5}%`);
+    }
+
+    lab.classList.add('is-ready');
+    slider.disabled = false;
+    slider.addEventListener('input', render);
+    render();
+  }
+
+  document.querySelectorAll('[data-xc-cohort-lab]').forEach(setupCohortLab);
+
   document.querySelectorAll('[data-xc-shader]').forEach((figure) => {
     let refresh = () => {};
+    const renderReplay = setupCaseReplay(figure);
     const switcher = figure.querySelector('.xc-switch');
     if (switcher) {
       switcher.querySelectorAll('[data-xc-view]').forEach((button) => {
@@ -101,6 +187,7 @@
           switcher.querySelectorAll('[data-xc-view]').forEach((item) => {
             item.setAttribute('aria-pressed', String(item === button));
           });
+          renderReplay();
           refresh();
         });
       });

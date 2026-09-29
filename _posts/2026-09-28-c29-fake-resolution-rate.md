@@ -89,7 +89,7 @@ last_modified_at: 2026-09-29 12:00:00 +0800
   <canvas class="xc-visual__canvas" aria-hidden="true"></canvas>
   <span class="xc-kicker">Metric mirror · 02</span>
   <strong class="xc-visual__title">看板说 90%，客户说“我问了三遍”</strong>
-  <p class="xc-visual__lead">点两个视角，看看同一批虚构案例为何有两套完全不同的说法。</p>
+  <p class="xc-visual__lead">先切看板视角，再点 App、微信、电话：同一个问题在三个渠道里怎样被“解决”了三次？</p>
   <div class="xc-switch" role="group" aria-label="切换关注的指标视角">
     <button type="button" data-xc-view="old" aria-pressed="false">只看旧看板</button>
     <button type="button" data-xc-view="linked" aria-pressed="true">穿透同案轨迹</button>
@@ -99,11 +99,16 @@ last_modified_at: 2026-09-29 12:00:00 +0800
     <div class="xc-metric-card xc-metric-card--real"><span class="xc-metric-card__label">穿透复联与证据之后</span><strong class="xc-metric-card__number">76<span class="xc-metric-card__unit"> 个候选</span></strong><span class="xc-metric-card__note">12 个复联、5 个证据不足，重叠 3 个；76 仍要等待队列成熟，不能写作 76%。</span></div>
   </div>
   <div class="xc-journey" aria-label="客户的三次求助时间线">
-    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>App · 周一 09:00</strong><small>问签收争议，机器人说“正在核查”</small></div>
-    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>微信 · 周一 18:00</strong><small>同一包裹，再问一次</small></div>
-    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>电话 · 周二 10:00</strong><small>还没解决，升级投诉</small></div>
+    <button class="xc-journey__stop" type="button" data-xc-replay-step="0" aria-pressed="false" disabled><span class="xc-journey__dot" aria-hidden="true"></span><strong>App · 周一 09:00</strong><small>问签收争议，机器人说“正在核查”</small></button>
+    <button class="xc-journey__stop" type="button" data-xc-replay-step="1" aria-pressed="false" disabled><span class="xc-journey__dot" aria-hidden="true"></span><strong>微信 · 周一 18:00</strong><small>同一包裹，再问一次</small></button>
+    <button class="xc-journey__stop" type="button" data-xc-replay-step="2" aria-pressed="true" disabled><span class="xc-journey__dot" aria-hidden="true"></span><strong>电话 · 周二 10:00</strong><small>还没解决，升级投诉</small></button>
   </div>
-  <figcaption>发光背景由 WebGL 着色器生成；信息、按钮与时间线是可阅读的 HTML，动画关闭或 WebGL 不可用时仍能看懂。</figcaption>
+  <div class="xc-replay-panel" data-xc-replay-panel aria-live="polite">
+    <span data-xc-replay-label>周二 10:00 · 电话投诉</span>
+    <strong data-xc-replay-head>穿透同案：第三次联系证明原签收争议还没有闭环。</strong>
+    <small data-xc-replay-detail>App、微信、电话挂到同一个 case 后，先前那次“已解决”必须回算。</small>
+  </div>
+  <figcaption>读者可以重放客户旅程；WebGL 只绘制光效，所有判断和数字都能直接读到。关闭脚本时保留完整静态解释。</figcaption>
 </figure>
 
 ## 演示算例：90% 怎样变成不能庆祝的数字
@@ -132,6 +137,21 @@ last_modified_at: 2026-09-29 12:00:00 +0800
     <div class="xc-venn-math"><span>去重后的不合格案例</span><strong>12 + 5 − 3 = <b>14</b></strong><span>下一步候选</span><strong>90 − 14 = <b>76</b></strong><small>这是候选数量。另有 20 个案例尚未走完评估期；它们与 76 的交集未知，不能算出最终完成率。</small></div>
   </div>
   <figcaption>左侧独有 9、交集 3，所以复联共 12；右侧独有 2、交集 3，所以证据不足共 5。图把“去重”和“等评估期”拆开，避免把 76 个候选偷换成 76% 的结论。</figcaption>
+</figure>
+
+<figure class="xc-visual xc-cohort-lab" data-xc-cohort-lab aria-label="互动演示：在一百个案例里有七十六个候选、十四个不合格、十个人工处理；改变二十个未成熟案例中落在候选里的数量，会改变成熟候选占比，但不能得出最终完成率">
+  <span class="xc-kicker">Cohort lab · 04</span>
+  <strong class="xc-visual__title">同样是 76 个候选，成熟队列的数字能差一大截</strong>
+  <p class="xc-visual__lead">100 个点各代表一张业务案例。拖动“20 个未成熟案例”的归属，看为什么只拿总数算不出完成率；以下分布均为假设。</p>
+  <div class="xc-cohort-lab__legend" aria-hidden="true"><span><i class="xc-cohort-lab__key xc-cohort-lab__key--candidate"></i>76 个待核候选</span><span><i class="xc-cohort-lab__key xc-cohort-lab__key--excluded"></i>14 个不合格</span><span><i class="xc-cohort-lab__key xc-cohort-lab__key--human"></i>10 个人工处理</span><span><i class="xc-cohort-lab__key xc-cohort-lab__key--immature"></i>斜纹＝未成熟</span></div>
+  <div class="xc-cohort-lab__dots" data-xc-cohort-dots role="img" aria-label="一百个案例点，其中七十六个候选、十四个不合格、十个人工；当前二十个未成熟案例里有十个在候选中">{% for dot in (1..100) %}<span class="xc-cohort-lab__dot" aria-hidden="true"></span>{% endfor %}</div>
+  <div class="xc-cohort-lab__control">
+    <label for="c29-cohort-overlap">20 个未成熟案例中，有几个落在 76 个候选里？</label>
+    <div class="xc-cohort-lab__range"><span>0</span><input id="c29-cohort-overlap" type="range" min="0" max="20" step="1" value="10" data-xc-cohort-slider disabled><span>20</span><output for="c29-cohort-overlap" data-xc-cohort-overlap>10 个</output></div>
+  </div>
+  <div class="xc-cohort-lab__math" aria-live="polite"><div><span>成熟分母</span><strong>100 − 20 = 80</strong></div><div><span>成熟候选</span><strong data-xc-cohort-numerator>76 − 10 = 66</strong></div><div><span>候选占比</span><strong data-xc-cohort-share>66 ÷ 80 = 82.5%</strong></div></div>
+  <div class="xc-cohort-lab__caution" data-xc-cohort-explanation>另外 10 个未成熟案例落在候选之外。82.5% 只是这个假设下的成熟候选占比；待核复联、结案证据和数据水位还会继续改变最终完成数。</div>
+  <figcaption>拖到 0，候选占比是 76/80＝95%；拖到 20，变成 56/80＝70%。旧看板的 90% 和这两个值都不能直接称作真实解决率。</figcaption>
 </figure>
 
 **领导：**观察窗口定几天？

@@ -282,10 +282,40 @@
   box-shadow: 0 0 12px #7ddbd7;
 }
 
-.xc-journey__stop { position: relative; padding: .05rem .25rem; }
+.xc-journey__stop {
+  position: relative;
+  min-width: 0;
+  padding: .05rem .25rem .5rem;
+  border: 1px solid transparent;
+  border-radius: .7rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+}
+.xc-journey__stop:disabled { cursor: default; }
+.xc-journey__stop:not(:disabled):hover,
+.xc-journey__stop[aria-pressed="true"] { border-color: rgb(153 235 222 / 58%); background: rgb(24 103 104 / 34%); }
+.xc-journey__stop:focus-visible { outline: 2px solid #aff7e8; outline-offset: 2px; }
 .xc-journey__dot { display: block; width: .75rem; height: .75rem; margin: .8rem auto .65rem; border: 2px solid #dbfff4; border-radius: 50%; background: #52bfae; box-shadow: 0 0 0 5px rgb(51 153 150 / 30%); }
 .xc-journey__stop strong { display: block; color: #fff; font-size: .81rem; text-align: center; }
 .xc-journey__stop small { display: block; margin-top: .15rem; color: #bfd5d5; font-size: .69rem; line-height: 1.45; text-align: center; }
+
+.xc-replay-panel {
+  display: grid;
+  gap: .3rem;
+  margin-top: 1rem;
+  padding: .85rem 1rem;
+  border: 1px solid rgb(125 222 216 / 50%);
+  border-left: 4px solid #83e6ce;
+  border-radius: .72rem;
+  background: rgb(3 34 43 / 82%);
+}
+.xc-visual[data-view="old"] .xc-replay-panel { border-color: rgb(250 179 129 / 58%); border-left-color: #ffbd8b; }
+.xc-replay-panel span { color: #a1c9cf; font-size: .7rem; font-weight: 800; letter-spacing: .08em; }
+.xc-replay-panel strong { color: #fff; font-size: .87rem; line-height: 1.5; }
+.xc-replay-panel small { color: #c5d8d8; font-size: .75rem; line-height: 1.6; }
 
 /* C29: data hierarchy and inclusion-exclusion are separate teaching visuals. */
 .xc-case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
@@ -303,6 +333,52 @@
 .xc-venn-math strong { display: block; margin: .25rem 0; color: #fff; font-size: 1.55rem; letter-spacing: -.04em; }
 .xc-venn-math b { color: #9be8cf; }
 .xc-venn-math small { display: block; color: #bfd5d5; font-size: .71rem; line-height: 1.55; }
+
+/* C29: a fixed 100-case cohort whose maturity allocation readers can change. */
+.xc-cohort-lab__legend { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-bottom: .8rem; color: #cbdedc; font-size: .7rem; }
+.xc-cohort-lab__legend span { display: inline-flex; align-items: center; gap: .35rem; }
+.xc-cohort-lab__key { display: inline-block; width: .9rem; height: .9rem; border-radius: .25rem; }
+.xc-cohort-lab__key--candidate { background: #66ddbd; }
+.xc-cohort-lab__key--excluded { background: #f0a46b; }
+.xc-cohort-lab__key--human { background: #728992; }
+.xc-cohort-lab__key--immature { border: 1px solid #d8f7ec; background: repeating-linear-gradient(135deg, #c6eee6 0 2px, #456d72 2px 5px); }
+
+.xc-cohort-lab__dots {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: .3rem;
+  padding: .8rem;
+  border: 1px solid rgb(138 218 212 / 28%);
+  border-radius: .85rem;
+  background: rgb(4 30 40 / 68%);
+}
+.xc-cohort-lab__dot { display: block; aspect-ratio: 1; min-width: 0; border-radius: .28rem; background-color: #728992; }
+.xc-cohort-lab__dot:nth-child(-n+76) { background-color: #66ddbd; }
+.xc-cohort-lab__dot:nth-child(n+77):nth-child(-n+90) { background-color: #f0a46b; }
+.xc-cohort-lab__dot:nth-child(n+91) { background-color: #728992; }
+.xc-cohort-lab.is-ready .xc-cohort-lab__dot.is-immature,
+.xc-cohort-lab:not(.is-ready) .xc-cohort-lab__dot:nth-child(-n+10),
+.xc-cohort-lab:not(.is-ready) .xc-cohort-lab__dot:nth-child(n+77):nth-child(-n+86) {
+  outline: 1px solid #e0fff8;
+  background-image: repeating-linear-gradient(135deg, rgb(255 255 255 / 72%) 0 2px, transparent 2px 6px);
+  opacity: .84;
+}
+
+.xc-cohort-lab__control { display: grid; gap: .55rem; margin-top: 1rem; padding: .9rem 1rem; border-radius: .8rem; background: rgb(4 31 40 / 78%); }
+.xc-cohort-lab__control label { color: #f2fffb; font-size: .83rem; font-weight: 700; line-height: 1.45; }
+.xc-cohort-lab__range { display: flex; align-items: center; gap: .65rem; color: #b8d3d4; font-size: .72rem; }
+.xc-cohort-lab__range input { flex: 1; min-width: 0; height: .4rem; border: 0; border-radius: 99px; appearance: none; background: linear-gradient(90deg, #6de6bf 0 var(--xc-range-progress, 50%), #416c74 var(--xc-range-progress, 50%) 100%); cursor: pointer; }
+.xc-cohort-lab__range input:disabled { cursor: default; }
+.xc-cohort-lab__range input::-webkit-slider-thumb { width: 1.18rem; height: 1.18rem; border: 3px solid #eafff5; border-radius: 50%; appearance: none; background: #168e8a; box-shadow: 0 0 0 4px rgb(95 227 204 / 25%); }
+.xc-cohort-lab__range input::-moz-range-thumb { width: .8rem; height: .8rem; border: 3px solid #eafff5; border-radius: 50%; background: #168e8a; box-shadow: 0 0 0 4px rgb(95 227 204 / 25%); }
+.xc-cohort-lab__range input:focus-visible { outline: 2px solid #aff7e8; outline-offset: 8px; }
+.xc-cohort-lab__range output { min-width: 2.7rem; color: #a8f5d4; font-size: .87rem; font-weight: 800; text-align: right; }
+
+.xc-cohort-lab__math { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; margin-top: .75rem; }
+.xc-cohort-lab__math div { min-width: 0; padding: .8rem .7rem; border: 1px solid rgb(149 223 215 / 25%); border-radius: .7rem; background: rgb(3 28 37 / 70%); }
+.xc-cohort-lab__math span { display: block; color: #bdd3d5; font-size: .71rem; }
+.xc-cohort-lab__math strong { display: block; margin-top: .35rem; color: #e9fff3; font-size: clamp(.78rem, 1.8vw, 1.05rem); line-height: 1.4; }
+.xc-cohort-lab__caution { margin-top: .75rem; padding: .78rem .9rem; border-left: 3px solid #e7af7c; border-radius: .4rem; background: rgb(113 72 50 / 26%); color: #f7dfcf; font-size: .75rem; line-height: 1.65; }
 
 @media (max-width: 720px) {
   .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
@@ -324,6 +400,9 @@
   .xc-metric-card { min-height: 0; }
   .xc-case-grid { grid-template-columns: minmax(0, 1fr); }
   .xc-venn-wrap { grid-template-columns: minmax(0, 1fr); }
+  .xc-cohort-lab__dots { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: .22rem; padding: .6rem; }
+  .xc-cohort-lab__math { gap: .3rem; }
+  .xc-cohort-lab__math div { padding: .6rem .45rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
