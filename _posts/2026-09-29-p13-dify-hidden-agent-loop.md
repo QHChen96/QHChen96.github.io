@@ -51,6 +51,7 @@ Dify 的经典 Agent 节点给模型工具使用权，可以选择 Function Call
   <strong class="xc-visual__title">一个方框，可能往返很多次</strong>
   <p class="xc-visual__lead">画布节点数、模型轮次、工具调用数、账单请求数，是四个口径。</p>
   <div class="xc-state-chain xc-flow-chain"><div><b>上游变量</b><span>订单事实与任务边界。</span></div><i aria-hidden="true">→</i><div><b>模型判断</b><span>够写？还缺什么？</span></div><i aria-hidden="true">→</i><div><b>工具执行</b><span>检索、查询、返回观察。</span></div><i aria-hidden="true">→</i><div><b>继续或停止</b><span>证据充分才交草稿。</span></div></div>
+  <div class="xc-loop-return"><b>证据不足 ↶</b><span>工具结果回到模型判断，继续下一轮；预算耗尽则退出。</span></div>
   <figcaption>工具结果会回到模型进入下一轮；达到次数或时间预算时，应显式标为未完成，外层按失败分支接住。</figcaption>
 </figure>
 

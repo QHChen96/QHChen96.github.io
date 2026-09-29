@@ -458,6 +458,9 @@
 .xc-flow-chain { flex-wrap: nowrap; }
 .xc-flow-chain > div { flex: 1 1 0; }
 .xc-flow-chain > i { flex: 0 0 auto; }
+.xc-loop-return { display: flex; align-items: center; gap: .55rem; margin-top: .65rem; padding: .48rem .7rem; border: 1px dashed rgb(147 226 212 / 62%); border-radius: .6rem; color: #d3e6e3; font-size: .72rem; line-height: 1.5; }
+.xc-loop-return::before { content: "↶"; color: #a8f4db; font-size: 1.25rem; line-height: 1; }
+.xc-loop-return b { color: #a8f4db; }
 .xc-decision-ladder { display: grid; gap: .35rem; }
 .xc-decision-ladder__row { display: grid; grid-template-columns: minmax(0, 1.05fr) 2.8rem minmax(0, 1fr); gap: .55rem; align-items: stretch; }
 .xc-decision-ladder__row > .xc-decision-node { min-width: 0; }
