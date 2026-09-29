@@ -450,6 +450,9 @@
 .xc-state-chain span { padding: .48rem .64rem; border: 1px solid rgb(147 226 212 / 42%); border-radius: .6rem; background: rgb(4 30 40 / 75%); color: #effbf7; font-size: .73rem; line-height: 1.4; }
 .xc-state-chain i { color: #a8f4db; font-size: .86rem; font-style: normal; }
 .xc-state-chain .is-alert { border-color: rgb(244 177 133 / 65%); color: #ffd2ad; }
+.xc-state-chain > div { flex: 1 1 8.5rem; min-width: 0; padding: .62rem .68rem; border: 1px solid rgb(147 226 212 / 42%); border-radius: .6rem; background: rgb(4 30 40 / 75%); }
+.xc-state-chain > div b { display: block; color: #a8f4db; font-size: .78rem; }
+.xc-state-chain > div span { display: block; margin-top: .3rem; padding: 0; border: 0; background: none; color: #d3e6e3; font-size: .7rem; }
 
 @media (max-width: 720px) {
   .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
