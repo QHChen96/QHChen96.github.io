@@ -380,6 +380,55 @@
 .xc-cohort-lab__math strong { display: block; margin-top: .35rem; color: #e9fff3; font-size: clamp(.78rem, 1.8vw, 1.05rem); line-height: 1.4; }
 .xc-cohort-lab__caution { margin-top: .75rem; padding: .78rem .9rem; border-left: 3px solid #e7af7c; border-radius: .4rem; background: rgb(113 72 50 / 26%); color: #f7dfcf; font-size: .75rem; line-height: 1.65; }
 
+/* New series diagrams: each card is a concrete state or decision, never background art. */
+.xc-series-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .65rem;
+}
+.xc-series-steps > div {
+  position: relative;
+  min-width: 0;
+  padding: .85rem .7rem;
+  border: 1px solid rgb(147 226 212 / 38%);
+  border-radius: .75rem;
+  background: rgb(3 29 39 / 78%);
+}
+.xc-series-steps > div:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 2;
+  top: 39%;
+  right: -.61rem;
+  color: #a6f9dc;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.xc-series-steps b { display: block; color: #a8f4db; font-size: .82rem; }
+.xc-series-steps span { display: block; margin-top: .45rem; color: #d3e6e3; font-size: .72rem; line-height: 1.55; }
+.xc-series-warning {
+  margin-top: .85rem;
+  padding: .65rem .8rem;
+  border-left: 3px solid #f0b187;
+  border-radius: .35rem;
+  background: rgb(117 68 46 / 26%);
+  color: #f7e1d0;
+  font-size: .76rem;
+  line-height: 1.6;
+}
+.xc-series-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
+.xc-series-board > div { min-width: 0; padding: .8rem; border: 1px solid rgb(147 226 212 / 35%); border-radius: .75rem; background: rgb(4 30 40 / 75%); }
+.xc-series-board b { display: block; color: #a8f4db; font-size: .78rem; }
+.xc-series-board strong { display: block; margin: .35rem 0; color: #fff; font-size: 1.25rem; }
+.xc-series-board span { color: #cbdedc; font-size: .72rem; line-height: 1.5; }
+.xc-series-board .is-alert { border-color: rgb(244 177 133 / 65%); }
+.xc-series-board .is-alert b, .xc-series-board .is-alert strong { color: #ffd2ad; }
+.xc-series-matrix { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.xc-series-matrix > div { min-width: 0; padding: .8rem; border: 1px solid rgb(147 226 212 / 38%); border-radius: .75rem; background: rgb(4 30 40 / 75%); }
+.xc-series-matrix b { display: block; color: #a8f4db; font-size: .75rem; }
+.xc-series-matrix strong { display: block; margin: .35rem 0; color: #fff; font-size: .95rem; }
+.xc-series-matrix span { color: #cbdedc; font-size: .72rem; line-height: 1.55; }
+
 @media (max-width: 720px) {
   .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
   .xc-flow__step { min-height: 0; }
@@ -403,6 +452,9 @@
   .xc-cohort-lab__dots { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: .22rem; padding: .6rem; }
   .xc-cohort-lab__math { gap: .3rem; }
   .xc-cohort-lab__math div { padding: .6rem .45rem; }
+  .xc-series-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .xc-series-steps > div:nth-child(2)::after { display: none; }
+  .xc-series-board { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {

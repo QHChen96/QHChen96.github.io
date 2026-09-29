@@ -46,6 +46,7 @@
 - 关于页面：`_tabs/about.md`
 - 基础入门目录：`_tabs/agents-basics.md`
 - 智能客服目录：`_tabs/customer-service.md`
+- 企业销售助手目录：`_tabs/sales-assistant.md`
 - 颜色和排版：`assets/css/xiaochen.css`
 - 导航、文章页及其他主题功能：Chirpy 主题；优先通过 `_config.yml` 与站点样式配置
 

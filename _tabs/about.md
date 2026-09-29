@@ -1,6 +1,6 @@
 ---
 icon: fas fa-user
-order: 6
+order: 7
 permalink: /about/
 ---
 
