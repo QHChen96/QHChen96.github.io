@@ -1,0 +1,331 @@
+/* Explanatory graphics: the shader decorates, while HTML carries every fact. */
+.content figure.xc-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 2.4rem 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #315e63;
+  border-radius: 1.25rem;
+  background: radial-gradient(circle at 88% 8%, #174e52, transparent 45%),
+    linear-gradient(145deg, #081d29, #0e343a 70%, #132d36);
+  box-shadow: 0 20px 48px rgb(10 43 50 / 16%);
+  color: #effbf7;
+}
+
+.xc-visual *, .xc-visual *::before, .xc-visual *::after { box-sizing: border-box; }
+
+.xc-visual__canvas {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.xc-visual__canvas.is-ready { opacity: .72; }
+
+.xc-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #8ee6d0;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.xc-kicker::before {
+  content: "";
+  width: .48rem;
+  height: .48rem;
+  border-radius: 50%;
+  background: #72e4bb;
+  box-shadow: 0 0 14px #72e4bb;
+}
+
+.xc-visual__title {
+  display: block;
+  margin: .55rem 0 .35rem;
+  color: #fff;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+}
+
+.xc-visual__lead {
+  margin: 0 0 1.25rem !important;
+  color: #bcd6d4;
+  font-size: .88rem;
+  line-height: 1.65 !important;
+}
+
+.content .xc-visual figcaption {
+  margin-top: 1.2rem;
+  color: #b9d2d0;
+  font-size: .82rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* C28: one question travelling through four accountable gates. */
+.xc-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .72rem;
+  padding: .25rem 0;
+}
+
+.xc-flow__step {
+  position: relative;
+  min-height: 9.4rem;
+  padding: .95rem;
+  border: 1px solid rgb(152 225 218 / 27%);
+  border-radius: .9rem;
+  background: rgb(6 30 39 / 76%);
+  backdrop-filter: blur(8px);
+}
+
+.xc-flow__step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  z-index: 2;
+  top: 43%;
+  right: -.74rem;
+  color: #95f3db;
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.xc-flow__number {
+  display: inline-grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid rgb(130 233 207 / 60%);
+  border-radius: .55rem;
+  color: #a0f6dc;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.xc-flow__step strong {
+  display: block;
+  margin: .7rem 0 .3rem;
+  color: #fff;
+  font-size: .96rem;
+  line-height: 1.4;
+}
+
+.xc-flow__step span:last-child {
+  display: block;
+  color: #b9d2d0;
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+.xc-visual__verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  margin-top: 1rem;
+  padding: .75rem .9rem;
+  border: 1px solid rgb(129 237 185 / 44%);
+  border-radius: .75rem;
+  background: rgb(18 95 79 / 40%);
+  color: #e5fff4;
+  font-size: .8rem;
+  line-height: 1.65;
+}
+
+.xc-visual__verdict::before {
+  content: "✓";
+  color: #8ff5bb;
+  font-weight: 900;
+}
+
+/* C28: fault-location diagram and the three release receipts. */
+.xc-diagnosis { display: grid; gap: .5rem; }
+
+.xc-diagnosis__row {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(0, .78fr) minmax(0, 1fr);
+  align-items: center;
+  gap: .75rem;
+  padding: .72rem .8rem;
+  border: 1px solid rgb(143 207 210 / 23%);
+  border-radius: .7rem;
+  background: rgb(5 28 38 / 63%);
+}
+
+.xc-diagnosis__index {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #1b686a;
+  color: #ddfff1;
+  font-size: .75rem;
+  font-weight: 900;
+}
+
+.xc-diagnosis__symptom strong,
+.xc-diagnosis__fix strong { display: block; font-size: .83rem; line-height: 1.45; }
+.xc-diagnosis__symptom small,
+.xc-diagnosis__fix small { display: block; margin-top: .15rem; color: #bed4d6; font-size: .72rem; line-height: 1.5; }
+.xc-diagnosis__fix { padding-left: .8rem; border-left: 2px solid #79d8be; }
+.xc-diagnosis__fix strong { color: #9ef2d1; }
+
+.xc-receipts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+}
+
+.xc-receipt {
+  padding: 1rem;
+  border: 1px solid rgb(153 221 216 / 30%);
+  border-radius: .85rem;
+  background: rgb(5 30 39 / 74%);
+}
+
+.xc-receipt span { display: block; color: #9abdc0; font-size: .72rem; letter-spacing: .08em; }
+.xc-receipt strong { display: block; margin: .45rem 0; color: #fff; font-size: 1.32rem; }
+.xc-receipt small { color: #c1d6d4; font-size: .73rem; line-height: 1.5; }
+.xc-receipt--warn { border-color: rgb(255 189 136 / 64%); }
+.xc-receipt--warn strong { color: #ffd1a9; }
+
+/* C29: the same customer is visible behind a deceptively good metric. */
+.xc-switch {
+  display: none;
+  gap: .2rem;
+  margin: .15rem 0 1rem;
+  padding: .23rem;
+  border: 1px solid rgb(174 219 219 / 29%);
+  border-radius: .65rem;
+  background: rgb(3 25 35 / 78%);
+}
+
+.xc-switch.is-ready { display: inline-flex; }
+
+.xc-switch button {
+  padding: .48rem .8rem;
+  border: 0;
+  border-radius: .48rem;
+  background: transparent;
+  color: #c1d5d5;
+  cursor: pointer;
+  font: inherit;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.xc-switch button[aria-pressed="true"] {
+  background: #2b7f80;
+  color: #fff;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 20%);
+}
+
+.xc-switch button:focus-visible { outline: 2px solid #aff7e8; outline-offset: 2px; }
+
+.xc-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+
+.xc-metric-card {
+  min-height: 10.3rem;
+  padding: 1rem;
+  border: 1px solid rgb(164 215 215 / 24%);
+  border-radius: .9rem;
+  background: rgb(5 30 40 / 78%);
+  transition: border-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.xc-metric-card--old { border-color: rgb(244 161 104 / 52%); }
+.xc-metric-card--real { border-color: rgb(119 220 234 / 60%); }
+.xc-visual[data-view="old"] .xc-metric-card--real { opacity: .7; }
+.xc-visual[data-view="linked"] .xc-metric-card--old { opacity: .7; }
+.xc-visual[data-view="old"] .xc-metric-card--old,
+.xc-visual[data-view="linked"] .xc-metric-card--real { transform: translateY(-2px); }
+
+.xc-metric-card__label { color: #c3d5d6; font-size: .78rem; font-weight: 700; }
+.xc-metric-card__number { display: block; margin: .35rem 0 .1rem; font-size: clamp(2.3rem, 5vw, 3.7rem); font-weight: 900; line-height: 1.05; letter-spacing: -.05em; }
+.xc-metric-card--old .xc-metric-card__number { color: #ffc291; }
+.xc-metric-card--real .xc-metric-card__number { color: #a0eafb; }
+.xc-metric-card__unit { font-size: .45em; letter-spacing: 0; }
+.xc-metric-card__note { display: block; color: #b9d0d3; font-size: .73rem; line-height: 1.5; }
+
+.xc-journey {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .72rem;
+  margin-top: 1rem;
+}
+
+.xc-journey::before {
+  content: "";
+  position: absolute;
+  top: 1.12rem;
+  right: 13%;
+  left: 13%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffbc8a, #8bead8, #8fcaf4);
+  box-shadow: 0 0 12px #7ddbd7;
+}
+
+.xc-journey__stop { position: relative; padding: .05rem .25rem; }
+.xc-journey__dot { display: block; width: .75rem; height: .75rem; margin: .8rem auto .65rem; border: 2px solid #dbfff4; border-radius: 50%; background: #52bfae; box-shadow: 0 0 0 5px rgb(51 153 150 / 30%); }
+.xc-journey__stop strong { display: block; color: #fff; font-size: .81rem; text-align: center; }
+.xc-journey__stop small { display: block; margin-top: .15rem; color: #bfd5d5; font-size: .69rem; line-height: 1.45; text-align: center; }
+
+/* C29: data hierarchy and inclusion-exclusion are separate teaching visuals. */
+.xc-case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
+.xc-case-channel { padding: .75rem; border: 1px solid rgb(152 225 218 / 33%); border-radius: .75rem; background: rgb(4 32 41 / 75%); }
+.xc-case-channel strong { display: block; color: #a7f5dc; font-size: .8rem; }
+.xc-case-channel span { display: block; margin-top: .28rem; color: #e4f5f3; font-size: .72rem; line-height: 1.5; }
+.xc-case-join { display: grid; place-items: center; height: 1.3rem; color: #93eadb; font-size: 1.1rem; }
+.xc-case-root { padding: .85rem; border: 1px solid #80d9c1; border-radius: .75rem; background: rgb(16 99 83 / 42%); color: #eafff4; font-size: .84rem; text-align: center; }
+.xc-case-root strong { color: #fff; }
+
+.xc-venn-wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1rem; align-items: center; }
+.xc-venn-svg { width: 100%; max-height: 15rem; }
+.xc-venn-math { padding: 1rem; border: 1px solid rgb(138 218 212 / 34%); border-radius: .85rem; background: rgb(4 31 40 / 75%); }
+.xc-venn-math span { display: block; color: #b8d3d4; font-size: .74rem; }
+.xc-venn-math strong { display: block; margin: .25rem 0; color: #fff; font-size: 1.55rem; letter-spacing: -.04em; }
+.xc-venn-math b { color: #9be8cf; }
+.xc-venn-math small { display: block; color: #bfd5d5; font-size: .71rem; line-height: 1.55; }
+
+@media (max-width: 720px) {
+  .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
+  .xc-flow__step { min-height: 0; }
+  .xc-flow__step:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: 48%;
+    bottom: -.94rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .content figure.xc-visual { padding: 1.1rem; border-radius: 1rem; }
+  .xc-diagnosis__row { grid-template-columns: 2rem minmax(0, 1fr); }
+  .xc-diagnosis__fix { grid-column: 2; }
+  .xc-receipts { grid-template-columns: minmax(0, 1fr); }
+  .xc-metric-grid { grid-template-columns: minmax(0, 1fr); }
+  .xc-metric-card { min-height: 0; }
+  .xc-case-grid { grid-template-columns: minmax(0, 1fr); }
+  .xc-venn-wrap { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xc-visual__canvas, .xc-metric-card { transition: none; }
+}

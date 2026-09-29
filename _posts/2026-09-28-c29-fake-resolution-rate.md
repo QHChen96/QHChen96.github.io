@@ -8,7 +8,9 @@ categories: [AI, 智能客服]
 tags: [Agent, 服务质量, 指标口径, 复联]
 series: customer-service
 series_order: 29
+visuals: code
 date: 2026-09-28 00:29:00 +0800
+last_modified_at: 2026-09-29 12:00:00 +0800
 ---
 
 **领导：**看板真好看：机器人解决率 90%。是不是可以把人工入口藏深一点？
@@ -44,6 +46,20 @@ date: 2026-09-28 00:29:00 +0800
 
 但这里有个硬边界：**分析用的“疑似同案”不能直接用于对客取数**。微信用户只说出了订单号，还没核验身份，就算相似度 99%，Agent 也不能把 App 工单里的地址和物流细节读给他听。身份验证、订单归属和同案判断分三步做：先确认是谁，再确认有权看哪张单，最后确认是否同一诉求。无法确认时，保留两张记录和一个待核关联候选，人工可以审，但模型不自作主张。
 
+<figure class="xc-visual" aria-label="App、微信和电话各留渠道记录，经身份与包裹归属核验后关联到同一个客户诉求 case 0823">
+  <span class="xc-kicker">Case identity · 01</span>
+  <strong class="xc-visual__title">三张渠道记录，底下是同一个问题</strong>
+  <p class="xc-visual__lead">消息、会话和工单各自保留；只有经过身份与业务对象核验，才能在分析层汇成同一个 case。</p>
+  <div class="xc-case-grid">
+    <div class="xc-case-channel"><strong>App · 周一 09:00</strong><span>“显示签收却没收到”<br>工单 A-0823</span></div>
+    <div class="xc-case-channel"><strong>微信 · 周一 18:00</strong><span>“那个包裹查到哪了？”<br>会话 W-441</span></div>
+    <div class="xc-case-channel"><strong>电话 · 周二 10:00</strong><span>“还没处理，我要投诉”<br>工单 P-019</span></div>
+  </div>
+  <div class="xc-case-join" aria-hidden="true">↓　↓　↓</div>
+  <div class="xc-case-root"><strong>case 0823：同一客户 · 同一包裹 · 同一签收争议</strong><br>关联用于统计和流转；读取订单详情仍须单独校验权限。</div>
+  <figcaption>上面有三次接触，下面只有一个待解决的业务诉求。若把三张记录各算一次“新问题”，复联就从看板上消失了。</figcaption>
+</figure>
+
 **领导：**关联错了，报表会怎样？
 
 **小陈：**错拆会把一次复联算成两个“首次咨询”，抬高自动解决率；错合会把两位客户的诉求搅在一起，还可能触发隐私事故。所以关联规则要留证据：身份来源、订单 ID、诉求类型、时间窗口、确认人、规则版本，并支持撤销。撤销时重算受影响统计窗口，不能只把工单页面改好，历史看板仍保留错误数字。
@@ -57,7 +73,7 @@ date: 2026-09-28 00:29:00 +0800
 | 指标 | 分子 | 分母 | 解释时必须附带 |
 | --- | --- | --- | --- |
 | 自动触达率 | 至少有一次 Agent 有效响应的案例 | 适用范围内的入组案例 | 哪些渠道、问题类型被排除 |
-| 无人工完成率 | 有结案依据、无人工处理、窗口内无确认同案复联的成熟案例 | 已走完观察窗口的适用案例 | 未成熟数、疑似复联数、抽检误差 |
+| 无人工完成率 | 有结案依据、无人工处理、结案后窗口内无确认同案复联的成熟案例 | 入组后已走完预定评估期的适用案例，未结案也在分母内 | 未成熟数、疑似复联数、抽检误差 |
 | 确认同案复联率 | 结案后窗口内有同一诉求再次联系的案例 | 已走完相同窗口的已结案例 | 身份匹配覆盖率、跨渠道漏接情况 |
 | 转人工接手时长 | 每个转人案例从触发条件到人确认接手的时长 | 转人案例集合 | p50、p95、无主与超时数 |
 | 首次答复时间 | 入组到首次有内容的公开答复的时长 | 有公开答复的案例 | “已收到”与有效答复须分开 |
@@ -69,9 +85,25 @@ date: 2026-09-28 00:29:00 +0800
 
 [Zendesk 的官方指标文档](https://support.zendesk.com/hc/en-us/articles/4408827693594-Metrics-and-attributes-for-Zendesk-Support)分别列出重开次数、一次触达工单、首次答复时间、首次解决时间和完整解决时间。这些词可以借来建立术语表，但**一触达工单不等于客户只联系一次，平台的“已解决”状态也不自动证明业务问题解决**。我们自己的定义必须写到字段、窗口和异常处理，不能只把供应商看板的列名翻译成中文。
 
-<figure class="diagram">
-  <img src="{{ '/assets/images/agent-c29-metric-mirror.svg' | relative_url }}" alt="左侧看板显示高机器人解决率，右侧同一客户的 App、微信、电话三次联系揭示原问题未解决" width="960" height="430">
-  <figcaption>单看一根漂亮柱子，很容易把客户的第二次求助藏在隔壁。</figcaption>
+<figure class="xc-visual" data-xc-shader="metrics" data-view="linked" aria-label="旧看板把九十个没转人工的案例都称为解决；穿透同案复联和结案证据后只有七十六个待核候选，客户在 App、微信、电话联系三次">
+  <canvas class="xc-visual__canvas" aria-hidden="true"></canvas>
+  <span class="xc-kicker">Metric mirror · 02</span>
+  <strong class="xc-visual__title">看板说 90%，客户说“我问了三遍”</strong>
+  <p class="xc-visual__lead">点两个视角，看看同一批虚构案例为何有两套完全不同的说法。</p>
+  <div class="xc-switch" role="group" aria-label="切换关注的指标视角">
+    <button type="button" data-xc-view="old" aria-pressed="false">只看旧看板</button>
+    <button type="button" data-xc-view="linked" aria-pressed="true">穿透同案轨迹</button>
+  </div>
+  <div class="xc-metric-grid">
+    <div class="xc-metric-card xc-metric-card--old"><span class="xc-metric-card__label">旧口径 · 没转人工就算解决</span><strong class="xc-metric-card__number">90<span class="xc-metric-card__unit">%</span></strong><span class="xc-metric-card__note">100 个适用案例里有 90 个未转人工；这个数字只说明路由，不说明结局。</span></div>
+    <div class="xc-metric-card xc-metric-card--real"><span class="xc-metric-card__label">穿透复联与证据之后</span><strong class="xc-metric-card__number">76<span class="xc-metric-card__unit"> 个候选</span></strong><span class="xc-metric-card__note">12 个复联、5 个证据不足，重叠 3 个；76 仍要等待队列成熟，不能写作 76%。</span></div>
+  </div>
+  <div class="xc-journey" aria-label="客户的三次求助时间线">
+    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>App · 周一 09:00</strong><small>问签收争议，机器人说“正在核查”</small></div>
+    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>微信 · 周一 18:00</strong><small>同一包裹，再问一次</small></div>
+    <div class="xc-journey__stop"><span class="xc-journey__dot" aria-hidden="true"></span><strong>电话 · 周二 10:00</strong><small>还没解决，升级投诉</small></div>
+  </div>
+  <figcaption>发光背景由 WebGL 着色器生成；信息、按钮与时间线是可阅读的 HTML，动画关闭或 WebGL 不可用时仍能看懂。</figcaption>
 </figure>
 
 ## 演示算例：90% 怎样变成不能庆祝的数字
@@ -80,13 +112,31 @@ date: 2026-09-28 00:29:00 +0800
 
 **领导：**既然是 76，为什么你又叫它“候选”，不直接报 76%？
 
-**小陈：**因为 100 个案例里有的观察窗口还没走完。假设其中 20 个是昨天才入组的物流争议，客户是否复联、物流是否真正完成尚未可知。若把它们提前当成功，新版本永远比旧版本占便宜——新版本没有给客户留下“再次来电”的时间。正确做法是固定一个入组队列，例如 9 月第一周创建的适用案例，等同类问题的观察窗口结束，再算成熟队列的比例。未成熟的 20 个单独报，不进成熟分母；若政策和业务允许不同类型用不同窗口，先分类型算，再按固定权重汇总。
+**小陈：**因为 100 个案例里有的评估期还没走完。假设其中 20 个是昨天才入组的物流争议，客户是否复联、物流是否真正完成尚未可知。若把它们提前当成功，新版本永远比旧版本占便宜——新版本没有给客户留下“再次来电”的时间。正确做法是固定一个入组队列和**从入组时刻起算的评估期**，例如物流争议留出处理时限加复联观察期；到期仍未结案的案例留在分母，算未完成，不因它“还在处理”而消失。未成熟的 20 个单独报，不进成熟分母；若不同问题类型用不同期限，先分类型算，再按固定权重汇总。
 
-再看那 12 个复联：其中 4 个可能是问同一个包裹的新配送安排，属于原问题延续；2 个可能只是问发票，属于新问题；剩余 6 个需人工核对。模型只凭“同一客户再次发消息”就全部扣分，会低估真实完成；只凭“换了工单号”就全部忽略，又会高估。小陈把抽检结果回写关联规则，报告同时给**确认同案复联、确认新问题、待核**三栏。统计不是把模糊性藏起来，而是让管理者知道数字哪部分还没坐实。
+上面扣掉的 12 个，是已经确认**同一诉求再次联系**的案例；另有待核的二次来信不能偷偷塞进这 12 个。客户问同一个包裹的新配送安排，可能是原问题延续；转头问发票，可能是新问题；只留下“我的单怎么样了”而无法核验对象，就先记待核。模型只凭“同一客户再次发消息”就全部扣分，会低估真实完成；只凭“换了工单号”就全部忽略，又会高估。报告并列给**确认同案复联、确认新问题、待核**三栏。若待核后来证实是同案，76 个候选还要继续减少。统计不是把模糊性藏起来，而是让管理者知道数字哪部分还没坐实。
+
+<figure class="xc-visual" aria-label="集合去重计算：十二个复联与五个结案证据不足有三个重叠，不合格的独立案例共十四个，九十减十四等于七十六个候选；二十个未成熟案例的归属未知">
+  <span class="xc-kicker">Set arithmetic · 03</span>
+  <strong class="xc-visual__title">12 加 5，为什么只扣 14？</strong>
+  <p class="xc-visual__lead">两个故障集合有重叠；同一张单不能罚两次。下面的数全是教学演示。</p>
+  <div class="xc-venn-wrap">
+    <svg class="xc-venn-svg" viewBox="0 0 420 230" role="img" aria-label="复联独有九个，复联且证据不足三个，证据不足独有两个；所以复联合计十二个，证据不足合计五个">
+      <defs><linearGradient id="c29-orange" x1="0" x2="1"><stop stop-color="#ef8c59" stop-opacity=".8"/><stop offset="1" stop-color="#f0bd83" stop-opacity=".45"/></linearGradient><linearGradient id="c29-blue" x1="0" x2="1"><stop stop-color="#65d6d0" stop-opacity=".48"/><stop offset="1" stop-color="#74a9f2" stop-opacity=".8"/></linearGradient></defs>
+      <circle cx="153" cy="117" r="93" fill="url(#c29-orange)" stroke="#ffcfab" stroke-width="2"/>
+      <circle cx="265" cy="117" r="70" fill="url(#c29-blue)" stroke="#b6e8fb" stroke-width="2"/>
+      <text x="107" y="112" fill="#fff" font-size="28" font-weight="800" text-anchor="middle">9</text><text x="107" y="137" fill="#fff" font-size="15" text-anchor="middle">仅复联</text>
+      <text x="209" y="122" fill="#fff" font-size="25" font-weight="800" text-anchor="middle">3</text>
+      <text x="299" y="111" fill="#fff" font-size="25" font-weight="800" text-anchor="middle">2</text><text x="299" y="136" fill="#fff" font-size="14" text-anchor="middle">仅证据不足</text>
+    </svg>
+    <div class="xc-venn-math"><span>去重后的不合格案例</span><strong>12 + 5 − 3 = <b>14</b></strong><span>下一步候选</span><strong>90 − 14 = <b>76</b></strong><small>这是候选数量。另有 20 个案例尚未走完评估期；它们与 76 的交集未知，不能算出最终完成率。</small></div>
+  </div>
+  <figcaption>左侧独有 9、交集 3，所以复联共 12；右侧独有 2、交集 3，所以证据不足共 5。图把“去重”和“等评估期”拆开，避免把 76 个候选偷换成 76% 的结论。</figcaption>
+</figure>
 
 **领导：**观察窗口定几天？
 
-**小陈：**随业务问题定，并在比较前固定。发票入口也许很快能验证；物流争议可能要等调查完成。窗口还没走完的案例标“结果未成熟”，别把它们当成功；上线前后比较用相同窗口，不然新上线那周天然没来得及复联，解决率会虚高。客服人工抽样复核“系统判已解决、客户后来又联系”的案例，修正身份关联和问题归类。
+**小陈：**先定从入组起算的评估期，再定结案后的复联观察窗，两者不要混着说。发票入口也许很快能验证；物流争议需要给调查和再次联系留够时间。评估期到点仍未结案，是未完成，不是“永远未成熟”；刚入组、期限还没走完，才标“结果未成熟”。上线前后比较用相同期限，不然新上线那周天然没来得及复联，解决率会虚高。客服抽样复核“系统判已解决、客户后来又联系”的案例，修正身份关联和问题归类。
 
 小陈又把看板拆成三层：第一层看全量趋势，知道今天有没有异常；第二层按问题类型、渠道和风险拆开，发现“发票入口变好、签收争议变坏”；第三层点到具体工单，看到首次答复、转人工、重开和最终结论。每个指标都标出统计起止、分母、样本量与未成熟案例数。小流量试点里 9/10 的“90%”和十万单里的 90%，讨论时不能写成一样稳。
 
@@ -122,9 +172,61 @@ date: 2026-09-28 00:29:00 +0800
 
 **小陈：**给数据管道也做回放样本：同一事件重投三次只能算一次；客户跨 App 和微信追同单要算复联；同客户问另一件事不能算；先结案后重开的单不能保持“未复联完成”；身份误关联撤销后相关窗口重算。用几十条人工核过的案例做固定回归集，每次改匹配规则或看板口径都跑。报表不是一次性 PPT，它和 Agent 一样要版本、测试与负责人。
 
+## 第三层再拆：同案关联与报表 SQL，错一个字段会错一排
+
+**领导：**说到底，你那 `case_id` 是怎么生出来的？可别让模型看两句聊天就把两个客户并成一家。
+
+**小陈：**关联先过两个硬条件：经授权映射的客户身份、明确的业务对象，例如订单或包裹。再检查诉求类型和时间关系。App 的 A-0823 与微信的 W-441，即便都提“没收到”，若客户身份未核验，先只产生“待核候选”；即便同一客户，若一个问包裹签收、一个问发票，也不强并。文本相似度只负责召回候选，不能给它“一句话定户口”的权力。尤其不能做不加约束的传递合并：A 与 B 因同包裹关联，B 与 C 只因一句话相似，不能推断 A 与 C 必然同案。
+
+关联结果单独存版本，而不是回写抹掉渠道记录。一个最小的关联决策包含 `source_record_id`、`case_id`、身份核验依据、业务对象 ID、诉求类型、`confirmed | candidate | rejected` 状态、规则版本、决策时间和操作人或服务。错合时发一条撤销或改挂事件：先阻断越权读取，再重算受影响队列。**统计用的关联结果与对客读取权限是两张不同的票**，报表看到 `case_id` 不代表 Agent 能跨渠道读取客户资料。
+
+**领导：**那最终的 90、76 是怎么从事件变成一行数字的？
+
+**小陈：**先构建一张可回放的 `case_rollup`，一行一个 `case_id`，至少有：首次入组时间、问题类型、渠道、是否适用、固定评估截止时间、首次结案时间、结案依据引用、人工实际处理标记、确认同案复联次数、待核复联次数，以及使用的关联规则与指标版本。这里的“人工实际处理”看接手和处置事件，不能拿“转人请求已发出”替代；“结案依据”要能点回业务事实，不是平台状态写了 `solved` 就填真。
+
+下面是**口径伪 SQL**，假设事件去重、跨渠道关联和复联裁决已在前序表完成；它故意保留分子、分母，避免只吐一个百分比：
+
+```sql
+WITH mature AS (
+  SELECT *
+  FROM case_rollup
+  WHERE cohort_week = :cohort_week
+    AND eligible = TRUE
+    AND evaluation_due_at <= :report_as_of
+    AND source_complete_through >= evaluation_due_at
+), counted AS (
+  SELECT case_id,
+    CASE WHEN closed_at IS NOT NULL
+       AND closure_evidence_ref IS NOT NULL
+       AND closed_at + recontact_window <= evaluation_due_at
+       AND human_handled = FALSE
+       AND confirmed_same_case_recontacts = 0
+       AND pending_same_case_recontacts = 0
+      THEN 1 ELSE 0 END AS auto_completed
+  FROM mature
+)
+SELECT COUNT(*) AS mature_cases,
+       COALESCE(SUM(auto_completed), 0) AS completed_cases,
+       COALESCE(SUM(auto_completed), 0) * 1.0 / NULLIF(COUNT(*), 0)
+         AS auto_completion_rate
+FROM counted;
+```
+
+**小陈：**`evaluation_due_at` 从入组时间和预先固定的问题类型期限推出来；它到期而单子还没结，仍进分母，分子为 0。`source_complete_through` 是渠道数据已追齐到的时间，不是这张单最后一条消息的时间：电话回执还在延迟，就先别把队列当完整数据发布。`closed_at + recontact_window` 不能晚于评估截止，否则刚刚结案、客户还没机会再次联系的单会抢跑。待核复联暂不进高置信完成分子，但要在报表上单列，人工核完再重算。SQL 里的 0 也可能只是“关联没有查到”，不是客户真的没来信。
+
+那 20 个未成熟案例为什么不能简单从 76 个候选里扣掉？因为我们不知道它们落在哪里。极端演示：若 20 个全在 76 个候选里，成熟候选只剩 56，分母 80；若 20 个都在候选之外，成熟候选仍有 76，分母还是 80。仅靠原来的汇总数字，连成熟队列的**候选率**都只能落在 `56/80` 到 `76/80` 之间，更别说待核复联和结案证据还可能改数。正确做法是回到 `case_id` 逐行标记成熟状态，再聚合，不能拿三个总数在 PPT 上心算。
+
+**领导：**你这数据链一改，过去的月报岂不是跟着变？
+
+**小陈：**会，所以每次快照保存 `report_as_of`、来源数据水位、同案规则版本、指标定义版本、分子分母和异常案例清单。晚到电话事件或错合撤销触发增量重算，报表展示“9 月 29 日修订了 9 月第一周队列，原因是电话回执晚到 2 条”，而不是悄悄把上周 90% 改成 88%。历史快照负责解释当时为什么那样报，修订快照负责给出目前更完整的事实。
+
 ## 第四层判断：哪些漂亮数字最容易骗过我们
 
 **小陈：**第一是**幸存者偏差**。只抽能在机器人里结束的单，复杂客户早已转人工，当然显得机器人很准。分母必须写“适用范围”，同时报覆盖率与被排除案例的去向。第二是**观察期偏差**：新上线版本还没等到客户复联，解决率天然偏高。第三是**混合构成变化**：本周发票入口题多、签收争议少，总率可能上涨，即使每类问题都没改善。按问题类型、风险和渠道分层看，再用固定权重汇总，才能分辨产品进步还是题目变简单。
+
+**领导：**“题目变简单”能把总率抬高多少？
+
+**小陈：**举个故意算得很整齐的例子。旧周有 50 个简单入口题、50 个复杂签收争议，分别完成 45 和 25 个，总率 `(45 + 25) / 100 = 70%`。新周各类能力一点没变，简单题占 90 个、完成 81 个；复杂题只占 10 个、完成 5 个，总率却变成 `(81 + 5) / 100 = 86%`。看板会欢呼“提升 16 个百分点”，但简单题仍是 90%，复杂题仍是 50%，Agent 没有多学会一件事。要比较产品改进，用同一批题型权重重算两周，再看各层样本量；若复杂题只剩 10 单，连那层 50% 的估计也得标明不稳。
 
 第四是**指标被优化成了游戏**。如果团队只背“转人工率越低越好”，机器人就会把人工入口藏得更深；如果只追求首次答复时间，就会给所有客户秒回“已收到”，实际排队更久。我们把指标成对看：无人工完成率配同案复联率与投诉，首次答复时间配有效答复时间和完整解决时间，转人工率配接手时长和高风险漏转率。优化一个数字导致另一面恶化，不能宣布胜利。
 
@@ -162,4 +264,4 @@ date: 2026-09-28 00:29:00 +0800
 
 会议最后，小陈把“90% 机器人解决率”的横幅先从周报撤下，换成一张有负责人的改造单：数据工程师补跨渠道事件与去重，客服负责人确认各类问题的结案依据，运营抽查已结却复联的案例，产品负责人把人工接手回执接进看板。下周先用同一批历史案例重算旧指标与新指标，逐条解释差额；口径没对齐前，对外只报告“自动触达率”，不冒充“已解决”。领导盯着那张被客户追了三次的工单，说：“这次看板先别庆祝，先让他的问题真的有个结尾。”
 
-<p class="article-note">作者：小陈。100 个案例及其计算均为虚构演示，不代表任何产品或企业的表现。指标参考 <a href="https://support.zendesk.com/hc/en-us/articles/4408827693594-Metrics-and-attributes-for-Zendesk-Support">Zendesk 官方指标文档</a>，本文口径为业务设计示例。核对日期：2026 年 9 月 28 日。图为原创。</p>
+<p class="article-note">作者：小陈。100 个案例及其计算均为虚构演示，不代表任何产品或企业的表现。指标参考 <a href="https://support.zendesk.com/hc/en-us/articles/4408827693594-Metrics-and-attributes-for-Zendesk-Support">Zendesk 官方指标文档</a>，本文口径为业务设计示例。核对日期：2026 年 9 月 29 日。图为原创代码绘制；动态效果不承载独有信息。</p>

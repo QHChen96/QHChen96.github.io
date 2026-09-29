@@ -8,7 +8,9 @@ categories: [AI, 智能客服]
 tags: [Agent, 知识库运营, KCS, 反馈闭环]
 series: customer-service
 series_order: 28
+visuals: code
 date: 2026-09-28 00:28:00 +0800
+last_modified_at: 2026-09-29 12:00:00 +0800
 ---
 
 **领导：**客服昨天人工回答了 20 次“新款充电器能不能单买”，Agent 今天还说没找到资料。把那 20 段聊天直接倒进知识库，不就学会了？
@@ -29,9 +31,19 @@ date: 2026-09-28 00:28:00 +0800
 
 **小陈：**只有第三句具备成为政策候选的资格，还得有负责人的确认记录和生效时间。知识条目要写：适用型号 X2、渠道 App、开始时间、客户可见的购买入口、不能承诺的内容、失效或复核日期，以及来源责任人。问题是“X1 能买吗”时，不能因为检索到了“充电器”就拿 X2 条款回答。
 
-<figure class="diagram">
-  <img src="{{ '/assets/images/agent-c28-knowledge-loop.svg' | relative_url }}" alt="未知工单经过聚类、事实核验、业务负责人批准、知识发布和历史问法回放后才成为 Agent 可用答案" width="960" height="430">
-  <figcaption>聊天记录是地里的种子，不能连泥带石直接端上餐桌。</figcaption>
+<figure class="xc-visual" data-xc-shader="knowledge" aria-label="知识缺口处理的四道闸门：从二十段聊天出发，经过运营分诊、业务确认、发布验收，才形成可对客使用的生效知识">
+  <canvas class="xc-visual__canvas" aria-hidden="true"></canvas>
+  <span class="xc-kicker">Knowledge release · 01</span>
+  <strong class="xc-visual__title">20 段聊天，怎么变成 1 条能用的知识？</strong>
+  <p class="xc-visual__lead">顺着箭头看：前两格只是在找线索，后两格才决定能不能对客户说。</p>
+  <div class="xc-flow">
+    <div class="xc-flow__step"><span class="xc-flow__number">01</span><strong>收到 20 段聊天</strong><span>有重复追问、客服猜测和客户隐私；此时没有一条能直接当政策。</span></div>
+    <div class="xc-flow__step"><span class="xc-flow__number">02</span><strong>运营分诊</strong><span>合并同义问法，拆开 X1／X2、App／门店和“单买／加购”。</span></div>
+    <div class="xc-flow__step"><span class="xc-flow__number">03</span><strong>业务确认</strong><span>负责人确认：X2 原装、App、10 月 3 日起；不承诺到货日。</span></div>
+    <div class="xc-flow__step"><span class="xc-flow__number">04</span><strong>发布验收</strong><span>检查索引版本、正反例和线上查询；确认旧版本不再误命中。</span></div>
+  </div>
+  <div class="xc-visual__verdict">只有通过四道闸门的生效版本，才能成为 Agent 对客回答的依据。</div>
+  <figcaption>从“客户说过”到“公司能承诺”，中间隔着事实、权限、版本和验证。动态光效由代码绘制；文字流程在不支持 WebGL 的设备上照样可读。</figcaption>
 </figure>
 
 ## 谁提、谁批、何时能被搜到
@@ -64,6 +76,20 @@ date: 2026-09-28 00:28:00 +0800
 
 所以缺口工单要先有诊断字段：用户原问、标准化意图、型号与渠道、检索查询、召回候选及分数、过滤后可用条目、最后回答或转人、客服改稿的原因。不要把分数当裁判，只用它帮助排查。没有候选时看术语映射和索引；候选被过滤时看适用范围与生效状态；候选可用但回答错时查生成和引用约束；条款本身无法裁决时请业务负责人补规则。知识运营拿着这些信息，才能知道到底该改文档、检索、规则，还是服务流程。
 
+<figure class="xc-visual" aria-label="没资料的五种故障位置和对应修法">
+  <span class="xc-kicker">Fault map · 02</span>
+  <strong class="xc-visual__title">Agent 一句“没资料”，先查掉在哪一层</strong>
+  <p class="xc-visual__lead">沿着回答链往下排：每一层的症状和负责人都不同。</p>
+  <div class="xc-diagnosis">
+    <div class="xc-diagnosis__row"><span class="xc-diagnosis__index">1</span><div class="xc-diagnosis__symptom"><strong>确实没有可信事实</strong><small>知识目录里不存在已批准的适用条目</small></div><div class="xc-diagnosis__fix"><strong>请业务负责人定事实</strong><small>先补来源与生效条件，别把聊天猜测入库</small></div></div>
+    <div class="xc-diagnosis__row"><span class="xc-diagnosis__index">2</span><div class="xc-diagnosis__symptom"><strong>有条目，搜不到</strong><small>“充电头”没召回“配件销售安排”</small></div><div class="xc-diagnosis__fix"><strong>修查询与索引</strong><small>查同义词、分词、索引构建和召回日志</small></div></div>
+    <div class="xc-diagnosis__row"><span class="xc-diagnosis__index">3</span><div class="xc-diagnosis__symptom"><strong>搜到了，却不适用</strong><small>命中 X1、门店或未生效的版本</small></div><div class="xc-diagnosis__fix"><strong>核型号、渠道和时间</strong><small>业务条件确定性过滤，条件未知就先问清楚</small></div></div>
+    <div class="xc-diagnosis__row"><span class="xc-diagnosis__index">4</span><div class="xc-diagnosis__symptom"><strong>条款本身裁决不了</strong><small>制度只写“视情况处理”</small></div><div class="xc-diagnosis__fix"><strong>补决策条件与责任人</strong><small>模型不能凭相似度发明政策例外</small></div></div>
+    <div class="xc-diagnosis__row"><span class="xc-diagnosis__index">5</span><div class="xc-diagnosis__symptom"><strong>回答了，客户仍没办成</strong><small>通用政策答复替代不了订单资格核验</small></div><div class="xc-diagnosis__fix"><strong>补业务动作或转人</strong><small>查订单、交接责任，跟踪最终结果</small></div></div>
+  </div>
+  <figcaption>看到“无答案率”上涨，先定位故障层；直接多传十篇文档，可能把第 2、3 层弄得更乱。</figcaption>
+</figure>
+
 **领导：**20 单都是同一个问法，模型归成一类不就完了？
 
 **小陈：**聚类只能帮人整理，不能替人定政策。把“X2 原装充电器能不能单买”“X2 第三方充电器能不能用”“X2 订单能不能加购”揉成“X2 充电器问题”，客户数看着大，答案却有三套。聚类后先抽样看簇内差异，按型号、商品类型、渠道、地区、生效时间和客户购买阶段拆开。优先级也不单看问了多少次，要看影响人数、潜在错答后果、人工处理时长、当前是否有安全兜底。退款政策错一次，可能比入口说明问二十次更要紧。
@@ -83,6 +109,32 @@ date: 2026-09-28 00:28:00 +0800
 **小陈：**先做确定性过滤，再做相似度排序。查询时把当前时间、渠道、地区、型号等业务条件带进去，筛掉未生效、已失效和不适用条目；只在剩余集合里搜索。生成前再检查被引用的版本是否仍生效，以及本单条件是否真的匹配。相似度高只说明“文字像”，不说明“政策对”。如果型号没核实，Agent 应先问型号或给出不承诺的解释，不应拿 X2 的答案猜 X1。
 
 检索链路还得能解释失败。业务过滤掉所有候选时，记录“没有适用于 X1 门店的生效条目”，这是一条明确的运营待办；不要只给客户显示“知识库中未找到”。对客户可以说“我还不能确认这个型号在门店是否能单买，我帮您转专员核实”，对内部留下缺的具体条件。客户听到的是诚实的下一步，团队得到的是可补的洞。
+
+## 再往底层拆：一次查询究竟经过哪四次判断
+
+**领导：**“先过滤、再检索”听着挺对，但出了错工程师该看哪一行？
+
+**小陈：**给每次回答留一条脱敏的检索轨迹，并让四道判断各自留下结果。第一道是**上下文是否齐全**：本单型号从已授权的订单查询来，渠道从当前会话来，查询时刻由服务端提供；客户没说清型号时标 `unknown`，不能让模型猜一个 X2。第二道是**资格过滤**：仅保留状态已生效、在时间窗内、型号和渠道适用的知识版本。第三道才是**召回与排序**：在合格集合里用关键词、语义检索或两者结合找可能回答问题的条目。第四道是**证据检验**：检查候选条款能否支持即将说出的每个承诺，缺结论就转人工或继续查业务系统。
+
+这四道的顺序有实际后果。假设旧 X1 门店条款与“X2 充电器”文字更像，先全库排前十名、再过滤，十个名额可能全被旧条款占掉，新 X2 条款根本进不了候选。检索系统若支持按元数据限定候选集合，就在召回时带上状态、型号、渠道和生效区间；若底层做不到，就要扩大召回并验证过滤后仍有足够候选，不能把“过滤后为空”草率解释成“公司没有政策”。**过滤条件与召回策略要一起测试**，不能只测模型最后一句话。
+
+小陈给工程师一份最小轨迹，字段都是教学示意，不存客户原文和地址：
+
+```json
+{
+  "query_id": "q-x2-017",
+  "scope": {"model": "X2", "channel": "app", "at": "2026-10-03T10:00:00+08:00"},
+  "approved_versions": 3,
+  "eligible_versions": ["x2-accessory-v4"],
+  "retrieved_versions": ["x2-accessory-v4"],
+  "evidence_check": "supported_with_date_and_channel",
+  "action": "draft_for_review"
+}
+```
+
+**小陈：**`approved_versions` 是知识目录里曾批准过的数量，`eligible_versions` 是本单条件下真正能用的集合，`retrieved_versions` 是检索命中的结果。前者有、后者空，先查适用条件；合格集合有、召回为空，查索引与查询词；命中版本正确却把“10 月 3 日起”说丢了，查证据校验与答复模板。四个数和版本号串起来，才能把“Agent 又胡说了”翻译成具体维修单。
+
+日期边界也别靠人脑猜：可用区间约定为 `[valid_from, valid_to)`，开始时刻算生效，结束时刻不再生效。若发布当日延迟两小时，更新版本的生效时刻和索引状态，而不是让缓存里同时存在“今天能买”和“今天不能买”。缓存至少按知识版本或索引代际区分；撤回版本时让对应缓存失效，并从线上查询入口验证。否则编辑器显示正确，客户仍会听到旧答案。
 
 ## 用历史问法验收，也要用反例防串台
 
@@ -140,6 +192,19 @@ date: 2026-09-28 00:28:00 +0800
 
 上线前跑一条带唯一测试条件的线上查询：在允许的渠道和日期，能检到新版本；在旧型号和未生效日期，检不到。查询结果要记 `knowledge_id`、`version`、`index_generation` 和过滤原因。这样客户说“刚才机器人还是按旧政策回答”时，工程师能判断是旧缓存、检索过滤、发布失败，还是回答生成时丢了条件，而不是让知识同事反复点发布。
 
+<figure class="xc-visual" aria-label="知识发布的三张回执：审批、索引、线上查询应读到同一版本">
+  <span class="xc-kicker">Release receipts · 03</span>
+  <strong class="xc-visual__title">“发布成功”要拿得出三张回执</strong>
+  <p class="xc-visual__lead">同一条 X2 知识，管理后台、检索索引与客户入口都要对得上版本。</p>
+  <div class="xc-receipts">
+    <div class="xc-receipt"><span>① 业务批准</span><strong>version 4</strong><small>谁批准、何时生效、适用 X2／App。</small></div>
+    <div class="xc-receipt"><span>② 索引完成</span><strong>version 4</strong><small>构建任务成功，旧版从可用集合撤出。</small></div>
+    <div class="xc-receipt xc-receipt--warn"><span>③ 线上实查</span><strong>version 3 ?</strong><small>仍返回旧版时，先暂停放量，查缓存和检索路由。</small></div>
+  </div>
+  <div class="xc-visual__verdict">第三张回执还在 v3，就不能说 v4 已经对客户生效；修好后再把线上实查变成 v4。</div>
+  <figcaption>图里故意留了一张不一致的回执：它展示的是“中途失败”的诊断方法，不是一次成功发布。</figcaption>
+</figure>
+
 **领导：**如果新知识上线十分钟就发现错了，先让客服通知客户，还是先下架？
 
 **小陈：**两条线同时走，但顺序要守住传播面。系统负责人先把错误版本从可用集合撤下，刷新缓存并验证线上查询不再返回；知识负责人定位正确版本或设置“此问题转人工”；客服负责人根据引用日志找到可能收到错误答复的案件，按影响与风险决定是否主动更正。不能简单删除日志，因为我们需要知道谁在什么时间被告知过什么；也不能只在文档标题上写“作废”，索引仍可能引用正文。回滚要验证真实对客路径，不是验证管理后台显示“已撤销”。
@@ -152,4 +217,4 @@ date: 2026-09-28 00:28:00 +0800
 
 最后，知识库不是越大越好。两条相互冲突的生效政策，比缺一条更危险。每次发布时自动检查同型号、同渠道、同时间窗是否已有有效条目；冲突先交负责人裁决，再上索引。知识条目要有复核日，到期不是直接删除，而是暂停高风险自动答复并提醒负责人重新确认。公司业务变了，Agent 不会自己闻出风向，得有人把事实改进系统里。
 
-<p class="article-note">作者：小陈。型号、上市时间和工单均为虚构示范。知识状态与内容健康的理念参看 <a href="https://library.serviceinnovation.org/KCS/Knowledge-Centered_Success_Practices_Guide/301-Evolve_Loop/Practice_5_Content_Health/Technique_5.2">Consortium for Service Innovation 的 KCS 指南</a>。核对日期：2026 年 9 月 28 日。图为原创。</p>
+<p class="article-note">作者：小陈。型号、上市时间和工单均为虚构示范。知识状态与内容健康的理念参看 <a href="https://library.serviceinnovation.org/KCS/Knowledge-Centered_Success_Practices_Guide/301-Evolve_Loop/Practice_5_Content_Health/Technique_5.2">Consortium for Service Innovation 的 KCS 指南</a>。核对日期：2026 年 9 月 29 日。图为原创代码绘制；动态效果不承载独有信息。</p>
