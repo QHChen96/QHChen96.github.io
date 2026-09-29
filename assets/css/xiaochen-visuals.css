@@ -453,6 +453,9 @@
 .xc-state-chain > div { flex: 1 1 8.5rem; min-width: 0; padding: .62rem .68rem; border: 1px solid rgb(147 226 212 / 42%); border-radius: .6rem; background: rgb(4 30 40 / 75%); }
 .xc-state-chain > div b { display: block; color: #a8f4db; font-size: .78rem; }
 .xc-state-chain > div span { display: block; margin-top: .3rem; padding: 0; border: 0; background: none; color: #d3e6e3; font-size: .7rem; }
+.xc-flow-chain { flex-wrap: nowrap; }
+.xc-flow-chain > div { flex: 1 1 0; }
+.xc-flow-chain > i { flex: 0 0 auto; }
 
 @media (max-width: 720px) {
   .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
@@ -483,6 +486,9 @@
   .xc-decision-fork { grid-template-columns: minmax(0, 1fr); padding-top: 0; }
   .xc-decision-fork::before { display: none; }
   .xc-lane { grid-template-columns: 4.25rem minmax(0, 1fr); }
+  .xc-flow-chain { flex-direction: column; align-items: stretch; }
+  .xc-flow-chain > div { flex: 1 1 auto; }
+  .xc-flow-chain > i { transform: rotate(90deg); align-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
