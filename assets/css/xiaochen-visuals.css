@@ -436,6 +436,8 @@
 .xc-decision-node span { display: block; margin-top: .25rem; color: #d3e6e3; font-size: .75rem; line-height: 1.55; }
 .xc-decision-fork { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; position: relative; padding-top: 1.15rem; }
 .xc-decision-fork::before { content: ""; position: absolute; top: .4rem; left: 25%; right: 25%; height: .65rem; border: 1px solid #89ebd4; border-bottom: 0; border-radius: .5rem .5rem 0 0; }
+.xc-decision-fork--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.xc-decision-fork--three::before { left: 16.67%; right: 16.67%; }
 .xc-decision-fork > .xc-decision-node { min-width: 0; }
 .xc-decision-fork .is-stop { border-color: rgb(244 177 133 / 65%); }
 .xc-decision-fork .is-stop b { color: #ffd2ad; }
