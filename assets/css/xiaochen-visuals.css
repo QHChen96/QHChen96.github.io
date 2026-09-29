@@ -429,6 +429,28 @@
 .xc-series-matrix strong { display: block; margin: .35rem 0; color: #fff; font-size: .95rem; }
 .xc-series-matrix span { color: #cbdedc; font-size: .72rem; line-height: 1.55; }
 
+/* A diagram's geometry follows the concept: decision forks, transitions and handoffs. */
+.xc-decision-flow { display: grid; gap: .62rem; }
+.xc-decision-node { padding: .72rem .9rem; border: 1px solid rgb(147 226 212 / 42%); border-radius: .7rem; background: rgb(3 29 39 / 82%); }
+.xc-decision-node b { display: block; color: #a8f4db; font-size: .82rem; }
+.xc-decision-node span { display: block; margin-top: .25rem; color: #d3e6e3; font-size: .75rem; line-height: 1.55; }
+.xc-decision-fork { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; position: relative; padding-top: 1.15rem; }
+.xc-decision-fork::before { content: ""; position: absolute; top: .4rem; left: 25%; right: 25%; height: .65rem; border: 1px solid #89ebd4; border-bottom: 0; border-radius: .5rem .5rem 0 0; }
+.xc-decision-fork > .xc-decision-node { min-width: 0; }
+.xc-decision-fork .is-stop { border-color: rgb(244 177 133 / 65%); }
+.xc-decision-fork .is-stop b { color: #ffd2ad; }
+.xc-decision-arrow { color: #9de8d7; font-size: 1.2rem; line-height: 1; text-align: center; }
+.xc-lane { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: .65rem; align-items: stretch; margin-top: .55rem; }
+.xc-lane > b { display: grid; place-items: center; padding: .55rem; border: 1px solid rgb(147 226 212 / 38%); border-radius: .65rem; color: #a8f4db; font-size: .78rem; text-align: center; }
+.xc-lane > div { padding: .7rem .8rem; border: 1px solid rgb(147 226 212 / 32%); border-radius: .65rem; background: rgb(4 30 40 / 75%); color: #d3e6e3; font-size: .76rem; line-height: 1.55; }
+.xc-lane strong { color: #fff; }
+.xc-lane.is-alert > div { border-color: rgb(244 177 133 / 65%); }
+.xc-lane.is-alert > b { border-color: rgb(244 177 133 / 65%); color: #ffd2ad; }
+.xc-state-chain { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.xc-state-chain span { padding: .48rem .64rem; border: 1px solid rgb(147 226 212 / 42%); border-radius: .6rem; background: rgb(4 30 40 / 75%); color: #effbf7; font-size: .73rem; line-height: 1.4; }
+.xc-state-chain i { color: #a8f4db; font-size: .86rem; font-style: normal; }
+.xc-state-chain .is-alert { border-color: rgb(244 177 133 / 65%); color: #ffd2ad; }
+
 @media (max-width: 720px) {
   .xc-flow { grid-template-columns: minmax(0, 1fr); gap: .8rem; }
   .xc-flow__step { min-height: 0; }
@@ -455,6 +477,9 @@
   .xc-series-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .xc-series-steps > div:nth-child(2)::after { display: none; }
   .xc-series-board { grid-template-columns: minmax(0, 1fr); }
+  .xc-decision-fork { grid-template-columns: minmax(0, 1fr); padding-top: 0; }
+  .xc-decision-fork::before { display: none; }
+  .xc-lane { grid-template-columns: 4.25rem minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {
