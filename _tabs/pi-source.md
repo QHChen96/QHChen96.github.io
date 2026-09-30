@@ -4,7 +4,11 @@ description: 小陈沿一条真实调用链拆 Pi Agent 的循环、会话、扩
 icon: fas fa-code-branch
 order: 7
 permalink: /pi-source/
+nav: false
+topic_id: pi-source
 ---
+
+{% include topic-context.html %}
 
 领导说：“Pi 不就是终端聊天框吗？把热门插件全装上，明天就能干活吧？”小陈打开源码，从入口、循环、会话树一路查到插件的注册、权限和回执。六篇各解决一个研发麻烦，所有源码链接固定到 2026 年 9 月 29 日核对的提交；示意故障是教学虚构，不冒充运行实测。
 

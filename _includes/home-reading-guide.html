@@ -1,0 +1,15 @@
+<section class="home-reading-guide" aria-labelledby="reading-guide-heading">
+  <div class="home-reading-heading">
+    <div>
+      <span class="topic-kicker">按方向读</span>
+      <h2 id="reading-guide-heading" data-toc-skip>先选一条阅读路线</h2>
+    </div>
+    <a class="home-reading-all" href="{{ '/topics/' | relative_url }}">专题导航 <span aria-hidden="true">→</span></a>
+  </div>
+  <nav class="home-reading-directions" aria-label="阅读方向">
+  {% for home_group in site.data.topic_catalog.groups %}
+    {% assign home_group_url = '/topics/#' | append: home_group.id %}
+    <a href="{{ home_group_url | relative_url }}"><i class="{{ home_group.icon }}" aria-hidden="true"></i>{{ home_group.title }}</a>
+  {% endfor %}
+  </nav>
+</section>

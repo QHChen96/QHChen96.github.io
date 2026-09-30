@@ -4,7 +4,11 @@ description: 小陈替研发 Agent 搭工位：从接 issue、查代码、用工
 icon: fas fa-tools
 order: 4
 permalink: /agent-harness/
+nav: false
+topic_id: agent-harness
 ---
+
+{% include topic-context.html %}
 
 领导给研发 Agent 一张 issue，要求它看仓库、改代码、跑测试、交 PR。这条线拆开模型之外真正负责运行的底座：循环、上下文、工具、执行环境、检查点、预算和故障恢复。每篇拿一个会让项目翻车的现场，跟着小陈查证据、修机制。
 

@@ -1,0 +1,43 @@
+{% comment %}All series labels and grouping come from the shared catalog.{% endcomment %}
+{% assign reading_topic = nil %}
+{% assign reading_group = nil %}
+{% for reading_candidate_group in site.data.topic_catalog.groups %}
+  {% for reading_candidate in reading_candidate_group.series %}
+    {% if reading_candidate.id == page.series or reading_candidate.id == page.topic_id or reading_candidate.start_url == page.url %}
+      {% assign reading_topic = reading_candidate %}
+      {% assign reading_group = reading_candidate_group %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if reading_topic %}{% break %}{% endif %}
+{% endfor %}
+{% if reading_topic %}
+  {% assign reading_posts = site.posts | where: "series", reading_topic.id | sort: "series_order" %}
+  {% assign reading_extra_count = reading_topic.extra_count | default: 0 %}
+  {% assign reading_count = reading_posts.size | plus: reading_extra_count %}
+  {% assign reading_first = reading_posts | first %}
+  {% assign reading_start = reading_topic.start_url | default: reading_first.url %}
+  {% assign reading_group_url = '/topics/#' | append: reading_group.id %}
+  <nav class="reading-context" aria-label="所属专题与阅读路线">
+    <div class="reading-context-path">
+      <a href="{{ reading_group_url | relative_url }}">专题导航 · {{ reading_group.title }}</a>
+      <span aria-hidden="true">/</span>
+      {% if page.layout == 'post' %}
+        <a class="reading-context-title" href="{{ reading_topic.url | relative_url }}">{{ reading_topic.title }}</a>
+      {% else %}
+        <strong>{{ reading_topic.title }}</strong>
+      {% endif %}
+    </div>
+    <div class="reading-context-actions">
+      <span class="reading-context-count">
+        {% if page.layout == 'post' %}
+          {% assign reading_order = page.series_order | default: 1 %}
+          {{ reading_topic.prefix }}{% if reading_order < 10 %}0{% endif %}{{ reading_order }} ·
+        {% endif %}
+        {{ reading_count }} 篇
+      </span>
+      {% if page.layout == 'post' %}<a href="{{ reading_topic.url | relative_url }}">专题目录</a>{% endif %}
+      {% unless page.url == reading_start %}<a href="{{ reading_start | relative_url }}">从第一篇读 <span aria-hidden="true">→</span></a>{% endunless %}
+    </div>
+  </nav>
+{% endif %}

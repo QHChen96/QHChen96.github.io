@@ -4,7 +4,11 @@ description: 跟着小陈和爱挑刺的领导，从一张虚构客服工单看�
 icon: fas fa-book-open
 order: 1
 permalink: /agents-basics/
+nav: false
+topic_id: agents-basics
 ---
+
+{% include topic-context.html %}
 
 领导说“做个 Agent”，我们先把每一步讲明白。
 

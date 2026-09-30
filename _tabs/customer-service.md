@@ -4,7 +4,11 @@ description: 跟着小陈，把客服 Agent 从漂亮演示带到规则、检索
 icon: fas fa-headset
 order: 2
 permalink: /customer-service/
+nav: false
+topic_id: customer-service
 ---
+
+{% include topic-context.html %}
 
 领导说“明早上线客服 Agent”，小陈先拿一张虚构的签收争议工单试出了误答退款。从那张单出发，这条线把知识库、查询工具、权限和外发审核一项项落到能验收的做法。
 

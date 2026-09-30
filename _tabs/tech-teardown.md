@@ -4,7 +4,11 @@ description: 领导说“都叫 Agent，你给我拆开看看”，小陈沿真�
 icon: fas fa-microchip
 order: 6
 permalink: /tech-teardown/
+nav: false
+topic_id: tech-teardown
 ---
+
+{% include topic-context.html %}
 
 同一张工单，放进 LangChain、Claude Code、Codex 或可视化平台，模型、运行循环、工具、权限和恢复分别由谁负责？小陈不背产品宣传语，沿执行轨迹拆原理；每篇让一次故障暴露真正的责任边界。
 

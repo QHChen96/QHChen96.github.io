@@ -4,7 +4,11 @@ description: 记什么、怎么写、如何想起、怎样压缩续跑、多 Age
 icon: fas fa-brain
 order: 13
 permalink: /agent-memory/
+nav: false
+topic_id: memory-engineering
 ---
+
+{% include topic-context.html %}
 
 领导要助手“永远记得客户”。小陈发现，真正麻烦的是记错之后怎么改、过期之后怎么停用、换窗口之后怎么接着办，以及另一个 Agent 为什么能看到不属于它的资料。
 

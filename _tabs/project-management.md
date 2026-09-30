@@ -4,7 +4,11 @@ description: 领导一句“两个月上线”，小陈从立项、范围、排�
 icon: fas fa-tasks
 order: 10
 permalink: /project-management/
+nav: false
+topic_id: project-management
 ---
+
+{% include topic-context.html %}
 
 领导说：“做个销售 Agent，两个月上线。项目管理不就是催进度吗？”小陈把这句话拆成六个绕不开的难题：什么叫成功、需求如何收口、日期怎么推算、忙碌为什么没有产出、风险何时喊停，以及上线之后谁来证明效果。
 

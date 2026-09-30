@@ -1,0 +1,98 @@
+# Reading directions. New series belong here, rather than becoming sidebar tabs.
+groups:
+  - id: foundations
+    title: 入门基础
+    icon: fas fa-book-open
+    description: 刚接触 Agent，先讲清目标、工具、工作流与状态。
+    series:
+      - id: agents-basics
+        title: Agent 基础入门
+        url: /agents-basics/
+        prefix: B
+        summary: 用一张客服工单，逐步理解 Agent 怎么做事、怎么停下来。
+
+  - id: engineering
+    title: 系统工程
+    icon: fas fa-gears
+    description: 已经开始开发，按运行、检索、协作与记忆补齐底座。
+    series:
+      - id: agent-harness
+        title: 运行底座 · Harness
+        url: /agent-harness/
+        prefix: H
+        summary: Agent 循环、工具执行、预算、检查点与故障恢复。
+      - id: knowledge-retrieval
+        title: 知识与检索
+        url: /knowledge-retrieval/
+        prefix: K
+        summary: grep、RAG 与知识层，找到有出处、仍有效的证据。
+      - id: multi-agent
+        title: 多 Agent 协作
+        url: /multi-agent/
+        prefix: MA
+        summary: 任务拆分、交接、调度、验真和失败恢复。
+      - id: memory-engineering
+        title: Agent 记忆工程
+        url: /agent-memory/
+        prefix: ME
+        summary: 记什么、怎样更新与找回，以及共享、遗忘和评测。
+
+  - id: delivery
+    title: 企业落地
+    icon: fas fa-briefcase
+    description: 从试点目标到业务流程，再到验收与持续运营。
+    series:
+      - id: project-management
+        title: 项目管理实战
+        url: /project-management/
+        prefix: PM
+        summary: 范围、排期、执行、风险与上线效果，组织项目交付。
+      - id: customer-service
+        title: 智能客服
+        url: /customer-service/
+        prefix: C
+        summary: 退款、工单、转人工与知识闭环，把客服做成可验收的系统。
+        extra_count: 1
+        start_url: /posts/2026/09/24/agents-introduction-and-tools/
+      - id: sales-assistant
+        title: 企业销售助手
+        url: /sales-assistant/
+        prefix: S
+        summary: 线索、客户研究、CRM、报价与恢复，解决销售现场的问题。
+
+  - id: source
+    title: 源码解读
+    icon: fas fa-code
+    description: 先理解产品分工，再沿调用链读具体实现。
+    series:
+      - id: tech-teardown
+        title: Agent 技术原理
+        url: /tech-teardown/
+        prefix: P
+        summary: 拆开框架和产品，辨清模型、运行循环、工具与权限的责任。
+      - id: pi-source
+        title: Pi Agent
+        url: /pi-source/
+        prefix: PI
+        summary: 入口、循环、会话树、扩展与插件的实际调用。
+      - id: langchain-graph-source
+        title: LangChain / LangGraph
+        url: /langchain-graph-source/
+        prefix: LG
+        summary: Agent 工厂、状态、超步调度、检查点与人工审批。
+      - id: agentscope-java-source
+        title: AgentScope Java
+        url: /agentscope-java-source/
+        prefix: ASJ
+        summary: Java 实现的 ReAct、工具权限、记忆、沙箱与子 Agent。
+
+  - id: growth
+    title: 个人成长
+    icon: fas fa-seedling
+    description: 从工作之外的角度，安排自己的方向、精力与生活。
+    series:
+      - id: personal-growth
+        title: 个人成长
+        url: /personal-growth/
+        prefix: PG
+        summary: 方向、学习、行动、身心、关系、职业与金钱。

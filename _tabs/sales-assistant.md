@@ -4,7 +4,11 @@ description: 从线索进入到 CRM 写入，跟着小陈逐步处理销售 Agen
 icon: fas fa-briefcase
 order: 3
 permalink: /sales-assistant/
+nav: false
+topic_id: sales-assistant
 ---
+
+{% include topic-context.html %}
 
 领导想让 Agent 一夜填满 CRM，小陈先从一位一天接到三通电话的客户查起。这条线用同一家虚构公司的 B2B 销售团队，讲清线索来源、客户情报、资格判断和字段写入。对外联系和关键承诺都要有明确负责人。
 

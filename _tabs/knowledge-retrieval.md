@@ -4,7 +4,11 @@ description: 跟着小陈追查“资料明明在，Agent 为什么还说错”�
 icon: fas fa-search
 order: 5
 permalink: /knowledge-retrieval/
+nav: false
+topic_id: knowledge-retrieval
 ---
+
+{% include topic-context.html %}
 
 领导说“资料都在”，小陈偏偏找到了搜索盲区、过期政策和会自我引用的 Wiki。这条线从代码搜索到企业知识库，讲清怎么找到证据、确认来源与权限，并在证据不足时停下来。
 

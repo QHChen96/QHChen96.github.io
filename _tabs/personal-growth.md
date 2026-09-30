@@ -4,7 +4,11 @@ description: 从方向、学习、行动、身心、关系、职业和金钱七�
 icon: fas fa-seedling
 order: 11
 permalink: /personal-growth/
+nav: false
+topic_id: personal-growth
 ---
+
+{% include topic-context.html %}
 
 成长不是每天把自己拧得更紧。方向错了，效率越高越累；只学不做，收藏夹会比人先升职；身体、关系和现金流没有余地，再漂亮的职业计划也经不起一次意外。
 

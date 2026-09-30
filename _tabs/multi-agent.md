@@ -4,7 +4,11 @@ description: 从任务拆分到协作、证据合并、并发调度、故障恢�
 icon: fas fa-project-diagram
 order: 12
 permalink: /multi-agent/
+nav: false
+topic_id: multi-agent
 ---
+
+{% include topic-context.html %}
 
 领导想给销售助手配一整队 Agent：查客户、翻合同、看工单、写方案、再互相审稿。小陈先把“大家一起干”拆成七个能落实的工程问题：怎么分、谁指挥、怎样交接、如何调度、失败怎么办、谁来验真，以及选什么框架。
 

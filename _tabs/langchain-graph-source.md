@@ -4,7 +4,11 @@ description: 小陈顺着官方源码，把 LangChain 的 Agent 工厂与 LangGr
 icon: fas fa-project-diagram
 order: 8
 permalink: /langchain-graph-source/
+nav: false
+topic_id: langchain-graph-source
 ---
+
+{% include topic-context.html %}
 
 领导说：“`create_agent()` 不就一行吗？Graph 也不过是画箭头，为什么生产事故还要小陈来背锅？”小陈从工厂、钩子、结构化输出一路读到超步、检查点和人工审阅。七篇各解决一个具体麻烦；简化源码直接放在文章里，相关调用和失败分支逐段讲清。源码链接固定到 2026 年 9 月 29 日核对的提交，虚构事故不冒充实测。
 
