@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="860" viewBox="0 0 600 860" role="img" aria-labelledby="title desc">
+<title id='title'>重启先查真相，再接着干</title><desc id='desc'>恢复先验证身份授权与正式快照，核对动作结果，未知先查，刷新外部事实与权限后继续，缺证据阻断相关步骤。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='860' rx='20' fill='#f6fafb'/>
+<rect width='600' height='860' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>重启先查真相，再接着干</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>恢复流程 · 检查点不倒转外部世界</text>
+<rect x='40' y='115' width='300' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='190.0' y='155.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>核验任务身份与授权</text>
+<path d='M190 180 V222' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='40' y='225' width='300' height='75' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='190.0' y='256.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>读正式快照</text>
+<text x='190.0' y='285.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>校验状态与工件版本</text>
+<path d='M190 300 V350' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M 190 350.0 L 330.0 405 L 190 460.0 L 50.0 405 Z' fill='#e9f6f1' stroke='#0c7668' stroke-width='2.4'/>
+<text x='190' y='398.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>外部动作</text>
+<text x='190' y='427.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>结果明确？</text>
+<path d='M330 405 H377' fill='none' stroke='#aa5625' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='354' y='390' text-anchor='middle' font-size='22' fill='#aa5625' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>否</text>
+<rect x='380' y='360' width='190' height='90' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='475.0' y='398.5' text-anchor='middle' font-size='24' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>未知先核查</text>
+<text x='475.0' y='427.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>不盲目重做</text>
+<path d='M475 450 V525 H190' fill='none' stroke='#aa5625' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<text x='350' y='502' text-anchor='middle' font-size='20' fill='#aa5625' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>核查后结果明确</text>
+<path d='M190 460 V562' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='216' y='505' text-anchor='middle' font-size='22' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>是</text>
+<rect x='40' y='565' width='300' height='75' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='190.0' y='596.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>刷新必要业务事实</text>
+<text x='190.0' y='625.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>重查权限与有效性</text>
+<path d='M340 602.5 H377' fill='none' stroke='#ae3e40' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='380' y='565' width='190' height='75' rx='13' fill='white' stroke='#ae3e40' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='475.0' y='596.0' text-anchor='middle' font-size='24' fill='#ae3e40' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>无权或缺证据</text>
+<text x='475.0' y='625.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>相关步骤停下</text>
+<path d='M190 640 V732' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='40' y='735' width='300' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='190.0' y='775.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>从合法阶段继续</text>
+<text x='300' y='837' text-anchor='middle' font-size='22' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>恢复状态后，仍需核对当前世界</text>
+</svg>

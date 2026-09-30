@@ -193,6 +193,10 @@ def merge_results(old, incoming):
 
 这篇的交付是结果信封、分层校验、冲突记录与证据依赖关系。下一篇用它们开始调度：任务已经分对、结果能收住，为什么并发一调大，系统反而排队更久、账单更厚。
 
+## 共享记忆的进一步实现
+
+客户改口后怎样替换旧事实，见[记忆写入与修订]({{ '/posts/2026/09/30/me02-write-and-revise/' | relative_url }})；多个 Agent 怎样继承来源权限、处理并发写入和撤回，见[共享与遗忘]({{ '/posts/2026/09/30/me05-sharing-and-forgetting/' | relative_url }})。两篇把本篇的来源、版本和范围继续落到记忆服务协议。
+
 ## 资料与边界
 
 - [LangGraph Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)：线程检查点与跨线程 store 的用途。

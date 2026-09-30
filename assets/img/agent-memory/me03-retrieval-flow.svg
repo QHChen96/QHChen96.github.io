@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="860" viewBox="0 0 600 860" role="img" aria-labelledby="title desc">
+<title id='title'>按范围找，再按任务选</title><desc id='desc'>认证解析范围后分路查当前属性、相关经历与权威状态，再复核权限版本条件，展开证据并按预算组装。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='860' rx='20' fill='#f6fafb'/>
+<rect width='600' height='860' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>按范围找，再按任务选</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>检索流程 · 属性、经历与状态分路</text>
+<rect x='170' y='115' width='260' height='70' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='158.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>认证·范围解析</text>
+<path d='M300 185 V220 H110 V267' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M300 185 V220 H300 V267' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M300 185 V220 H490 V267' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='30' y='270' width='160' height='100' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='110.0' y='313.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>当前属性</text>
+<text x='110.0' y='342.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>按主键查</text>
+<rect x='220' y='270' width='160' height='100' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='313.5' text-anchor='middle' font-size='24' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>相关经历</text>
+<text x='300.0' y='342.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>域内搜索</text>
+<rect x='410' y='270' width='160' height='100' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='490.0' y='313.5' text-anchor='middle' font-size='24' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>业务状态</text>
+<text x='490.0' y='342.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>查权威源</text>
+<path d='M110 370 V405 H300 V442' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  />
+<path d='M300 370 V405 H300 V442' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M490 370 V405 H300 V442' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  />
+<rect x='150' y='445' width='300' height='70' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='488.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>版本·条件·权限复核</text>
+<path d='M300 515 V567' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='150' y='570' width='300' height='75' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='601.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>展开必要证据</text>
+<text x='300.0' y='630.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>保留主体·来源·否定</text>
+<path d='M300 645 V697' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='150' y='700' width='300' height='75' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='745.5' text-anchor='middle' font-size='24' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>按预算组装记忆包</text>
+<text x='300' y='830' text-anchor='middle' font-size='23' fill='#ae3e40' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>没有依据 → 保留未知，不猜答案</text>
+</svg>

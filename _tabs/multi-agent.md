@@ -23,3 +23,7 @@ permalink: /multi-agent/
   </a>
   {% endfor %}
 </div>
+
+## 把协作里的记忆做好
+
+[Agent 记忆工程专题]({{ '/agent-memory/' | relative_url }})进一步拆解：哪些资料值得记、怎样写入和更新、如何找回相关记忆、长会话怎样续跑、多 Agent 如何共享与遗忘，以及怎样评测实际效果。六篇延伸文章均配 SVG，正文内解释实现。

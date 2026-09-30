@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="820" viewBox="0 0 600 820" role="img" aria-labelledby="title desc">
+<title id='title'>优先装进去的是必要条件</title><desc id='desc'>先预留系统工具和输出，保留目标硬约束与有效属性，再加入完整证据；相关经历择优，无关重复历史排除。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='820' rx='20' fill='#f6fafb'/>
+<rect width='600' height='820' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>优先装进去的是必要条件</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>预算选择 · 次序不代表容量占比</text>
+<rect x='60' y='125' width='480' height='80' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='158.5' text-anchor='middle' font-size='24' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>先预留固定输入与输出</text>
+<text x='300.0' y='187.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>系统规则·工具定义·生成空间</text>
+<path d='M300 205 V262' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='60' y='265' width='480' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='305.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>当前目标与硬约束</text>
+<path d='M300 330 V377' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='60' y='380' width='480' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='420.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>适用属性与必要未知</text>
+<path d='M300 445 V497' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='60' y='500' width='480' height='75' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='531.0' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>完整证据主张</text>
+<text x='300.0' y='560.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>条件与来源不能截掉</text>
+<path d='M300 575 V610 H155 V642' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M300 610 H450 V642' fill='none' stroke='#aa5625' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='30' y='645' width='250' height='80' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='155.0' y='678.5' text-anchor='middle' font-size='24' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>相关经历</text>
+<text x='155.0' y='707.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>在剩余预算内择优</text>
+<rect x='330' y='645' width='240' height='80' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='450.0' y='678.5' text-anchor='middle' font-size='24' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>重复或无关历史</text>
+<text x='450.0' y='707.5' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>排除</text>
+<text x='300' y='785' text-anchor='middle' font-size='22' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>条数不是预算，按实际 token 计量</text>
+</svg>

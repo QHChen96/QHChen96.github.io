@@ -177,6 +177,10 @@ def commit_result(task_id, lease_epoch, artifact):
 
 下一篇解决另一种更安静的事故：程序全部成功，几个审查 Agent 也全部通过，草稿却仍然引用了错价。权限、独立核验和端到端评测要一起上场。
 
+## 长会话恢复的进一步实现
+
+检查点恢复之外，历史太长需要压缩时还要保住目标、否定条件、工件版本与未完成事项。[长会话压缩与恢复]({{ '/posts/2026/09/30/me04-compaction-and-resume/' | relative_url }})把摘要、结构状态和动作账本分开保存，展开预算触发、快照发布与旧版本迁移。
+
 ## 资料与边界
 
 - [LangGraph Checkpointers](https://docs.langchain.com/oss/python/langgraph/checkpointers)：线程检查点、pending writes、恢复与耐久性模式。

@@ -176,6 +176,10 @@ date: 2026-09-30 02:01:00 +0800
 
 下一篇把“主流程”拆开：主 Agent 调专家、把对话交给专家、路由后并行汇总，三种控制方式看起来都叫协作，实际责任完全不同。
 
+## 协作里的记忆，接着读什么
+
+分工确定以后，客户偏好、任务进度与研究结果怎样保存、更新和共享，可以继续读[Agent 记忆工程专题]({{ '/agent-memory/' | relative_url }})。六篇从“什么值得记”讲到改口、检索、压缩恢复、权限与遗忘，最后附完整可运行的 SQLite 示例。
+
 ## 资料与边界
 
 - [LangChain Multi-agent](https://docs.langchain.com/oss/python/langchain/multi-agent)：当前协作模式与上下文管理动机。
