@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="790" viewBox="0 0 600 790" role="img" aria-labelledby="title desc">
+<title id='title'>派发不等于已经完成</title><desc id='desc'>协调者派发三个研究任务，收集带任务身份的结果，通过证据校验后再写作与审核。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='790' rx='20' fill='#f6fafb'/>
+<rect width='600' height='790' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>派发不等于已经完成</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>时序图 · 回传后才验收与收口</text>
+<rect x='24' y='112' width='108' height='60' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='78.0' y='150.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>协调者</text>
+<path d='M78 175 V710' fill='none' stroke='#a7bdc6' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" />
+<rect x='171' y='112' width='108' height='60' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='225.0' y='150.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>客户</text>
+<path d='M225 175 V710' fill='none' stroke='#a7bdc6' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" />
+<rect x='318' y='112' width='108' height='60' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='372.0' y='150.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>合同</text>
+<path d='M372 175 V710' fill='none' stroke='#a7bdc6' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" />
+<rect x='465' y='112' width='108' height='60' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='519.0' y='150.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>服务</text>
+<path d='M519 175 V710' fill='none' stroke='#a7bdc6' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" />
+<path d='M78 220 H225' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='151.5' y='208' text-anchor='middle' font-size='21' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>派客户任务</text>
+<path d='M78 275 H372' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='225.0' y='263' text-anchor='middle' font-size='21' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>派合同任务</text>
+<path d='M78 330 H519' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='298.5' y='318' text-anchor='middle' font-size='21' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>派服务任务</text>
+<path d='M225 410 H78' fill='none' stroke='#6452a3' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='151.5' y='398' text-anchor='middle' font-size='21' fill='#6452a3' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>客户证据</text>
+<path d='M519 465 H78' fill='none' stroke='#6452a3' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='298.5' y='453' text-anchor='middle' font-size='21' fill='#6452a3' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>服务证据</text>
+<path d='M372 520 H78' fill='none' stroke='#6452a3' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<text x='225.0' y='508' text-anchor='middle' font-size='21' fill='#6452a3' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>合同证据</text>
+<rect x='24' y='570' width='175' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='111.5' y='610.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>证据验收</text>
+<path d='M78 635 V664' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='24' y='668' width='260' height='65' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='154.0' y='708.5' text-anchor='middle' font-size='26' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>草稿与验证</text>
+<text x='300' y='766' text-anchor='middle' font-size='23' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>顺序可乱，任务身份不能乱</text>
+</svg>

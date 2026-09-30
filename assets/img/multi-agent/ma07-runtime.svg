@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="850" viewBox="0 0 600 850" role="img" aria-labelledby="title desc">
+<title id='title'>框架能换，业务含义保留</title><desc id='desc'>可信上下文进入编排，三个可替换研究适配器返回统一证据；草稿与批准分开，动作执行保留对账，状态与工件保存。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='850' rx='20' fill='#f6fafb'/>
+<rect width='600' height='850' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>框架能换，业务含义保留</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>架构图 · 统一证据与动作契约</text>
+<rect x='155' y='108' width='290' height='65' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='148.5' text-anchor='middle' font-size='26' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>可信上下文与编排</text>
+<path d='M300 173 V206 H110 V242' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M300 206 V242' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M300 206 H490 V242' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='25' y='245' width='170' height='80' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='110.0' y='278.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>客户适配器</text>
+<text x='110.0' y='308.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>框架可替换</text>
+<rect x='215' y='245' width='170' height='80' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='278.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>合同适配器</text>
+<text x='300.0' y='308.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>框架可替换</text>
+<rect x='405' y='245' width='170' height='80' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='490.0' y='278.0' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>服务适配器</text>
+<text x='490.0' y='308.0' text-anchor='middle' font-size='24' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>框架可替换</text>
+<path d='M110 325 V364 H300 V397' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  />
+<path d='M300 325 V364 H300 V397' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<path d='M490 325 V364 H300 V397' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  />
+<rect x='155' y='400' width='290' height='75' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='445.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>统一证据与归并</text>
+<path d='M300 475 V517' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='155' y='520' width='290' height='65' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='560.5' text-anchor='middle' font-size='26' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>草稿 / 独立验证</text>
+<path d='M300 585 V626' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='155' y='629' width='290' height='65' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='669.5' text-anchor='middle' font-size='26' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>具体版本批准</text>
+<path d='M300 694 V734' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='155' y='737' width='290' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='777.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>动作账本与对账</text>
+<path d='M445 435 H586 V140 H448' fill='none' stroke='#638190' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" />
+<text x='516' y='551' text-anchor='middle' font-size='22' fill='#57717d' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>状态</text>
+<text x='516' y='587' text-anchor='middle' font-size='22' fill='#57717d' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>工件</text>
+</svg>

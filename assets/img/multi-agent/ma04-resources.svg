@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+<title id='title'>时间、资源、钱都要够</title><desc id='desc'>就绪任务依次满足租户配额、模型和工具槽、预算原子预留以及剩余截止时间，完成后结算真实消耗。</desc>
+<defs>
+<pattern id='grid' width='24' height='24' patternUnits='userSpaceOnUse'><circle cx='2' cy='2' r='1' fill='#d9e5ea'/></pattern>
+<filter id='shadow' x='-20%' y='-20%' width='140%' height='140%'><feDropShadow dx='0' dy='3' stdDeviation='4' flood-color='#15374b' flood-opacity='.08'/></filter>
+<marker id='arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='context-stroke'/></marker>
+</defs>
+<rect width='600' height='760' rx='20' fill='#f6fafb'/>
+<rect width='600' height='760' rx='20' fill='url(#grid)' opacity='.6'/>
+<rect x='24' y='24' width='6' height='48' rx='3' fill='#0c7668'/>
+<text x='45' y='46' text-anchor='start' font-size='28' fill='#19364b' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>时间、资源、钱都要够</text>
+<text x='45' y='77' text-anchor='start' font-size='20' fill='#5b7281' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>资源流 · 启动前预留，完成后结算</text>
+<rect x='135' y='112' width='330' height='65' rx='13' fill='white' stroke='#6452a3' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='152.5' text-anchor='middle' font-size='26' fill='#6452a3' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>就绪任务</text>
+<path d='M300 177 V204' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='135' y='207' width='330' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='247.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>租户与全局配额</text>
+<path d='M300 272 V299' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='135' y='302' width='330' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='342.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>模型 / 工具资源槽</text>
+<path d='M300 367 V394' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='135' y='397' width='330' height='65' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='437.5' text-anchor='middle' font-size='26' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>原子预算预留</text>
+<path d='M300 462 V489' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='135' y='492' width='330' height='65' rx='13' fill='white' stroke='#aa5625' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='532.5' text-anchor='middle' font-size='26' fill='#aa5625' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>剩余时限足够</text>
+<path d='M300 557 V584' fill='none' stroke='#0c7668' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round'  marker-end="url(#arrow)"/>
+<rect x='135' y='587' width='330' height='65' rx='13' fill='white' stroke='#0c7668' stroke-width='2.4' filter='url(#shadow)'/>
+<text x='300.0' y='627.5' text-anchor='middle' font-size='26' fill='#0c7668' font-weight='700' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>执行并结算实耗</text>
+<path d='M465 620 H555 V429 H468' fill='none' stroke='#6452a3' stroke-width='2.8' stroke-linejoin='round' stroke-linecap='round' stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<text x='522' y='535' text-anchor='middle' font-size='22' fill='#6452a3' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>释放</text>
+<text x='300' y='721' text-anchor='middle' font-size='23' fill='#19364b' font-weight='500' font-family='Microsoft YaHei,PingFang SC,Noto Sans CJK SC,sans-serif'>预算留给必要研究、写作与验证</text>
+</svg>
