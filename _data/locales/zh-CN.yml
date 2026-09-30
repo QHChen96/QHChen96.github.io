@@ -1,4 +1,4 @@
-# Chirpy 中文界面文案；保留主题字段，并增加本站的基础入门栏目。
+# Chirpy 中文界面文案；自定义专题标题也用于浏览器标题栏。
 layout:
   post: 文章
   category: 分类
@@ -6,14 +6,29 @@ layout:
 
 tabs:
   home: 首页
+  topics: 专题导航
+  专题导航: 专题导航
   agents-basics: 基础入门
   基础入门: 基础入门
   customer-service: 智能客服
   智能客服: 智能客服
   categories: 分类
   tags: 标签
-  archives: 归档
+  archives: 文章归档
+  文章归档: 文章归档
   about: 关于
+  关于: 关于
+  "agent harness": Agent Harness
+  知识与检索: 知识与检索
+  "多 agent 协作": 多 Agent 协作
+  "agent 记忆工程": Agent 记忆工程
+  项目管理实战: 项目管理实战
+  企业销售助手: 企业销售助手
+  "agent 技术拆解": Agent 技术拆解
+  "pi 源码解读": Pi 源码解读
+  "langchain／langgraph 源码": LangChain／LangGraph 源码
+  "agentscope java 源码": AgentScope Java 源码
+  个人成长: 个人成长
 
 search:
   hint: 搜索
