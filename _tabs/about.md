@@ -11,4 +11,9 @@ permalink: /about/
 
 我在这里讲两类故事：**领导的一句灵魂拷问，究竟该怎么接**；以及**公司开发 Agent 时，卡住团队的麻烦事到底怎么解**。文章主要是我和领导对话，边谈边把问题解决。标题可以夸张，答案要实在。
 
-想选一条适合自己的阅读路线，可以先看[专题导航]({{ '/topics/' | relative_url }})。入门基础、系统工程、企业落地、源码解读和个人成长分别整理，挑当前需要解决的问题即可。也可以在 [GitHub](https://github.com/QHChen96) 找到我。
+想选一条适合自己的阅读路线，可以先看[专题导航]({{ '/topics/' | relative_url }})。入门基础、系统工程、企业落地、源码解读和个人成长分别整理，挑当前需要解决的问题即可。
+
+## 联系方式
+
+- 邮箱：[qhchen96@gmail.com](mailto:qhchen96@gmail.com)
+- GitHub：[QHChen96](https://github.com/QHChen96)
