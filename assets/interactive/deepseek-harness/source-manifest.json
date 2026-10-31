@@ -1,0 +1,149 @@
+{
+  "checked_at": "2026-10-31 Asia/Shanghai",
+  "repo": "deepseek-ai/deepseek-harness",
+  "commit": "ce7073d51254c26cd63b22a60835b8f948deb447",
+  "root_package_version": "0.2.2-alpha.2",
+  "diagram_engine": "@rokoai/arch-diagram@1.2.3",
+  "sources": [
+    {
+      "id": "architecture",
+      "title": "整体架构与扩展点",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/architecture.md"
+    },
+    {
+      "id": "agent",
+      "title": "Agent 接口与输入语义",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent/README.md"
+    },
+    {
+      "id": "loop",
+      "title": "默认 Agent loop",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent-loop/README.md"
+    },
+    {
+      "id": "loop-source",
+      "title": "ReactLoopAgent 实现",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent-loop/src/agent.ts"
+    },
+    {
+      "id": "session",
+      "title": "Session 事件与消息视图",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/session.md"
+    },
+    {
+      "id": "stream-source",
+      "title": "流式输出结算的实际源码",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent-loop/src/assistant-stream.ts"
+    },
+    {
+      "id": "persistence",
+      "title": "Session 存储与恢复",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/persistence.md"
+    },
+    {
+      "id": "checkpoint",
+      "title": "Session checkpoint 策略",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/session/session-checkpoint-policy/README.md"
+    },
+    {
+      "id": "compaction",
+      "title": "上下文压缩能力",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/compaction.md"
+    },
+    {
+      "id": "compaction-basic",
+      "title": "基础摘要压缩实现",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/compaction/compaction-basic/README.md"
+    },
+    {
+      "id": "tool-pipeline",
+      "title": "工具执行管线",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/tool-execution-pipeline.md"
+    },
+    {
+      "id": "tool-authoring",
+      "title": "工具注册、输入与输出契约",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/cookbook/adding-a-tool.md"
+    },
+    {
+      "id": "mcp",
+      "title": "MCP 接入",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/mcp.md"
+    },
+    {
+      "id": "cordis",
+      "title": "Cordis 基础原理",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/cordis-primer.md"
+    },
+    {
+      "id": "skills",
+      "title": "Skills 发现与加载",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/skills.md"
+    },
+    {
+      "id": "boot",
+      "title": "Profile、Bundle 与配置叠加",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/README.md"
+    },
+    {
+      "id": "preset",
+      "title": "Agent Preset 与作用域",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/preset/agent-preset-registry/README.md"
+    },
+    {
+      "id": "llm",
+      "title": "模型适配与统一流协议",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/llm/llm/README.md"
+    },
+    {
+      "id": "cookbook",
+      "title": "扩展插件实现形状",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/cookbook/extension-cookbook.md"
+    },
+    {
+      "id": "subagent",
+      "title": "子 Agent",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/subagent.md"
+    },
+    {
+      "id": "workflow",
+      "title": "Workflow 编排与限制",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/workflow/workflow/README.md"
+    },
+    {
+      "id": "team",
+      "title": "实验性 Agent Teams",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/agent-team.md"
+    },
+    {
+      "id": "conversation",
+      "title": "Web 会话与业务节点",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/subsystems/conversation.md"
+    },
+    {
+      "id": "retry",
+      "title": "模型请求重试策略",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/llm/llm-retry/README.md"
+    },
+    {
+      "id": "python",
+      "title": "Python SDK 运行架构",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/user/guide/python-sdk.md"
+    },
+    {
+      "id": "first-tool",
+      "title": "第一个工具的官方教程",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/docs/user/develop/basic/tool.md"
+    },
+    {
+      "id": "package",
+      "title": "源码版本元信息",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/package.json"
+    }
+  ],
+  "notes": [
+    "教学动画，不是真实运行日志",
+    "未运行 DSH 模型请求",
+    "图源保留，使用原始 arch-diagram 引擎构建"
+  ]
+}

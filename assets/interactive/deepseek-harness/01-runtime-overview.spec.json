@@ -1,0 +1,419 @@
+{
+  "title": "DeepSeek Harness · {cy:模型怎样接入一个可行动的运行时}",
+  "layers": [
+    {
+      "id": "entry",
+      "label": "交互入口",
+      "color": "blue"
+    },
+    {
+      "id": "runtime",
+      "label": "运行控制",
+      "color": "cyan"
+    },
+    {
+      "id": "cap",
+      "label": "能力接口",
+      "color": "green"
+    },
+    {
+      "id": "fact",
+      "label": "会话事实",
+      "color": "amber"
+    },
+    {
+      "id": "ext",
+      "label": "外部执行",
+      "color": "purple"
+    }
+  ],
+  "flows": [
+    {
+      "id": "call",
+      "label": "调用 / 返回",
+      "color": "blue"
+    },
+    {
+      "id": "fact",
+      "label": "持久事实 / 派生上下文",
+      "color": "amber"
+    },
+    {
+      "id": "live",
+      "label": "瞬态流",
+      "color": "purple",
+      "dash": true
+    },
+    {
+      "id": "execute",
+      "label": "执行能力",
+      "color": "green"
+    }
+  ],
+  "groups": [
+    {
+      "label": "核心运行服务 · 均为 Cordis 插件",
+      "x": 20,
+      "y": 360,
+      "w": 1040,
+      "h": 510,
+      "color": "cyan",
+      "labelRight": true
+    }
+  ],
+  "nodes": [
+    {
+      "id": "client",
+      "layer": "entry",
+      "x": 40,
+      "y": 180,
+      "w": 340,
+      "h": 126,
+      "title": "Web / Desktop / SDK / ACP",
+      "short": "交互入口",
+      "sub": "入口负责展示与交互",
+      "lines": [
+        "发送消息、取消、读取状态",
+        "Web 订阅会话与实时输出"
+      ]
+    },
+    {
+      "id": "agents",
+      "layer": "runtime",
+      "x": 720,
+      "y": 180,
+      "w": 320,
+      "h": 126,
+      "title": "Agent · 公共接口",
+      "short": "Agent 接口",
+      "sub": "ctx.agents",
+      "lines": [
+        "活跃 Agent 注册与生命周期",
+        "接口和默认循环驱动分离"
+      ]
+    },
+    {
+      "id": "prompt",
+      "layer": "cap",
+      "x": 40,
+      "y": 420,
+      "w": 280,
+      "h": 126,
+      "title": "Prompt · 提示组装",
+      "short": "提示组装",
+      "sub": "ctx.systemPrompt",
+      "lines": [
+        "提示词分区 + 本步工具 Schema",
+        "从注册项组装请求材料"
+      ]
+    },
+    {
+      "id": "loop",
+      "layer": "runtime",
+      "x": 400,
+      "y": 420,
+      "w": 280,
+      "h": 126,
+      "title": "Agent Loop · 默认驱动",
+      "short": "默认循环",
+      "sub": "ctx.agentLoop",
+      "lines": [
+        "领取输入 → 模型 → 工具 → 继续",
+        "Turn 由零个或多个 Step 组成"
+      ]
+    },
+    {
+      "id": "session",
+      "layer": "fact",
+      "x": 760,
+      "y": 420,
+      "w": 280,
+      "h": 126,
+      "title": "Session · 追加式事件日志",
+      "short": "会话日志",
+      "sub": "ctx.sessions",
+      "lines": [
+        "模型上下文从日志派生",
+        "记录消息、调用、结果与边界"
+      ]
+    },
+    {
+      "id": "llm",
+      "layer": "cap",
+      "x": 40,
+      "y": 700,
+      "w": 280,
+      "h": 126,
+      "title": "LLM · 模型适配层",
+      "short": "模型适配",
+      "sub": "ctx.llm",
+      "lines": [
+        "统一消息 / 流式协议",
+        "prepareCall 绑定本次模型"
+      ]
+    },
+    {
+      "id": "tools",
+      "layer": "cap",
+      "x": 400,
+      "y": 700,
+      "w": 280,
+      "h": 126,
+      "title": "Tools · 注册与执行",
+      "short": "工具管线",
+      "sub": "ctx.tools",
+      "lines": [
+        "参数 / 作用域 / 准入策略",
+        "执行工具并形成结果"
+      ]
+    },
+    {
+      "id": "persist",
+      "layer": "fact",
+      "x": 760,
+      "y": 700,
+      "w": 280,
+      "h": 126,
+      "title": "Persistence · 存储接口",
+      "short": "日志存储",
+      "sub": "SessionPersistence",
+      "lines": [
+        "日志持久化、打开、导出",
+        "实现可替换；默认有 JSONL"
+      ]
+    },
+    {
+      "id": "model",
+      "layer": "ext",
+      "x": 40,
+      "y": 970,
+      "w": 280,
+      "h": 126,
+      "title": "模型服务",
+      "short": "模型服务",
+      "sub": "适配器连接的推理后端",
+      "lines": [
+        "返回文本或结构化工具调用",
+        "模型本身不直接操作业务系统"
+      ]
+    },
+    {
+      "id": "world",
+      "layer": "ext",
+      "x": 400,
+      "y": 970,
+      "w": 280,
+      "h": 126,
+      "title": "文件 / 进程 / 外部服务",
+      "short": "执行环境",
+      "sub": "工具执行所连接的环境",
+      "lines": [
+        "本地或远程 Provider",
+        "Sandbox 对进程提供执行限制"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "x": 760,
+      "y": 980,
+      "w": 280,
+      "text": "{am:最终结算流}写入 Session\n{pu:实时 chunk}直接更新界面\n不是每个 token 都立即落盘。"
+    },
+    {
+      "x": 40,
+      "y": 1140,
+      "w": 1000,
+      "text": "Cordis 管理 Service、Event、Effect；插件卸载时回收其注册。上图是职责关系，不是进程或部署拓扑。",
+      "dim": true
+    }
+  ],
+  "edges": [
+    {
+      "to": "agents.l",
+      "label": "输入 / 控制",
+      "flow": "call",
+      "arrow": "both",
+      "log": {
+        "who": "调用",
+        "detail": "通过 Agent 公共接口驱动任务"
+      },
+      "from": "client.r"
+    },
+    {
+      "to": "loop.t@0.65",
+      "label": "交给默认驱动",
+      "flow": "call",
+      "via": [
+        [
+          832,
+          335
+        ],
+        [
+          582,
+          335
+        ]
+      ],
+      "log": {
+        "who": "调用",
+        "detail": "Agent 接口由默认 Agent Loop 实现"
+      },
+      "from": "agents.b@0.35"
+    },
+    {
+      "to": "loop.l",
+      "label": "组装",
+      "flow": "call",
+      "log": {
+        "who": "调用",
+        "detail": "组装提示词与本步可用工具定义"
+      },
+      "from": "prompt.r"
+    },
+    {
+      "to": "session.l",
+      "label": "记 / 读",
+      "flow": "fact",
+      "arrow": "both",
+      "log": {
+        "who": "事实",
+        "detail": "追加事实，并从会话日志派生下一次模型历史"
+      },
+      "from": "loop.r"
+    },
+    {
+      "to": "llm.t@0.8",
+      "label": "模型请求",
+      "flow": "call",
+      "via": [
+        [
+          462,
+          610
+        ],
+        [
+          264,
+          610
+        ]
+      ],
+      "log": {
+        "who": "调用",
+        "detail": "把不可变请求交给已绑定的模型适配器"
+      },
+      "from": "loop.b@0.22"
+    },
+    {
+      "to": "tools.t@0.72",
+      "label": "工具调用",
+      "flow": "call",
+      "log": {
+        "who": "调用",
+        "detail": "模型产出的工具调用进入受控执行管线"
+      },
+      "from": "loop.b@0.72"
+    },
+    {
+      "to": "persist.t",
+      "label": "持久化",
+      "flow": "fact",
+      "arrow": "both",
+      "log": {
+        "who": "事实",
+        "detail": "存储插件保存和恢复 Session 日志"
+      },
+      "from": "session.b"
+    },
+    {
+      "to": "model.t",
+      "label": "模型协议",
+      "flow": "call",
+      "arrow": "both",
+      "log": {
+        "who": "调用",
+        "detail": "适配器向模型服务请求，并接收流式响应"
+      },
+      "from": "llm.b"
+    },
+    {
+      "to": "world.t",
+      "label": "执行 / 返回",
+      "flow": "execute",
+      "arrow": "both",
+      "log": {
+        "who": "执行",
+        "detail": "工具通过能力提供方访问文件、进程或外部服务"
+      },
+      "from": "tools.b"
+    },
+    {
+      "to": "session.b@0.7",
+      "label": "工具结果",
+      "flow": "fact",
+      "via": [
+        [
+          720,
+          738
+        ],
+        [
+          720,
+          610
+        ],
+        [
+          956,
+          610
+        ]
+      ],
+      "labelPos": [
+        830,
+        610
+      ],
+      "log": {
+        "who": "事实",
+        "detail": "tool/result 成为模型后续可读的会话事实"
+      },
+      "from": "tools.r@0.3"
+    },
+    {
+      "to": "client.b@0.9",
+      "label": "实时输出",
+      "flow": "live",
+      "via": [
+        [
+          350,
+          448
+        ],
+        [
+          350,
+          335
+        ],
+        [
+          346,
+          335
+        ]
+      ],
+      "labelPos": [
+        350,
+        370
+      ],
+      "log": {
+        "who": "瞬态",
+        "detail": "agent/assistant-stream 的瞬态 chunk 推送至 Web 展示"
+      },
+      "from": "loop.l@0.22"
+    }
+  ],
+  "lang": "zh-CN",
+  "width": 1080,
+  "pageTitle": "DeepSeek Harness · {cy:模型怎样接入一个可行动的运行时}",
+  "subtitle": "官方源码 0.2.2-alpha.2 · ce7073d · @rokoai/arch-diagram 1.2.3 · 2026-10-31",
+  "log": {
+    "title": "教学动画 · 相对时间与连线交换为示意，非真实运行日志",
+    "live": {
+      "rows": 5
+    }
+  },
+  "footer": {
+    "cwd": "deepseek-harness",
+    "cmd": "dsh --profile web --dump-config",
+    "note": "来源：官方 docs/architecture.md 及其链接的子系统源码；布局按教学目的简化。"
+  }
+}

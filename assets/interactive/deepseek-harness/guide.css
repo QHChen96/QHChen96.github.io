@@ -1,0 +1,63 @@
+.dsh-guide { min-width: 0; line-height: 1.85; }
+.dsh-guide .dsh-original-link { border-left: 3px solid #508bdc; padding: .8rem 1rem; background: var(--prompt-info-bg, #edf4fa); }
+.dsh-guide .hero { padding: 1rem 0 1.5rem; border-bottom: 1px solid var(--main-border-color, #d9dfe5); }
+.dsh-guide .original-title { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.35; }
+.dsh-guide .eyebrow { font-size: .75rem; letter-spacing: .08em; font-weight: 600; color: var(--text-muted-color, #687786); }
+.dsh-guide .lead { font-size: 1.15rem; line-height: 1.8; }
+.dsh-guide .meta, .dsh-guide .footer { font-size: .85rem; color: var(--text-muted-color, #687786); }
+.dsh-guide .navlinks { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin: 1.2rem 0; font-size: .9rem; }
+.dsh-guide .diagram-area { margin: 1.5rem 0; padding: 1rem; border: 1px solid #293441; border-radius: .6rem; background: #0b0f14; color: #dce3eb; }
+.dsh-guide .diagram-area button { font: inherit; cursor: pointer; }
+.dsh-guide .diagram-area button:focus-visible { outline: 2px solid #5ad1e6; outline-offset: 3px; }
+.dsh-guide .tabs { display: flex; gap: .4rem; flex-wrap: wrap; }
+.dsh-guide .tabs button, .dsh-guide .controls button { background: transparent; border: 1px solid #53606f; color: #dce3eb; border-radius: .4rem; padding: .5rem .75rem; min-height: 42px; font-size: .85rem; }
+.dsh-guide .tabs button[aria-selected="true"] { background: #e1e8ef; color: #101820; border-color: #e1e8ef; font-weight: 650; }
+.dsh-guide .diagram-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 .6rem; }
+.dsh-guide .diagram-header p { margin: 0; color: #a8b8c8; font-size: .8rem; flex: 1; min-width: 200px; }
+.dsh-guide .controls { display: flex; gap: .5rem; }
+.dsh-guide .diagram-viewport { width: 100%; overflow-x: auto; border: 1px solid #293441; border-radius: .4rem; overscroll-behavior-x: contain; }
+.dsh-guide #diagram-frame { display: block; width: 100%; height: 820px; border: 0; background: #0b0f14; }
+.dsh-guide .diagram-reading { padding-top: 1rem; }
+.dsh-guide #diagram-summary { font-size: .95rem; margin: 0 0 .5rem; color: #f1f5fa; }
+.dsh-guide #diagram-points { font-size: .85rem; color: #a8b8c8; padding-left: 1.4rem; margin: .4rem 0; }
+.dsh-guide .dsh-interactive { display: none; }
+.dsh-guide.dsh-enhanced .dsh-interactive { display: block; }
+.dsh-guide.dsh-enhanced .dsh-static-diagrams { display: none; }
+.dsh-guide .dsh-static-diagrams figure { margin: 2rem 0; }
+.dsh-guide .dsh-static-diagrams figure > a { display: block; overflow-x: auto; }
+.dsh-guide .dsh-static-diagrams img { display: block; width: 1112px; min-width: 1112px; max-width: none !important; height: auto; }
+.dsh-guide .dsh-static-diagrams figcaption, .dsh-guide .dsh-static-diagrams ul { color: #c7d2dd; font-size: .85rem; }
+.dsh-guide .chapter { padding: 1.4rem 0; border-bottom: 1px solid var(--main-border-color, #d9dfe5); scroll-margin-top: 5rem; }
+.dsh-guide .chapter h2 { margin-top: .5rem; line-height: 1.5; }
+.dsh-guide .chapter h3 { margin-top: 1.6rem; line-height: 1.5; }
+.dsh-guide .chapter li { margin: .4rem 0; }
+.dsh-guide .principle { padding: 1rem 0; font-size: 1.1rem; font-weight: 650; border-block: 1px dashed var(--main-border-color, #d9dfe5); }
+.dsh-guide .table-wrap { max-width: 100%; overflow-x: auto; margin: 1.25rem 0; }
+.dsh-guide table { width: 100%; font-size: .9rem; line-height: 1.7; }
+.dsh-guide th, .dsh-guide td { min-width: 8rem; white-space: normal; vertical-align: top; padding: .7rem; }
+.dsh-guide pre { max-width: 100%; padding: 1rem; overflow: auto; white-space: pre-wrap; word-break: break-word; border: 1px solid var(--main-border-color, #d9dfe5); border-radius: .4rem; }
+.dsh-guide pre code { font-size: .85rem; line-height: 1.8; }
+.dsh-guide code { overflow-wrap: anywhere; }
+.dsh-guide .ref { font-size: .75rem; white-space: nowrap; }
+.dsh-guide .pipeline { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; padding: 1rem 0; margin: 1rem 0; border-block: 1px dashed var(--main-border-color, #d9dfe5); }
+.dsh-guide .scenario { border-left: 3px solid #508bdc; padding: .2rem 0 .2rem 1.1rem; margin: 1.4rem 0; }
+.dsh-guide .design-note { font-size: .85rem; }
+.dsh-guide .pseudo summary { cursor: pointer; }
+.dsh-guide .sources ol { font-size: .85rem; }
+.dsh-guide .sources code { display: block; font-size: .75rem; overflow-wrap: anywhere; word-break: break-all; }
+@media (max-width: 680px) {
+  .dsh-guide .diagram-area { padding: .65rem; }
+  .dsh-guide .tabs button { padding: .5rem; font-size: .78rem; }
+  .dsh-guide .diagram-header { gap: .5rem; }
+  .dsh-guide .diagram-header p { min-width: 100%; }
+  .dsh-guide .controls button { min-height: 42px; }
+  .dsh-guide .lead { font-size: 1rem; }
+  .dsh-guide table { font-size: .8rem; }
+}
+@media print {
+  .dsh-guide .dsh-interactive, .dsh-guide .navlinks { display: none !important; }
+  .dsh-guide .dsh-static-diagrams { display: block !important; }
+  .dsh-guide .dsh-static-diagrams img { width: 100%; min-width: 0; max-width: 100% !important; }
+  .dsh-guide .diagram-area { border: 0; background: transparent; color: #111; }
+  .dsh-guide .table-wrap { overflow: visible; }
+}

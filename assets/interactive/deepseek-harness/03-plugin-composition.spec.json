@@ -1,0 +1,423 @@
+{
+  "title": "DeepSeek Harness · {cy:插件如何装成一个 Agent 产品}",
+  "layers": [
+    {
+      "id": "config",
+      "label": "启动组合",
+      "color": "blue"
+    },
+    {
+      "id": "tree",
+      "label": "Cordis 运行树",
+      "color": "purple"
+    },
+    {
+      "id": "seam",
+      "label": "插件扩展接口",
+      "color": "green"
+    },
+    {
+      "id": "scope",
+      "label": "会话与能力边界",
+      "color": "amber"
+    }
+  ],
+  "flows": [
+    {
+      "id": "compose",
+      "label": "组合 / 覆盖配置",
+      "color": "blue"
+    },
+    {
+      "id": "register",
+      "label": "挂载 / 注册",
+      "color": "green"
+    },
+    {
+      "id": "scope",
+      "label": "作用域 / 生命周期",
+      "color": "amber",
+      "dash": true
+    }
+  ],
+  "groups": [
+    {
+      "label": "启动时组合 · Profile 依次应用 Bundle 与 Patch",
+      "x": 20,
+      "y": 150,
+      "w": 1040,
+      "h": 190,
+      "color": "blue"
+    },
+    {
+      "label": "Cordis 插件贡献三类能力",
+      "x": 20,
+      "y": 650,
+      "w": 1040,
+      "h": 190,
+      "color": "green"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "profile",
+      "layer": "config",
+      "x": 40,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "Profile · 产品入口组合",
+      "short": "Profile",
+      "sub": "web / headless / sdk / acp",
+      "lines": [
+        "列出有顺序的 Bundles",
+        "管理外部插件与自身 Patch"
+      ]
+    },
+    {
+      "id": "bundle",
+      "layer": "config",
+      "x": 390,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "Bundle · 分发与组装单元",
+      "short": "Bundle",
+      "sub": "dsh.bundle → patch 文件",
+      "lines": [
+        "声明插件配置行与所需代码",
+        "dsh-base 提供常用基础能力"
+      ]
+    },
+    {
+      "id": "patch",
+      "layer": "config",
+      "x": 740,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "Patch · 按层覆盖",
+      "short": "Patch",
+      "sub": "profile → home → --patch",
+      "lines": [
+        "按 id 覆盖整行 config 或插入行",
+        "preset 内的 plugins 也可覆盖"
+      ]
+    },
+    {
+      "id": "tree",
+      "layer": "tree",
+      "x": 390,
+      "y": 445,
+      "w": 300,
+      "h": 126,
+      "title": "Cordis Context · 插件树",
+      "short": "Cordis",
+      "sub": "ctx.plugin(...)",
+      "lines": [
+        "按依赖挂载 Service 和事件",
+        "Agent Loop 也只是其中一个插件"
+      ]
+    },
+    {
+      "id": "service",
+      "layer": "seam",
+      "x": 40,
+      "y": 690,
+      "w": 300,
+      "h": 126,
+      "title": "Service · 能力接口",
+      "short": "Service",
+      "sub": "ctx.tools / ctx.llm / ctx.fs",
+      "lines": [
+        "定义契约 → Provider 实现",
+        "Consumer 通过契约调用"
+      ]
+    },
+    {
+      "id": "event",
+      "layer": "seam",
+      "x": 390,
+      "y": 690,
+      "w": 300,
+      "h": 126,
+      "title": "Event · 执行扩展点",
+      "short": "Event",
+      "sub": "agent/* / tools/* / fs/*",
+      "lines": [
+        "观察、改写或拦截运行过程",
+        "需要持久的事实另记 Session"
+      ]
+    },
+    {
+      "id": "effect",
+      "layer": "seam",
+      "x": 740,
+      "y": 690,
+      "w": 300,
+      "h": 126,
+      "title": "Effect · 注册生命周期",
+      "short": "Effect",
+      "sub": "可撤销的注册与副作用",
+      "lines": [
+        "资源属于其创建插件",
+        "插件卸载时回收注册"
+      ]
+    },
+    {
+      "id": "preset",
+      "layer": "scope",
+      "x": 40,
+      "y": 980,
+      "w": 300,
+      "h": 126,
+      "title": "Agent Preset · 会话组合",
+      "short": "Agent Preset",
+      "sub": "agent.ctx + scoped 插件树",
+      "lines": [
+        "Agent 绑定一个 Preset revision",
+        "需要独立 Service 时声明 isolate"
+      ]
+    },
+    {
+      "id": "bridge",
+      "layer": "scope",
+      "x": 390,
+      "y": 980,
+      "w": 300,
+      "h": 126,
+      "title": "Skill / MCP · 两类接入",
+      "short": "Skill / MCP",
+      "sub": "指导文本 / 外部工具桥接",
+      "lines": [
+        "Skill 按需加载操作说明",
+        "MCP 工具桥接到 ctx.tools"
+      ]
+    },
+    {
+      "id": "sandbox",
+      "layer": "scope",
+      "x": 740,
+      "y": 980,
+      "w": 300,
+      "h": 126,
+      "title": "Sandbox · 执行限制",
+      "short": "Sandbox",
+      "sub": "ctx.sandbox + Provider",
+      "lines": [
+        "消费者包装进程启动参数",
+        "实际限制取决于所选后端"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "x": 40,
+      "y": 1160,
+      "w": 1000,
+      "text": "{am:Preset 的 isolate 是 Service 作用域，不能当作安全沙箱。}插件代码与 Skill 文本也不是同一种扩展。"
+    },
+    {
+      "x": 40,
+      "y": 1202,
+      "w": 1000,
+      "text": "本图展示组合与注册关系；动画不表示热加载频率，也不代表这些操作在同一任务里依次执行。",
+      "dim": true
+    }
+  ],
+  "edges": [
+    {
+      "to": "bundle.l",
+      "label": "列举",
+      "flow": "compose",
+      "from": "profile.r",
+      "log": {
+        "who": "组合",
+        "detail": "列举"
+      }
+    },
+    {
+      "to": "patch.l",
+      "label": "继续叠加",
+      "flow": "compose",
+      "from": "bundle.r",
+      "log": {
+        "who": "组合",
+        "detail": "继续叠加"
+      }
+    },
+    {
+      "to": "tree.t",
+      "label": "配置基础树",
+      "flow": "compose",
+      "from": "bundle.b",
+      "log": {
+        "who": "组合",
+        "detail": "配置基础树"
+      }
+    },
+    {
+      "to": "tree.r@0.25",
+      "label": "覆盖 / 插入",
+      "flow": "compose",
+      "via": [
+        [
+          890,
+          390
+        ],
+        [
+          725,
+          390
+        ],
+        [
+          725,
+          476
+        ]
+      ],
+      "labelPos": [
+        810,
+        390
+      ],
+      "from": "patch.b",
+      "log": {
+        "who": "组合",
+        "detail": "覆盖 / 插入"
+      }
+    },
+    {
+      "to": "service.t@0.85",
+      "label": "提供接口",
+      "flow": "register",
+      "via": [
+        [
+          444,
+          615
+        ],
+        [
+          295,
+          615
+        ]
+      ],
+      "labelPos": [
+        290,
+        615
+      ],
+      "from": "tree.b@0.18",
+      "log": {
+        "who": "注册",
+        "detail": "提供接口"
+      }
+    },
+    {
+      "to": "event.t",
+      "label": "挂载监听",
+      "flow": "register",
+      "from": "tree.b@0.5",
+      "log": {
+        "who": "注册",
+        "detail": "挂载监听"
+      }
+    },
+    {
+      "to": "effect.t",
+      "label": "跟踪资源",
+      "flow": "scope",
+      "via": [
+        [
+          636,
+          615
+        ],
+        [
+          890,
+          615
+        ]
+      ],
+      "labelPos": [
+        790,
+        615
+      ],
+      "from": "tree.b@0.82",
+      "log": {
+        "who": "作用域",
+        "detail": "跟踪资源"
+      }
+    },
+    {
+      "to": "preset.t",
+      "label": "按 Agent 限定",
+      "flow": "scope",
+      "from": "service.b",
+      "log": {
+        "who": "作用域",
+        "detail": "按 Agent 限定"
+      }
+    },
+    {
+      "to": "service.b@0.82",
+      "label": "MCP 注册工具",
+      "flow": "register",
+      "via": [
+        [
+          540,
+          900
+        ],
+        [
+          286,
+          900
+        ]
+      ],
+      "labelPos": [
+        420,
+        900
+      ],
+      "from": "bridge.t",
+      "log": {
+        "who": "注册",
+        "detail": "MCP 注册工具"
+      }
+    },
+    {
+      "to": "service.r@0.85",
+      "label": "提供执行限制",
+      "flow": "register",
+      "via": [
+        [
+          890,
+          870
+        ],
+        [
+          365,
+          870
+        ],
+        [
+          365,
+          797
+        ]
+      ],
+      "labelPos": [
+        735,
+        870
+      ],
+      "from": "sandbox.t",
+      "log": {
+        "who": "注册",
+        "detail": "提供执行限制"
+      }
+    }
+  ],
+  "lang": "zh-CN",
+  "width": 1080,
+  "pageTitle": "DeepSeek Harness · {cy:插件如何装成一个 Agent 产品}",
+  "subtitle": "官方源码 0.2.2-alpha.2 · ce7073d · @rokoai/arch-diagram 1.2.3 · 2026-10-31",
+  "log": {
+    "title": "教学动画 · 相对时间与连线交换为示意，非真实运行日志",
+    "live": {
+      "rows": 5
+    }
+  },
+  "footer": {
+    "cwd": "deepseek-harness",
+    "cmd": "dsh --profile web --dump-config",
+    "note": "来源：官方 docs/architecture.md 及其链接的子系统源码；布局按教学目的简化。"
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "title": "DeepSeek Harness · {cy:一条消息如何完成一轮任务}",
+  "layers": [
+    {
+      "id": "input",
+      "label": "输入与接纳",
+      "color": "blue"
+    },
+    {
+      "id": "run",
+      "label": "执行步骤",
+      "color": "cyan"
+    },
+    {
+      "id": "fact",
+      "label": "日志事实",
+      "color": "amber"
+    },
+    {
+      "id": "tool",
+      "label": "工具能力",
+      "color": "green"
+    }
+  ],
+  "flows": [
+    {
+      "id": "call",
+      "label": "主成功路径",
+      "color": "cyan"
+    },
+    {
+      "id": "fact",
+      "label": "结果写入",
+      "color": "amber"
+    },
+    {
+      "id": "loop",
+      "label": "下一步 / 分支",
+      "color": "green",
+      "dash": true
+    }
+  ],
+  "groups": [
+    {
+      "label": "Turn · 一轮任务内可重复多个 Step（模型请求 + 它调用的工具）",
+      "x": 20,
+      "y": 150,
+      "w": 1040,
+      "h": 780,
+      "color": "cyan"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "inbox",
+      "layer": "input",
+      "x": 40,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "01 输入进入 Inbox",
+      "short": "01 输入",
+      "sub": "turn/start",
+      "lines": [
+        "领取 next-step 输入",
+        "加一条排队消息"
+      ]
+    },
+    {
+      "id": "prestep",
+      "layer": "input",
+      "x": 390,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "02 组装并接纳",
+      "short": "02 组装",
+      "sub": "tools.resolve + assemble",
+      "lines": [
+        "agent/pre-step 可改写或拒绝",
+        "记录本步选择的模型快照"
+      ]
+    },
+    {
+      "id": "prepare",
+      "layer": "fact",
+      "x": 740,
+      "y": 190,
+      "w": 300,
+      "h": 126,
+      "title": "03 绑定模型，建立上下文",
+      "short": "03 上下文",
+      "sub": "step/start → prepareCall",
+      "lines": [
+        "先记入已接纳的输入与请求信息",
+        "deriveMessages() 派生并冻结"
+      ]
+    },
+    {
+      "id": "stream",
+      "layer": "run",
+      "x": 740,
+      "y": 450,
+      "w": 300,
+      "h": 126,
+      "title": "04 请求模型并接收流",
+      "short": "04 模型",
+      "sub": "ctx.llm / llm/stream",
+      "lines": [
+        "模型产出文本或工具调用",
+        "实时 chunk 可推送到界面"
+      ]
+    },
+    {
+      "id": "settle",
+      "layer": "fact",
+      "x": 390,
+      "y": 450,
+      "w": 300,
+      "h": 126,
+      "title": "05 结算模型输出",
+      "short": "05 结算",
+      "sub": "assistant/message",
+      "lines": [
+        "完整紧凑流随消息写入日志",
+        "失败尝试写 assistant/attempt"
+      ]
+    },
+    {
+      "id": "execute",
+      "layer": "tool",
+      "x": 40,
+      "y": 450,
+      "w": 300,
+      "h": 126,
+      "title": "06 受控执行工具",
+      "short": "06 工具",
+      "sub": "tools/pre-execute",
+      "lines": [
+        "准入 → execute → 工具函数",
+        "post-execute → 返回结果"
+      ]
+    },
+    {
+      "id": "result",
+      "layer": "fact",
+      "x": 40,
+      "y": 710,
+      "w": 300,
+      "h": 126,
+      "title": "07 结算本步",
+      "short": "07 本步结束",
+      "sub": "tool/result → step/end",
+      "lines": [
+        "有工具：结果写入 Session",
+        "无工具：也正常结束本步"
+      ]
+    },
+    {
+      "id": "continue",
+      "layer": "run",
+      "x": 390,
+      "y": 710,
+      "w": 300,
+      "h": 126,
+      "title": "08 是否还欠下一次请求？",
+      "short": "08 继续判断",
+      "sub": "检查结果与新输入",
+      "lines": [
+        "工具执行后通常需再请求模型",
+        "或已有 next-step 输入"
+      ]
+    },
+    {
+      "id": "end",
+      "layer": "run",
+      "x": 740,
+      "y": 710,
+      "w": 300,
+      "h": 126,
+      "title": "09 关闭这一轮",
+      "short": "09 Turn结束",
+      "sub": "agent/turn-stopping",
+      "lines": [
+        "待处理工作已清空",
+        "turn/end"
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "x": 40,
+      "y": 965,
+      "w": 1000,
+      "text": "pre-step 拒绝首条输入时，Turn 可以没有 Step。模型重试不重复组装和 pre-step；本图省略重试、取消的支路。",
+      "dim": true
+    },
+    {
+      "x": 40,
+      "y": 1008,
+      "w": 1000,
+      "text": "{am:关键区别：}Session 保存已结算事实；模型只能看到从这些事实派生出的上下文。实时 chunk 不等于持久日志。"
+    }
+  ],
+  "edges": [
+    {
+      "to": "prestep.l",
+      "label": "领取",
+      "flow": "call",
+      "from": "inbox.r",
+      "log": {
+        "who": "调用",
+        "detail": "领取"
+      }
+    },
+    {
+      "to": "prepare.l",
+      "label": "接纳",
+      "flow": "call",
+      "from": "prestep.r",
+      "log": {
+        "who": "调用",
+        "detail": "接纳"
+      }
+    },
+    {
+      "to": "stream.t",
+      "label": "不可变模型请求",
+      "flow": "call",
+      "from": "prepare.b",
+      "log": {
+        "who": "调用",
+        "detail": "不可变模型请求"
+      }
+    },
+    {
+      "to": "settle.r",
+      "label": "结算",
+      "flow": "fact",
+      "labelPos": [
+        713,
+        493
+      ],
+      "from": "stream.l",
+      "log": {
+        "who": "事实",
+        "detail": "结算"
+      }
+    },
+    {
+      "to": "execute.r",
+      "label": "有工具",
+      "flow": "call",
+      "from": "settle.l",
+      "log": {
+        "who": "调用",
+        "detail": "有工具"
+      }
+    },
+    {
+      "to": "result.t",
+      "label": "执行结果",
+      "flow": "fact",
+      "from": "execute.b",
+      "log": {
+        "who": "事实",
+        "detail": "执行结果"
+      }
+    },
+    {
+      "to": "continue.l",
+      "label": "本步完成",
+      "flow": "call",
+      "from": "result.r",
+      "log": {
+        "who": "调用",
+        "detail": "本步完成"
+      }
+    },
+    {
+      "to": "end.l",
+      "label": "否",
+      "flow": "call",
+      "from": "continue.r",
+      "log": {
+        "who": "调用",
+        "detail": "否"
+      }
+    },
+    {
+      "to": "prestep.b@0.8",
+      "label": "是：继续下一 Step",
+      "flow": "loop",
+      "via": [
+        [
+          630,
+          650
+        ],
+        [
+          1066,
+          650
+        ],
+        [
+          1066,
+          365
+        ],
+        [
+          630,
+          365
+        ]
+      ],
+      "labelPos": [
+        730,
+        365
+      ],
+      "log": {
+        "who": "分支",
+        "detail": "下一次请求会读到上一步工具结果"
+      },
+      "from": "continue.t@0.8"
+    },
+    {
+      "to": "result.t@0.85",
+      "label": "无工具",
+      "flow": "loop",
+      "via": [
+        [
+          495,
+          640
+        ],
+        [
+          295,
+          640
+        ]
+      ],
+      "labelPos": [
+        390,
+        640
+      ],
+      "log": {
+        "who": "分支",
+        "detail": "模型只给文本时，跳过工具执行，直接结束本步"
+      },
+      "from": "settle.b@0.35"
+    }
+  ],
+  "lang": "zh-CN",
+  "width": 1080,
+  "pageTitle": "DeepSeek Harness · {cy:一条消息如何完成一轮任务}",
+  "subtitle": "官方源码 0.2.2-alpha.2 · ce7073d · @rokoai/arch-diagram 1.2.3 · 2026-10-31",
+  "log": {
+    "title": "教学动画 · 相对时间与连线交换为示意，非真实运行日志",
+    "live": {
+      "rows": 5
+    }
+  },
+  "footer": {
+    "cwd": "deepseek-harness",
+    "cmd": "dsh --profile web --dump-config",
+    "note": "来源：官方 docs/architecture.md 及其链接的子系统源码；布局按教学目的简化。"
+  }
+}
