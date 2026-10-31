@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1460" viewBox="0 0 600 1460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">上下文、记忆与文件各管什么</title>
+<desc id="desc">适用项目指令与跨会话自动记忆按规则进入当前上下文，相关工作区片段通过搜索读取进入。压缩把旧历史变成摘要，可能损失细节；会话记录用于恢复有效历史。工作区另由有限的文件检查点和 Git 管理。恢复对话不恢复进程，检查点不回滚远端 API 或数据库，对话分支也不等于 Git 分支或 worktree。</desc>
+<metadata>Original code-generated SVG for the Claude Code tutorial. Public-mechanism teaching diagram; documentation snapshot 2.1.314, 2026-10-31. Generator: tools/generate-claude-code-diagrams.py.</metadata>
+<defs>
+<marker id="arrow-teal" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0c7668"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563a6"/></marker>
+<marker id="arrow-amber" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#a65a24"/></marker>
+<marker id="arrow-purple" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#6852a3"/></marker>
+<marker id="arrow-slate" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#647987"/></marker>
+</defs>
+<rect width="600" height="1460" rx="20" fill="#f6fafb"/>
+<rect x="24" y="23" width="6" height="55" rx="3" fill="#0c7668"/>
+<path d="M153 278 V325 H300" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M447 278 V325 H300" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M300 325 V385" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M153 635 V519" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M447 519 V635" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M568 699 H584 V452 H540" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-purple)"/>
+<path d="M300 519 V807 H447 V855" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-start="url(#arrow-amber)" marker-end="url(#arrow-amber)"/>
+<path d="M153 855 V763" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M153 983 V1050" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-start="url(#arrow-amber)"/>
+<path d="M153 1050 V1130" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-amber)"/>
+<path d="M153 1050 H447 V1130" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-amber)"/>
+<g id="instructions" data-box="32 140 242 138">
+<rect x="32" y="140" width="242" height="138" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="153.0" y="179.0" font-size="26" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">适用项目指令</text>
+<text x="153.0" y="214.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">CLAUDE.md</text>
+<text x="153.0" y="247.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">适用的 AGENTS.md</text>
+</g>
+<g id="memory" data-box="326 140 242 138">
+<rect x="326" y="140" width="242" height="138" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="447.0" y="179.0" font-size="26" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Auto memory</text>
+<text x="447.0" y="214.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">索引与主题文件</text>
+<text x="447.0" y="247.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">跨会话复用记录</text>
+</g>
+<g id="window" data-box="60 385 480 134">
+<rect x="60" y="385" width="480" height="134" rx="14" fill="#eaf6f2" stroke="#0c7668" stroke-width="2.4"/>
+<text x="300.0" y="422.0" font-size="27" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">当前上下文窗口</text>
+<text x="300.0" y="457.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">本次模型调用实际可见的内容</text>
+<text x="300.0" y="490.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">消息 · 结果 · 已加载的资料</text>
+</g>
+<g id="read" data-box="32 635 242 128">
+<rect x="32" y="635" width="242" height="128" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="153.0" y="669.0" font-size="25" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">按需搜索与读取</text>
+<text x="153.0" y="704.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">只取相关片段</text>
+<text x="153.0" y="737.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">仓库不会全量入窗</text>
+</g>
+<g id="compact" data-box="326 635 242 128">
+<rect x="326" y="635" width="242" height="128" rx="14" fill="#ffffff" stroke="#6852a3" stroke-width="2.4"/>
+<text x="447.0" y="669.0" font-size="26" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">压缩 /compact</text>
+<text x="447.0" y="704.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">旧历史变成摘要</text>
+<text x="447.0" y="737.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">摘要可能损失细节</text>
+</g>
+<g id="files" data-box="32 855 242 128">
+<rect x="32" y="855" width="242" height="128" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="153.0" y="889.0" font-size="27" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">工作区文件</text>
+<text x="153.0" y="924.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">源代码、测试、文档</text>
+<text x="153.0" y="957.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">真实读写的对象</text>
+</g>
+<g id="transcript" data-box="326 855 242 128">
+<rect x="326" y="855" width="242" height="128" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="447.0" y="889.0" font-size="27" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">会话记录</text>
+<text x="447.0" y="924.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">磁盘 JSONL</text>
+<text x="447.0" y="957.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">恢复有效历史</text>
+</g>
+<g id="checkpoint" data-box="32 1130 242 128">
+<rect x="32" y="1130" width="242" height="128" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="153.0" y="1164.0" font-size="27" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Checkpoints</text>
+<text x="153.0" y="1199.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">仅跟踪的文件回退</text>
+<text x="153.0" y="1232.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">恢复范围有限</text>
+</g>
+<g id="git" data-box="326 1130 242 128">
+<rect x="326" y="1130" width="242" height="128" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="447.0" y="1164.0" font-size="27" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Git</text>
+<text x="447.0" y="1199.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">提交与分支历史</text>
+<text x="447.0" y="1232.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">独立管理版本协作</text>
+</g>
+<text x="45" y="43" font-size="28" fill="#19364b" text-anchor="start" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">上下文、记忆与文件各管什么</text>
+<text x="45" y="78" font-size="22" fill="#536e7e" text-anchor="start" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">流转关系 · 保存与恢复分别有边界</text>
+<rect x="238.0" y="337.0" width="124.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="300" y="353" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">按规则加载</text>
+<rect x="99.0" y="561.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="150" y="577" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">按需片段</text>
+<rect x="396.0" y="561.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="447" y="577" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">生成摘要</text>
+<rect x="360.6" y="791.0" width="168.9" height="32" rx="5" fill="#f6fafb"/>
+<text x="445" y="807" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">保存 / resume</text>
+<rect x="124.0" y="793.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="153" y="809" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">读取</text>
+<rect x="102.0" y="1074.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="153" y="1090" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">有限回退</text>
+<rect x="377.5" y="1074.0" width="139.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="447" y="1090" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">提交 / 检出</text>
+<text x="300.0" y="1320" font-size="23" fill="#647987" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">恢复会话 ≠ 恢复进程</text>
+<text x="300.0" y="1366" font-size="23" fill="#647987" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">检查点不回滚远端 API 或数据库</text>
+<text x="300.0" y="1412" font-size="23" fill="#647987" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">对话分支 ≠ Git 分支 / worktree</text>
+</svg>

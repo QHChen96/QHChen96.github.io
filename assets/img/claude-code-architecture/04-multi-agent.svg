@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1970" viewBox="0 0 600 1970" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">分工时，复制了什么、共享什么</title>
+<desc id="desc">子代理部分：主会话用 Agent 工具委派任务，普通子代理有新上下文和委派提示；Fork 子代理复制启动时父上下文，后续过程独立，最终报告返回主会话。文件默认可能共用 checkout，可用 isolation: worktree 分离工作目录。Skill 的 context: fork 不复制父对话。Teams 部分：启用后 lead 发起独立 teammates，成员不继承 lead 对话，通过 mailbox 互通；Task 工具可用时可维护共享任务表，否则用消息协调。Teams 是实验性功能，仅交互使用且默认关闭，-p 和 Agent SDK 不启动 teammates。上下文隔离不等于权限或文件隔离。</desc>
+<metadata>Original code-generated SVG for the Claude Code tutorial. Public-mechanism teaching diagram; documentation snapshot 2.1.314, 2026-10-31. Generator: tools/generate-claude-code-diagrams.py.</metadata>
+<defs>
+<marker id="arrow-teal" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0c7668"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563a6"/></marker>
+<marker id="arrow-amber" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#a65a24"/></marker>
+<marker id="arrow-purple" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#6852a3"/></marker>
+<marker id="arrow-slate" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#647987"/></marker>
+</defs>
+<rect width="600" height="1970" rx="20" fill="#f6fafb"/>
+<rect x="24" y="23" width="6" height="55" rx="3" fill="#0c7668"/>
+<rect x="12" y="120" width="576" height="760" rx="18" fill="#edf4fb" fill-opacity=".48" stroke="#2563a6" stroke-opacity=".4" stroke-width="1.8"/>
+<rect x="12" y="930" width="576" height="940" rx="18" fill="#eaf6f2" fill-opacity=".48" stroke="#0c7668" stroke-opacity=".4" stroke-width="1.8"/>
+<path d="M235 294 V335 H159 V400" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M365 294 V335 H441 V400" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M44 473 H24 V242 H170" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-teal)"/>
+<path d="M556 473 H576 V242 H430" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-purple)"/>
+<path d="M159 546 V670" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-start="url(#arrow-amber)" marker-end="url(#arrow-amber)"/>
+<path d="M441 546 V670" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-start="url(#arrow-amber)" marker-end="url(#arrow-amber)"/>
+<path d="M300 1164 V1260" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
+<path d="M170 1112 H24 V1410 H104 V1460" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M430 1112 H576 V1410 H496 V1460" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M230 1364 V1400 H218 V1460" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
+<path d="M370 1364 V1400 H382 V1460" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-start="url(#arrow-teal)" marker-end="url(#arrow-teal)"/>
+<path d="M159 1606 V1660 H235 V1720" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+<path d="M441 1606 V1660 H365 V1720" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+<g id="main" data-box="170 190 260 104">
+<rect x="170" y="190" width="260" height="104" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="300.0" y="223.0" font-size="27" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">主会话</text>
+<text x="300.0" y="262.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">拆分任务、整合结果</text>
+</g>
+<g id="subagent" data-box="44 400 230 146">
+<rect x="44" y="400" width="230" height="146" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="159.0" y="443.0" font-size="26" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">普通子代理</text>
+<text x="159.0" y="478.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">新上下文 + 委派提示</text>
+<text x="159.0" y="511.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">不自动继承父对话</text>
+</g>
+<g id="fork" data-box="326 400 230 146">
+<rect x="326" y="400" width="230" height="146" rx="14" fill="#ffffff" stroke="#6852a3" stroke-width="2.4"/>
+<text x="441.0" y="443.0" font-size="26" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Fork 子代理</text>
+<text x="441.0" y="478.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">复制启动时父上下文</text>
+<text x="441.0" y="511.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">后续过程各自保留</text>
+</g>
+<g id="worktree" data-box="70 670 460 130">
+<rect x="70" y="670" width="460" height="130" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="300.0" y="705.0" font-size="27" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">文件仍需协调</text>
+<text x="300.0" y="740.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">默认可共用 checkout</text>
+<text x="300.0" y="773.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">isolation: worktree 可分开工作目录</text>
+</g>
+<g id="lead" data-box="170 1060 260 104">
+<rect x="170" y="1060" width="260" height="104" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="300.0" y="1093.0" font-size="27" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Team lead</text>
+<text x="300.0" y="1132.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">发起成员、综合产出</text>
+</g>
+<g id="mailbox" data-box="170 1260 260 104">
+<rect x="170" y="1260" width="260" height="104" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="300.0" y="1293.0" font-size="25" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Mailbox · 消息</text>
+<text x="300.0" y="1332.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">lead 与成员互通</text>
+</g>
+<g id="member-a" data-box="44 1460 230 146">
+<rect x="44" y="1460" width="230" height="146" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="159.0" y="1503.0" font-size="25" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Teammate A</text>
+<text x="159.0" y="1538.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">独立会话与上下文</text>
+<text x="159.0" y="1571.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">不继承 lead 对话</text>
+</g>
+<g id="member-b" data-box="326 1460 230 146">
+<rect x="326" y="1460" width="230" height="146" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="441.0" y="1503.0" font-size="25" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Teammate B</text>
+<text x="441.0" y="1538.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">独立会话与上下文</text>
+<text x="441.0" y="1571.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">不继承 lead 对话</text>
+</g>
+<g id="tasks" data-box="170 1720 260 122">
+<rect x="170" y="1720" width="260" height="122" rx="14" fill="#ffffff" stroke="#6852a3" stroke-width="2.4" stroke-dasharray="8 6"/>
+<text x="300.0" y="1751.0" font-size="27" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">共享任务表</text>
+<text x="300.0" y="1786.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">状态、依赖与领取</text>
+<text x="300.0" y="1819.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Task 工具可用时</text>
+</g>
+<text x="45" y="43" font-size="28" fill="#19364b" text-anchor="start" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">分工时，复制了什么、共享什么</text>
+<text x="45" y="78" font-size="22" fill="#536e7e" text-anchor="start" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">协作关系 · 上下文与文件隔离分别处理</text>
+<text x="30" y="150" font-size="25" fill="#2563a6" text-anchor="start" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">1  子代理：委派与回报</text>
+<rect x="108.0" y="349.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="159" y="365" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">任务摘要</text>
+<rect x="368.0" y="349.0" width="146.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="441" y="365" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">启动时上下文</text>
+<rect x="71.0" y="202.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="100" y="218" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">回报</text>
+<rect x="471.0" y="202.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="500" y="218" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">回报</text>
+<rect x="108.0" y="592.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="159" y="608" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">文件操作</text>
+<rect x="390.0" y="592.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="441" y="608" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">文件操作</text>
+<text x="300.0" y="841" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Skill 的 context: fork 不复制父对话</text>
+<text x="30" y="960" font-size="25" fill="#0c7668" text-anchor="start" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">2  Agent teams：多会话协作</text>
+<text x="300" y="997" font-size="22" fill="#536e7e" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">实验性 · 仅交互 · 需启用</text>
+<text x="300" y="1030" font-size="22" fill="#536e7e" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">-p / Agent SDK 不启动 teammates</text>
+<rect x="330.0" y="1196.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="359" y="1212" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">消息</text>
+<rect x="54.0" y="1366.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="83" y="1382" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">派工</text>
+<rect x="488.0" y="1366.0" width="58.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="517" y="1382" font-size="22" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">派工</text>
+<rect x="249.0" y="1408.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="300" y="1424" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">互通消息</text>
+<rect x="249.0" y="1644.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="300" y="1660" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">任务状态</text>
+<text x="300.0" y="1910" font-size="22" fill="#647987" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">没有 Task 工具时，以消息协调</text>
+<text x="300.0" y="1946" font-size="22" fill="#647987" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">独立上下文不等于权限或文件隔离</text>
+</svg>

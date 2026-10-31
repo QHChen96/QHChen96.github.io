@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1460" viewBox="0 0 600 1460" role="img" aria-labelledby="title desc" lang="zh-CN">
+<title id="title">一次任务怎样变成可验证的修改</title>
+<desc id="desc">用户目标进入当前上下文，Claude 模型选择回复或请求工具。宿主按配置、权限和适用 Hook 处理调用，获准工具操作真实文件、进程或外部服务；结果作为证据回到上下文，驱动下一轮。内建 Shell 沙箱是否启用由平台与配置决定。节点是公开机制的教学分层，不是内部源码模块。</desc>
+<metadata>Original code-generated SVG for the Claude Code tutorial. Public-mechanism teaching diagram; documentation snapshot 2.1.314, 2026-10-31. Generator: tools/generate-claude-code-diagrams.py.</metadata>
+<defs>
+<marker id="arrow-teal" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#0c7668"/></marker>
+<marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563a6"/></marker>
+<marker id="arrow-amber" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#a65a24"/></marker>
+<marker id="arrow-purple" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#6852a3"/></marker>
+<marker id="arrow-slate" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#647987"/></marker>
+</defs>
+<rect width="600" height="1460" rx="20" fill="#f6fafb"/>
+<rect x="24" y="23" width="6" height="55" rx="3" fill="#0c7668"/>
+<path d="M220 224 V290" fill="none" stroke="#2563a6" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<path d="M220 426 V510" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M370 570 H422" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M220 630 V748" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<path d="M422 818 H370" fill="none" stroke="#a65a24" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-amber)"/>
+<path d="M220 888 V1000" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M370 1070 H422" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M497 1140 V1190 H220 V1240" fill="none" stroke="#0c7668" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M70 1300 H26 V358 H70" fill="none" stroke="#6852a3" stroke-width="2.7" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="8 6" marker-end="url(#arrow-purple)"/>
+<g id="task" data-box="70 120 300 104">
+<rect x="70" y="120" width="300" height="104" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="220.0" y="153.0" font-size="27" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">用户目标</text>
+<text x="220.0" y="192.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">输入、预期与验收条件</text>
+</g>
+<g id="context" data-box="70 290 300 136">
+<rect x="70" y="290" width="300" height="136" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="220.0" y="328.0" font-size="27" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">当前上下文</text>
+<text x="220.0" y="363.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">按需载入指令与资料</text>
+<text x="220.0" y="396.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">组合历史和工具结果</text>
+</g>
+<g id="model" data-box="70 510 300 120">
+<rect x="70" y="510" width="300" height="120" rx="14" fill="#ffffff" stroke="#6852a3" stroke-width="2.4"/>
+<text x="220.0" y="551.0" font-size="27" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Claude 模型</text>
+<text x="220.0" y="590.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">选择下一步操作或回答</text>
+</g>
+<g id="reply" data-box="422 510 150 120">
+<rect x="422" y="510" width="150" height="120" rx="14" fill="#ffffff" stroke="#2563a6" stroke-width="2.4"/>
+<text x="497.0" y="540.0" font-size="27" fill="#2563a6" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">回复</text>
+<text x="497.0" y="575.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">变更与验证</text>
+<text x="497.0" y="608.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">或继续澄清</text>
+</g>
+<g id="dispatch" data-box="70 748 300 140">
+<rect x="70" y="748" width="300" height="140" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="220.0" y="788.0" font-size="27" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">宿主处理工具请求</text>
+<text x="220.0" y="823.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">校验规则与适用 Hook</text>
+<text x="220.0" y="856.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">允许、询问或拒绝</text>
+</g>
+<g id="policy" data-box="422 748 150 140">
+<rect x="422" y="748" width="150" height="140" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="497.0" y="788.0" font-size="25" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">执行约束</text>
+<text x="497.0" y="823.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">配置与权限</text>
+<text x="497.0" y="856.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">适用 Hook</text>
+</g>
+<g id="tools" data-box="70 1000 300 140">
+<rect x="70" y="1000" width="300" height="140" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="220.0" y="1040.0" font-size="27" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">工具执行</text>
+<text x="220.0" y="1075.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Read / Edit</text>
+<text x="220.0" y="1108.0" font-size="23" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">Bash / MCP</text>
+</g>
+<g id="environment" data-box="422 1000 150 140">
+<rect x="422" y="1000" width="150" height="140" rx="14" fill="#ffffff" stroke="#a65a24" stroke-width="2.4"/>
+<text x="497.0" y="1040.0" font-size="25" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">真实环境</text>
+<text x="497.0" y="1075.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">文件与进程</text>
+<text x="497.0" y="1108.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">外部服务</text>
+</g>
+<g id="evidence" data-box="70 1240 300 120">
+<rect x="70" y="1240" width="300" height="120" rx="14" fill="#ffffff" stroke="#0c7668" stroke-width="2.4"/>
+<text x="220.0" y="1281.0" font-size="27" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">结果成为新证据</text>
+<text x="220.0" y="1320.0" font-size="22" fill="#19364b" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">内容、差异、输出或错误</text>
+</g>
+<text x="45" y="43" font-size="28" fill="#19364b" text-anchor="start" dominant-baseline="middle" font-weight="700" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">一次任务怎样变成可验证的修改</text>
+<text x="45" y="78" font-size="22" fill="#536e7e" text-anchor="start" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">执行循环 · 运行器与模型分别配置</text>
+<rect x="235.0" y="452.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="286" y="468" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">模型输入</text>
+<rect x="235.0" y="673.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="286" y="689" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">工具请求</text>
+<rect x="236.0" y="928.0" width="124.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="298" y="944" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">允许后执行</text>
+<rect x="351.0" y="1174.0" width="102.0" height="32" rx="5" fill="#f6fafb"/>
+<text x="402" y="1190" font-size="22" fill="#0c7668" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">执行结果</text>
+<text x="300.0" y="1392" font-size="22" fill="#a65a24" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">内建 Shell 沙箱：按平台与配置启用</text>
+<text x="300.0" y="1432" font-size="22" fill="#6852a3" text-anchor="middle" dominant-baseline="middle" font-weight="500" font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">工具证据回到上下文，驱动下一次决策</text>
+</svg>
