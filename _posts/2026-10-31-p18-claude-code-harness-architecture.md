@@ -23,6 +23,8 @@ date: 2026-10-31 00:00:00 +0800
 
 本文以 **Claude Code 2.1.314、2026 年 10 月 31 日核验快照**为基准。四张静态图可直接随正文阅读；[交互图解页]({{ '/assets/interactive/claude-code-architecture/' | relative_url }})保留切换、缩放与暂停动画，[示例源码与图源下载]({{ '/assets/downloads/claude-code-learning-kit.zip' | relative_url }})包含完整实现、测试、参考结果和可编辑图源。正文完整给出修复代码、测试结果和交付边界。
 
+> 另存了[最初的十二节图解讲义原文]({{ '/posts/2026/10/31/p20-claude-code-original/' | relative_url }})，保留原始正文、表格、代码与交互阅读器。
+
 ## 一、先把“最新版”写成一个可核对的日期
 
 **领导：** 你不是说最新版吗？为什么还要写这么长的版本说明？

@@ -1,0 +1,213 @@
+---
+layout: post
+permalink: /posts/:year/:month/:day/:title/
+title: "Claude Code 2.1.314：完整图解讲义（原文）"
+description: "最初的十二节 Claude Code 图解讲义原文：从运行循环、上下文与记忆，到权限、扩展、多代理、SDK、安装和操作练习，保留原始代码、表格与官方引用。"
+author: 小陈
+categories: [AI, 技术拆解]
+tags: [Claude Code, Agent Harness, 原文, Skills, MCP, 多代理]
+series: tech-teardown
+series_order: 20
+topic_id: tech-teardown
+visuals: code
+toc: false
+date: 2026-10-31 12:48:00 +0800
+---
+
+<style>
+.cc-original-intro{margin-bottom:1.5rem}
+.cc-original-nav,.cc-original-figures{border:1px solid var(--main-border-color,#dee2e6);border-radius:.5rem;padding:.8rem 1rem;margin:1rem 0}
+.cc-original-nav summary,.cc-original-figures summary{cursor:pointer;font-weight:600}
+.cc-original-nav ol{margin:.8rem 0 0;padding-left:1.5rem}
+.cc-original-figures figure{margin:1.5rem 0 2rem}
+.cc-original-figures img{display:block;max-width:100%;height:auto;margin:auto}
+.cc-original-figures figcaption{font-size:.85rem;color:var(--text-muted-color,#6c757d);margin-top:.6rem}
+#claude-code-original-text{min-width:0;overflow-wrap:anywhere}
+#claude-code-original-text .chapter{scroll-margin-top:5rem;padding:1.5rem 0 1rem;border-top:1px solid var(--main-border-color,#dee2e6)}
+#claude-code-original-text .chapter-number{font-size:.75rem;letter-spacing:.08em;color:var(--text-muted-color,#6c757d)}
+#claude-code-original-text .chapter h2{margin-top:.65rem}
+#claude-code-original-text .big{font-size:1.1rem}
+#claude-code-original-text .table-wrap{overflow-x:auto;max-width:100%;margin:1.25rem 0}
+#claude-code-original-text table{display:table;min-width:560px;width:100%;margin:0}
+#claude-code-original-text pre{white-space:pre;overflow:auto;max-width:100%;padding:1rem;border-radius:.5rem;background:var(--highlight-bg-color,#f4f5f7)}
+#claude-code-original-text pre code{white-space:pre;font-size:.85rem;line-height:1.7}
+#claude-code-original-text .source{font-size:.85rem;color:var(--text-muted-color,#6c757d)}
+#claude-code-original-text .validation{border-left:3px solid var(--main-border-color,#a5adb9);padding-left:1rem}
+#claude-code-original-text details{padding:.8rem 0;border-top:1px solid var(--main-border-color,#dee2e6)}
+#claude-code-original-text summary{cursor:pointer;font-weight:600}
+</style>
+
+<div class="cc-original-intro">
+  <p><strong>原文存档：</strong>以下完整保留最初讲义的十二节正文、代码、表格与参考链接。文中的“最新版”对应 <strong>2026-10-31 核验的 Claude Code 2.1.314</strong>。</p>
+  <p><a href="{{ '/assets/interactive/claude-code-original/' | relative_url }}">打开原始四图交互阅读器</a> · <a href="{{ '/posts/2026/10/31/p18-claude-code-harness-architecture/' | relative_url }}">阅读“小陈与领导”对话版</a> · <a href="{{ '/assets/downloads/claude-code-learning-kit.zip' | relative_url }}">下载案例源码与图源（含完整解答）</a></p>
+</div>
+<nav class="cc-original-nav" aria-label="原文目录"><details open><summary>十二节原文目录</summary><ol><li><a href="#versions">先把“最新版”说准确</a></li><li><a href="#first-principles">Claude Code 是一个组装好的编程 Agent</a></li><li><a href="#loop">跟着一个失败测试走完整条循环</a></li><li><a href="#context">知道项目，不等于把整个仓库塞进模型</a></li><li><a href="#permissions">权限与沙箱各控制一层</a></li><li><a href="#extensions">Skills、MCP、Hooks、Plugins 插在不同位置</a></li><li><a href="#collaboration">多代理要同时画清“对话”和“文件”两条边界</a></li><li><a href="#sdk">做自己的企业 Agent，在哪一层接入？</a></li><li><a href="#practice">从一个清楚的任务开始，逐步增加配置</a></li><li><a href="#setup">安装、核对与常用入口</a></li><li><a href="#lab">一个可以跟着做的失败测试练习</a></li><li><a href="#self-check">用八个问题检查是否理解了边界</a></li></ol></details></nav>
+<details class="cc-original-figures"><summary>四张静态架构图（展开查看）</summary>
+<figure><a href="{{ '/assets/img/claude-code-architecture/01-agent-loop.svg' | relative_url }}"><img src="{{ '/assets/img/claude-code-architecture/01-agent-loop.svg' | relative_url }}" width="600" height="1460" loading="lazy" alt="任务和指令进入当前上下文，模型提出工具请求，宿主按适用控制执行，真实结果返回上下文形成反馈。"></a><figcaption>执行循环：模型判断、宿主处理工具、结果回到上下文。 静态 SVG 为公开机制示意；原始动态图见交互阅读器。</figcaption></figure>
+<figure><a href="{{ '/assets/img/claude-code-architecture/02-context-state.svg' | relative_url }}"><img src="{{ '/assets/img/claude-code-architecture/02-context-state.svg' | relative_url }}" width="600" height="1460" loading="lazy" alt="项目规则和选择性记忆进入窗口，文件按需读取，会话记录支持恢复，检查点与 Git 分别管理文件状态。"></a><figcaption>上下文与状态：窗口、记忆、会话、检查点与 Git 分别管理什么。 静态 SVG 为公开机制示意；原始动态图见交互阅读器。</figcaption></figure>
+<figure><a href="{{ '/assets/img/claude-code-architecture/03-extension-layers.svg' | relative_url }}"><img src="{{ '/assets/img/claude-code-architecture/03-extension-layers.svg' | relative_url }}" width="600" height="1360" loading="lazy" alt="Skills 提供方法，MCP 连接工具，Hooks 处理生命周期事件，Plugins 组织分发，各自接入上下文或执行循环。"></a><figcaption>扩展能力：Skills、MCP、Hooks 与 Plugins 的连接位置。 静态 SVG 为公开机制示意；原始动态图见交互阅读器。</figcaption></figure>
+<figure><a href="{{ '/assets/img/claude-code-architecture/04-multi-agent.svg' | relative_url }}"><img src="{{ '/assets/img/claude-code-architecture/04-multi-agent.svg' | relative_url }}" width="600" height="1970" loading="lazy" alt="普通子代理与 Fork 子代理使用不同上下文起点，Teams 为实验性且仅交互，worktree 单独处理文件目录隔离。"></a><figcaption>多代理协作：上下文起点、实验 Teams 与文件隔离分别处理。 静态 SVG 为公开机制示意；原始动态图见交互阅读器。</figcaption></figure>
+</details>
+
+<div id="claude-code-original-text">
+<!-- BEGIN ORIGINAL ARTICLE --><section class="chapter" id="versions"><div class="chapter-number">01 / VERSION</div><h2>先把“最新版”说准确</h2>
+<p class="big">本教程固定以 Claude Code <strong>2.1.314</strong> 为运行器基准，资料核验于 <strong>2026-10-31（北京时间）</strong>。</p>
+<p>GitHub latest release 与 npm latest 都指向 2.1.314。GitHub 发布记录为 2026-10-30 01:06:26 UTC，即北京时间 10 月 30 日 09:06:26，且不是 draft 或 prerelease。官方文档会持续更新；文中的实验性功能、宿主限制和最低版本另行注明。</p>
+<div class="table-wrap"><table><thead><tr><th>需要分开的版本</th><th>决定什么</th><th>怎样核对</th></tr></thead><tbody><tr><td>Claude Code 版本</td><td>运行器、工具、交互和扩展能力</td><td><code>claude --version</code></td></tr><tr><td>Claude 模型版本</td><td>推理能力、上下文、价格、供应商可用性</td><td><code>/model</code> 与模型配置</td></tr><tr><td>Agent SDK / 插件版本</td><td>程序接口与扩展组件</td><td>各自包版本；不能套用 CLI 版本号</td></tr></tbody></table></div>
+<p><code>latest</code> 与 <code>stable</code> 是两条发布通道。官方说明 stable 通常滞后一周左右，并跳过出现明显回归的版本；本教程的“最新”指 latest。原生安装的默认通道为 latest，Homebrew 的 <code>claude-code</code> cask 跟随 stable，<code>claude-code@latest</code> 跟随 latest。</p>
+<h3>2.1.314 这个补丁里，与学习最相关的变化</h3>
+<div class="table-wrap"><table><thead><tr><th>本次发布变化</th><th>实际含义</th><th>边界</th></tr></thead><tbody><tr><td>工作目录外写入限制</td><td>新增 <code>permissions.blockWritesOutsideWorkingDirectories</code></td><td>覆盖 Write、Edit、NotebookEdit；不能扩展解释为所有 Shell 或 MCP 操作都被它隔离</td></tr><tr><td>空闲压缩扩展到更多界面</td><td>VS Code / Desktop Code tab 的 200K+ token 闲置会话可预先摘要</td><td>下一条消息到来且提示缓存过期时使用；不能当成所有压缩的统一阈值</td></tr><tr><td>非交互启动错误修复</td><td><code>claude -p</code> 启动失败会输出错误并退出 1</td><td>方便宿主程序正确识别失败</td></tr><tr><td>长任务与工具反馈修复</td><td>降低部分长 headless / SDK 子代理任务的内存占用，修正未执行工具的误导显示</td><td>交互显示、进程内存与模型上下文是不同层面</td></tr></tbody></table></div>
+<p class="source">来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.314">官方 release</a> · <a href="https://registry.npmjs.org/@anthropic-ai/claude-code/latest">npm latest</a> · <a href="https://code.claude.com/docs/en/setup">安装与发布通道</a> · <a href="https://code.claude.com/docs/en/model-config">模型配置</a></p></section>
+
+<section class="chapter" id="first-principles"><div class="chapter-number">02 / FIRST PRINCIPLES</div><h2>Claude Code 是一个组装好的编程 Agent</h2>
+<p class="big">模型判断下一步，工具操作真实环境，Claude Code 把上下文、执行、反馈和开发者交互连接起来。</p>
+<p>如果你只调用一次模型 API，得到的是一次回答或工具调用请求。要让它解决一个仓库里的 bug，还要有程序负责：读取文件、运行测试、修改代码、收集错误、再次调用模型，并在过程中处理权限、历史和用户补充。围绕模型组织这些设施的部分，称为 <strong>Agent Harness</strong>。</p>
+<p>Claude Code 已经把一套面向开发工作的 Harness 组装成产品。你提供任务和项目环境，通过终端、IDE、桌面或云端入口使用它。AgentScope 则让你通过代码组合 Agent、模型、工具、状态和协作流程。两者都依靠“模型—工具—反馈”循环，但交付层级与配置方式不同。</p>
+<div class="table-wrap"><table><thead><tr><th>对象</th><th>主要职责</th><th>订单修复示例</th></tr></thead><tbody><tr><td>Claude 模型</td><td>理解目标、判断下一步、生成工具参数</td><td>认为需要先查看金额函数和失败测试</td></tr><tr><td>Claude Code Harness</td><td>管理上下文、工具执行、会话和交互</td><td>把实际测试结果送回模型</td></tr><tr><td>工具</td><td>执行一个具体动作</td><td>读 pricing.py、编辑文件、运行 unittest</td></tr><tr><td>实际工作环境</td><td>保存文件并运行进程或服务</td><td>你的 checkout、Python 解释器、业务接口</td></tr><tr><td>验收规则</td><td>说明什么结果才算完成</td><td>折扣不影响运费，现有测试通过</td></tr></tbody></table></div>
+<p>官方把循环描述为收集上下文、执行动作、验证结果。这些阶段可以交错和重复。图中的“整理上下文”“处理工具调用”等是公开行为的教学分层，不声称它们对应未公开的内部类、微服务或线程。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/how-claude-code-works">How Claude Code works</a> · <a href="https://code.claude.com/docs/en/overview">产品入口</a> · <a href="https://docs.agentscope.io/en/versions/2.0.11/building-blocks/agent/configure-agent">AgentScope 2.0.11 对照</a></p></section>
+
+<section class="chapter" id="loop"><div class="chapter-number">03 / EXECUTION</div><h2>跟着一个失败测试走完整条循环</h2>
+<p>学习包中的练习采用整数分计价。规则是：<strong>先给商品打折，再原额加入运费。</strong>起始实现故意把运费也算进了折扣。两件单价 100 元的商品，打九折、运费 5 元，应付 185 元；错误实现得到 184.50 元。</p>
+<div class="table-wrap"><table><thead><tr><th>阶段</th><th>模型可能选择什么</th><th>真正的证据在哪里</th></tr></thead><tbody><tr><td>了解任务</td><td>读取 CLAUDE.md、实现和测试</td><td>文件工具返回的实际内容</td></tr><tr><td>复现错误</td><td>调用 Shell 运行测试</td><td>退出码、失败用例、期望值与实际值</td></tr><tr><td>形成修改</td><td>决定将运费移出折扣计算</td><td>实际写入的代码与 diff</td></tr><tr><td>检验结果</td><td>重新运行同一组测试</td><td>新的测试输出</td></tr><tr><td>结束回复</td><td>报告改动和验证范围</td><td>结论应与上述文件和运行结果对应</td></tr></tbody></table></div>
+<p>这里每个“选择”通常需要模型推理，每个“执行”需要实际工具完成。一次用户请求可能包含多轮模型调用。只读分析任务可能只需要搜集证据；复杂修复则可能多次编辑和测试。</p>
+<p>验证是否发生、验证范围是否正确，仍取决于任务、策略和工具结果。运行器结束一次回复，不自动等于业务目标达成。你可以通过具体的输入、预期结果和检查命令，把“完成”变成可观察的条件。</p>
+<p>文件查询不必固定记成某套旧工具名。当前 Read、Edit、Write、Bash 等仍是重要入口；macOS / Linux / WSL 默认不再暴露 Glob、Grep 两个独立工具，文件搜索可通过 Shell 完成。子代理委派工具现名 <code>Agent</code>；早期教程里的委派 <code>Task</code> 已更名。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/how-claude-code-works">执行循环</a> · <a href="https://code.claude.com/docs/en/tools-reference">工具参考</a>。金额案例为本教程设计，运行验证见第 11 节。</p></section>
+
+<section class="chapter" id="context"><div class="chapter-number">04 / CONTEXT &amp; MEMORY</div><h2>知道项目，不等于把整个仓库塞进模型</h2>
+<p>模型在某一次请求中，只能依据当次提供的上下文推理。Claude Code 通过搜索、读取、工具反馈和按需加载，逐步取得相关材料。一个仓库可以很大，但当前模型窗口仍然有限。</p>
+<div class="table-wrap"><table><thead><tr><th>机制</th><th>保存 / 提供什么</th><th>应放什么</th></tr></thead><tbody><tr><td>当前上下文</td><td>系统指令、对话、相关文件、工具结果</td><td>这次任务正在用的工作材料</td></tr><tr><td>CLAUDE.md / rules</td><td>按目录与范围加载的工程约定</td><td>构建命令、模块边界、业务术语、稳定约束</td></tr><tr><td>Auto memory</td><td>跨会话选择性保存的记忆文件</td><td>用户纠正、偏好、持续项目事实的引用</td></tr><tr><td>Session transcript</td><td>保存到磁盘的对话与工具记录</td><td>继续、查阅或分叉某段会话</td></tr><tr><td>File checkpoint</td><td>特定时间点的已跟踪文件快照</td><td>交互中恢复部分代码状态</td></tr><tr><td>Git</td><td>提交、分支和长期版本历史</td><td>正式版本管理与协作合并</td></tr></tbody></table></div>
+<h3>CLAUDE.md 与 settings.json 的区别</h3>
+<p><code>CLAUDE.md</code> 被送进模型上下文，表达“应该怎样工作”。<code>settings.json</code> 由运行器读取，配置模型、权限、Hook 和扩展等行为。发现的多层 CLAUDE.md 是按规则组合进上下文；不要把它理解为配置键那种逐层覆盖。</p>
+<p>当前版本已经原生支持 <code>AGENTS.md</code>。默认情况下，只有工作目录及祖先没有 <code>CLAUDE.md</code>、<code>.claude/CLAUDE.md</code> 或 <code>CLAUDE.local.md</code> 时，才使用 AGENTS.md；也可以调整 Project instructions。个人 <code>~/.claude/CLAUDE.md</code>、受管项目指令和 <code>.claude/rules/</code> 不参与这项排除判定。支持起始于 2.1.277，禁用相关内置组件或旧版本会影响结果。</p>
+<h3>Auto memory 是文件式记忆</h3>
+<p>本地会话的默认记忆路径在 <code>~/.claude/projects/&lt;project&gt;/memory/</code>。启动加载 MEMORY.md 前 200 行或前 25KB，先到者为限；主题详情按需读取。同一 Git 仓库的 worktree 可以共享这份项目记忆，但不同会话不会因此共享完整聊天历史。</p>
+<h3>压缩、恢复、回退，分别改变什么？</h3>
+<div class="table-wrap"><table><thead><tr><th>操作</th><th>改变什么</th><th>应保留的判断</th></tr></thead><tbody><tr><td><code>/context</code></td><td>查看当前输入占用</td><td>用实际占用判断是否有无关日志或材料</td></tr><tr><td><code>/compact</code></td><td>用摘要缩小当前工作上下文</td><td>摘要可能损失细节，关键事实可回源核验</td></tr><tr><td><code>--continue / --resume</code></td><td>恢复保存的会话</td><td>恢复窗口与存储历史不是逐字等价；已结束的工具进程不会因此复活</td></tr><tr><td><code>/branch</code></td><td>分叉对话到新会话</td><td>仍要单独决定文件目录是否隔离</td></tr><tr><td><code>/rewind</code></td><td>按选择恢复对话或已跟踪文件</td><td>不负责撤销远程 API、数据库或部署</td></tr></tbody></table></div>
+<p>Checkpoint 主要跟踪内建文件编辑工具触及的文件。仅由 Bash 改动且从未被跟踪的文件，不能假定会随 rewind 恢复；已被跟踪文件的后续 Bash 改动可能一并回退。多代理改动的覆盖也有条件，长期版本管理仍交给 Git。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/memory">项目指令与记忆</a> · <a href="https://code.claude.com/docs/en/context-window">上下文与压缩</a> · <a href="https://code.claude.com/docs/en/sessions">会话</a> · <a href="https://code.claude.com/docs/en/checkpointing">检查点范围</a></p></section>
+
+<section class="chapter" id="permissions"><div class="chapter-number">05 / EXECUTION CONTROL</div><h2>权限与沙箱各控制一层</h2>
+<p>执行一个动作前，运行器需要决定“是否允许”。动作开始后，操作系统环境还可以限制进程能够访问的文件与网络。这是权限控制与沙箱的职责差别。</p>
+<div class="table-wrap"><table><thead><tr><th>层面</th><th>决定什么</th><th>例子</th></tr></thead><tbody><tr><td>项目指令</td><td>希望模型采取什么行为</td><td>只修金额计算，不扩大功能范围</td></tr><tr><td>权限规则 / 模式</td><td>工具调用能否执行，是否需要确认</td><td>允许既有测试命令，限制某些操作</td></tr><tr><td>适用 Hook</td><td>在生命周期事件处运行程序或检查</td><td>编辑后校验格式；执行前验证条件</td></tr><tr><td>内建 Shell sandbox</td><td>Shell 及其子进程运行时能访问什么</td><td>文件与网络边界</td></tr><tr><td>业务服务授权</td><td>外部接口允许当前身份操作哪些业务数据</td><td>tenant_id、角色、订单归属</td></tr></tbody></table></div>
+<h3>最新版的默认模式，要看入口</h3>
+<p>2.1.283 起，交互终端和 VS Code 的内建起始模式为 <strong>Auto</strong>，但设置、组织政策、模型与提供商条件会影响结果。2.1.302 起，<code>claude -p</code> 与 Agent SDK 没有显式模式时，内建起始模式仍为 <strong>Manual / default</strong>。无人交互时需要批准的动作，必须通过适用的授权规则或回调等机制处理。</p>
+<div class="table-wrap"><table><thead><tr><th>模式</th><th>直观理解</th></tr></thead><tbody><tr><td><code>default / manual</code></td><td>按常规规则对需要批准的动作询问；只读行为也要看路径与已有配置</td></tr><tr><td><code>acceptEdits</code></td><td>接受文件编辑和适用的常见文件操作，其他动作继续走权限规则</td></tr><tr><td><code>plan</code></td><td>以调查和方案为主，代码编辑受限制；Shell 行为有额外条件</td></tr><tr><td><code>auto</code></td><td>由独立分类器审查适用动作，减少普通批准提示</td></tr><tr><td><code>dontAsk</code></td><td>需要询问却未获准的动作直接拒绝</td></tr><tr><td><code>bypassPermissions</code></td><td>跳过大量许可提示；不会自动建立 OS 隔离</td></tr></tbody></table></div>
+<p>内建沙箱默认关闭，支持 macOS、Linux 和 WSL 2；原生 Windows 当前不支持这层隔离。它主要覆盖 Shell 命令及子进程，不能把 Read / Edit、Hook、MCP server 全部画进同一个内建沙箱。工具仍由各自权限与部署机制约束。</p>
+<p>选择开发流程时，可以按任务风险和已有授权配置模式。小范围、有明确验收的修复可以直接调查并执行；大范围且方案未确定的改动再使用 Plan。无需把每一次文件读取都变成一轮人为审批。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/permission-modes">模式与入口默认值</a> · <a href="https://code.claude.com/docs/en/permissions">权限规则</a> · <a href="https://code.claude.com/docs/en/sandboxing">沙箱范围</a>。流程选择为本教程建议。</p></section>
+
+<section class="chapter" id="extensions"><div class="chapter-number">06 / EXTENSIONS</div><h2>Skills、MCP、Hooks、Plugins 插在不同位置</h2>
+<div class="table-wrap"><table><thead><tr><th>机制</th><th>增加的东西</th><th>OMS 场景</th></tr></thead><tbody><tr><td>CLAUDE.md</td><td>常驻项目约定</td><td>说明分仓模块位置、构建命令和库存术语</td></tr><tr><td>Skill</td><td>可复用的方法与资源入口</td><td>规定排查订单未分仓时先看哪些证据</td></tr><tr><td>MCP</td><td>外部工具与数据连接</td><td>调用已授权的订单或库存查询服务</td></tr><tr><td>Hook</td><td>按事件触发的处理逻辑</td><td>文件编辑后执行现有格式检查</td></tr><tr><td>Subagent</td><td>独立的任务执行与上下文</td><td>委派库存预占逻辑审阅</td></tr><tr><td>Plugin</td><td>可一起安装、更新和分发的组件包</td><td>打包团队的排查技能、工具连接和检查逻辑</td></tr></tbody></table></div>
+<h3>Skills：方法按需加载</h3>
+<p>通常先让模型看到技能名称与描述，真正使用时才把 SKILL.md 正文送入上下文；参考文件和脚本继续按需读取或执行。自定义 commands 已并入 Skills，旧 <code>.claude/commands/</code> 仍兼容。你指定的 arch-diagram 就属于这种“方法、配置规范、脚本和渲染资源”的组合。</p>
+<p>Skill 的 <code>allowed-tools</code> 表示本次调用这一轮的免提示授权，不是完整工具白名单；下条用户消息到来时会清除。该授权仍受适用权限与组织受管策略约束，例如启用 <code>allowManagedPermissionRulesOnly</code> 时，项目与个人技能的这类授权不生效。<code>disallowed-tools</code> 用于在生效期间移除工具。技能正文留在上下文多久，与权限持续多久，是两个问题。</p>
+<p><code>context: fork</code> 技能会在子代理里以技能正文执行任务，但<strong>不继承主会话历史</strong>；它与“复制当前对话的 forked subagent”不是同一入口。当前常见交互中默认后台执行，<code>background: false</code> 可要求等待，非交互场景另有规则。</p>
+<h3>MCP：连接可调用能力</h3>
+<p>Claude Code 作为 MCP client，连接本地 stdio 或远端服务，发现工具、资源等能力，将调用请求送到相应服务，再把结果交给模型。方法可以由 Skill 描述，具体查询由 MCP 工具完成，租户与数据授权仍由服务端落实。</p>
+<p>当前 MCP tool search 默认开启，工具定义按需加载；“超过上下文 10% 才打开”是可选 auto 阈值模式，不能再当统一默认值。模型、提供商与组织配置可能影响可用性。</p>
+<h3>Hooks：事件触发与处理器分开理解</h3>
+<p><code>PreToolUse</code>、<code>PostToolUse</code>、<code>SessionStart</code> 等事件由宿主触发。处理器可以是 command、HTTP、MCP 工具、prompt 或 agent。程序检查可以是确定性逻辑；使用 LLM 的 prompt / agent 处理器仍然是模型判断，agent 型 Hook 当前标为实验性。</p>
+<p>PostToolUse 发生在动作之后，检查发现问题时需要后续修正，不能把检查失败理解为自动撤销动作。针对编辑文件的快速检查通常比每次改动都跑完整构建更合适。</p>
+<h3>Plugins：复用与分发</h3>
+<p>插件把 skills、agents、hooks、MCP、LSP 等组件打包。清单通常放在 <code>.claude-plugin/plugin.json</code>，组件在插件根目录的相应目录。插件根目录的 CLAUDE.md 不会自动成为项目指令。</p>
+<p>当前还有 Mods：它们通过插件内的进程内 JS/TS 扩展接事件、工具流程或界面，支持范围取决于终端、IDE、桌面和 headless 宿主。理解扩展层时，先掌握 Skills / MCP / Hooks；需要修改产品运行或界面行为时再研究 Mods。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/skills">Skills</a> · <a href="https://code.claude.com/docs/en/mcp">MCP</a> · <a href="https://code.claude.com/docs/en/hooks">Hooks</a> · <a href="https://code.claude.com/docs/en/plugins/overview">Plugins</a> · <a href="https://code.claude.com/docs/en/plugins/mods/overview">Mods</a></p></section>
+
+<section class="chapter" id="collaboration"><div class="chapter-number">07 / PARALLEL WORK</div><h2>多代理要同时画清“对话”和“文件”两条边界</h2>
+<p>多个推理过程可以同时工作，但独立的上下文不自动产生独立的代码目录。设计并行开发时，要分别决定：谁知道什么、谁修改哪些文件、谁负责整合和验收。</p>
+<div class="table-wrap"><table><thead><tr><th>方式</th><th>上下文关系</th><th>协调方式与用途</th></tr></thead><tbody><tr><td>普通非 fork 子代理</td><td>独立上下文，接收委派任务和适用配置</td><td>把搜索、审阅等过程留在子代理，向调用方报告</td></tr><tr><td>Forked subagent</td><td>复制启动时的父对话背景，之后独立执行</td><td>适合子任务确实需要已积累背景；内部轨迹不全部回灌</td></tr><tr><td>Agent Teams</td><td>多个完整会话，每个成员独立</td><td>Lead、消息通信、可用时共享任务表；实验性</td></tr><tr><td>独立 / 后台 sessions</td><td>各自有会话与生命周期</td><td>外部调度或 agent view 监控，可按条件互发消息</td></tr><tr><td>Git worktree</td><td>不管理模型上下文</td><td>把文件改动分到独立目录与分支</td></tr></tbody></table></div>
+<h3>当前子代理比早期教程更灵活</h3>
+<p>现在可以按配置嵌套子代理，具名代理也可以互发消息；后台子代理可以把适用权限请求交给主会话处理。普通非 fork 子代理与复制父对话的 fork 必须分别说明，不能一概说“子代理全都继承历史”或“子代理绝不继承历史”。</p>
+<p>上下文隔离的收益，是让大量搜索结果、日志和文件内容留在子任务中；主代理获得必要结论和证据。代价是额外模型调用与交接。交接任务应写清目标、必要背景、范围和输出格式。</p>
+<h3>Agent Teams 的条件</h3>
+<p>当前 Teams 仍为 experimental，默认关闭，需要 <code>CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1</code>。它只在交互入口启动 teammates；<code>-p</code> 与 Agent SDK 即使设置变量，也不会因此获得 Teams。共享任务表要求相应 Task 工具可用；没有这些工具时成员通过消息协调。</p>
+<h3>后台会话与 worktree</h3>
+<p><code>claude agents</code> 对应的 agent view 当前是 research preview；<code>--bg</code> 启动完整独立的本地后台会话，不能与 <code>-p</code> 组合。它和“某个主会话下的后台子代理”有不同生命周期。</p>
+<p><code>claude -w pricing-fix</code> 可以在 Git worktree 中开始任务。Worktree 分开工作目录和分支，但仍共享 Git 历史及部分设置；数据库、端口、外部服务和自动合并需要另行设计。</p>
+<p>对你的并行开发目标，一个实用起点是：一名整合负责人，多个职责明确的执行会话，每个修改任务拥有清楚的文件范围，必要时使用独立 worktree。需求未拆好时，直接增加会话数量会把问题转移成文件冲突与协调开销。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/sub-agents">Subagents</a> · <a href="https://code.claude.com/docs/en/agent-teams">Agent Teams</a> · <a href="https://code.claude.com/docs/en/agent-view">Agent view</a> · <a href="https://code.claude.com/docs/en/cross-session-messaging">跨会话通信</a> · <a href="https://code.claude.com/docs/en/worktrees">Worktrees</a></p></section>
+
+<section class="chapter" id="sdk"><div class="chapter-number">08 / PRODUCT &amp; SDK</div><h2>做自己的企业 Agent，在哪一层接入？</h2>
+<div class="table-wrap"><table><thead><tr><th>入口</th><th>你得到什么</th><th>适合的需求</th></tr></thead><tbody><tr><td>Claude Code 交互产品</td><td>已经组装的开发 Agent 与界面</td><td>读仓库、写功能、修 bug、开发协作</td></tr><tr><td>CLI 的 <code>-p</code></td><td>用子进程调用同一 Agent，输出文本或 JSON 事件</td><td>一次性脚本、CI、跨语言宿主</td></tr><tr><td>Claude Agent SDK</td><td>Python / TypeScript 代码驱动 Claude Code binary 与其循环、工具、会话</td><td>将长程工具任务嵌入自己的应用</td></tr><tr><td>Claude Client SDK / API</td><td>直接模型 API；循环由应用或可选 tool runner 管理</td><td>精确控制一次请求或自建业务执行器</td></tr><tr><td>AgentScope 等框架</td><td>通过代码组合模型、业务工具、状态和流程</td><td>业务 Agent 服务与跨模型架构</td></tr><tr><td>Managed Agents</td><td>通过服务接口使用托管 Harness</td><td>需要托管运行环境与服务化会话的场景</td></tr></tbody></table></div>
+<p>Agent SDK 默认会读取哪些环境配置，也会随版本变化。当前文档说明，省略 settingSources 时会像 CLI 一样读取相关用户、项目和本地配置；显式空列表可以关闭这部分发现，但不等于消除所有受管设置、全局状态或自动记忆影响。构建多租户服务，应显式设计工作区、凭据、记忆与授权范围。</p>
+<h3>与你的两个项目对照</h3>
+<p><strong>BossOS：</strong>可以把 Claude Code CLI / Agent SDK 作为一种执行适配器。BossOS 自己管理任务领取、依赖、执行器选择、工作目录、结果归档和整合。Codex、Claude Code、OpenCode 的接口不完全相同，应在适配层统一生命周期与事件。</p>
+<p><strong>SCRM：</strong>在线话术推荐优先保留明确的客户事实、租户隔离、知识检索和时延目标。AgentScope Java 或直接模型 API 可以承担实时链路；需要文件环境、复杂资料整理或长程工具执行的离线任务，再评估 Agent SDK worker。选型依据应来自实际延迟、成功率与成本测量。</p>
+<p>下面是一条非交互调用示例。它只展示接口形态；可执行工具仍受实际权限配置控制：</p>
+<pre><code>claude -p "分析 pricing.py 的金额计算并说明依据" \
+  --output-format json \
+  --max-turns 8</code></pre>
+<p>持续集成可消费 <code>stream-json</code> 事件；结构化输出可用 JSON Schema。宿主还要处理退出码、被拒绝的工具、预算/迭代限制和任务状态。JSON 结构符合 Schema，表示结构合规，事实与业务规则仍要核验。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/agent-sdk/overview">Agent SDK 总览与产品对照</a> · <a href="https://code.claude.com/docs/en/agent-sdk/claude-code-features">SDK 配置加载</a> · <a href="https://code.claude.com/docs/en/cli-reference">CLI 参考</a>。BossOS / SCRM 内容是接入建议。</p></section>
+
+<section class="chapter" id="practice"><div class="chapter-number">09 / WORKFLOW</div><h2>从一个清楚的任务开始，逐步增加配置</h2>
+<p>首先让项目有可执行的验证命令，再补充简洁的项目约定。遇到反复出现的任务才抽成 Skill；需要访问外部数据才接 MCP；需要固定事件检查才加 Hook；有独立任务边界再增加子代理。</p>
+<h3>一份短 CLAUDE.md 应写什么</h3>
+<pre><code># 项目约定
+- 金额统一使用整数分。
+- 折扣作用于商品，运费最后原额加入。
+- 保留公开函数签名和类型标注。
+- 验证命令：python -m unittest -v。
+- 先读相关实现与失败证据，再做范围内修改。
+- 验证足够后结束，不扩展到无关模块。</code></pre>
+<p>它把稳定约定放在合适的位置，避免每轮重新描述。庞大的教程、无关历史和所有业务资料不适合无差别装入常驻上下文；可以留在参考文件中，任务相关时再读取。</p>
+<h3>给 Claude Code 的任务描述</h3>
+<pre><code>目标：修复订单折扣错误。
+现象：商品九折时，运费也被打折。
+范围：pricing.py，保留现有函数签名，不增加依赖。
+验收：现有四个测试通过，测试本身不修改。
+执行：先运行测试，用两三句话说明判断，然后完成修复与验证。
+输出：改动原因、实际验证结果、仍未验证的范围。</code></pre>
+<p>这个模板给出目标、证据、范围与验收，不要求 Agent 在每一步都重复规划。复杂任务可以先澄清方案；具体而小的修复直接依据证据推进。你仍可在执行中补充信息或调整方向。</p>
+<h3>成本和效率看什么</h3>
+<p>记录任务是否完成、模型调用与工具等待、重复读取、上下文占用、重试次数、并行协调开销以及最终修改量。子代理减少主窗口负担，也会产生自己的调用成本；超长上下文和高 effort 应当服务于实际任务难度。把正确证据放进输入，往往比增加一长串笼统要求更有用。</p>
+<p class="source">机制依据：<a href="https://code.claude.com/docs/en/how-claude-code-works">执行与反馈</a> · <a href="https://code.claude.com/docs/en/memory">项目约定</a> · <a href="https://code.claude.com/docs/en/sub-agents">子代理成本与上下文</a>。任务模板与选用顺序为教学建议。</p></section>
+
+<section class="chapter" id="setup"><div class="chapter-number">10 / GET STARTED</div><h2>安装、核对与常用入口</h2>
+<p>如果已经安装，先运行 <code>claude --version</code> 和 <code>claude doctor</code>。原生安装通常自动更新，也可运行 <code>claude update</code>；包管理器安装按相应管理器升级。</p>
+<h3>官方推荐的原生安装</h3>
+<p>macOS / Linux / WSL：</p><pre><code>curl -fsSL https://claude.ai/install.sh | bash
+claude --version</code></pre>
+<p>Windows PowerShell：</p><pre><code>irm https://claude.ai/install.ps1 | iex
+claude --version</code></pre>
+<p>原生安装使用原生可执行程序。若选择 npm 路径，当前包要求 Node.js 22 或更高版本；不要沿用旧教程的 Node 18 要求。账号、模型与提供商可用性，以实际登录与配置为准。</p>
+<div class="table-wrap"><table><thead><tr><th>入口</th><th>用途</th></tr></thead><tbody><tr><td><code>claude</code></td><td>在当前项目开始交互</td></tr><tr><td><code>/model</code></td><td>选择可用模型和相关参数</td></tr><tr><td><code>/context</code></td><td>查看输入窗口使用情况</td></tr><tr><td><code>/memory</code></td><td>检查项目指令与记忆</td></tr><tr><td><code>/permissions</code></td><td>查看和调整适用权限</td></tr><tr><td><code>/compact</code></td><td>压缩当前工作上下文</td></tr><tr><td><code>claude --continue</code></td><td>继续当前目录最近的适用会话</td></tr><tr><td><code>claude --resume</code></td><td>选择或指定已有会话</td></tr><tr><td><code>claude -w feature-name</code></td><td>在 Git worktree 中工作</td></tr><tr><td><code>claude -p "任务"</code></td><td>非交互执行，适合程序调用</td></tr></tbody></table></div>
+<p>模型别名会随版本和提供商变化。当前官方模型页除了 opus、sonnet、haiku，也列出 fable 等入口。不要把 Claude Code 运行器升级理解为所有账号自动获得同一模型；使用完整模型 ID 可固定特定版本。</p>
+<p class="source">来源：<a href="https://code.claude.com/docs/en/setup">安装与更新</a> · <a href="https://code.claude.com/docs/en/cli-reference">命令与参数</a> · <a href="https://code.claude.com/docs/en/model-config">模型与别名</a></p></section>
+
+<section class="chapter" id="lab"><div class="chapter-number">11 / HANDS-ON</div><h2>一个可以跟着做的失败测试练习</h2>
+<p>学习包的 <code>lab/</code> 包含 CLAUDE.md、pricing.py、test_pricing.py 和 README。只依赖 Python 标准库。下方是故意保留错误的起始实现：</p>
+<pre><code>&quot;&quot;&quot;Claude Code 反馈循环练习：这份起始实现故意包含一个业务错误。&quot;&quot;&quot;
+
+
+def payable_cents(
+    unit_price_cents: int,
+    quantity: int,
+    discount_percent: int = 0,
+    shipping_cents: int = 0,
+) -&gt; int:
+    &quot;&quot;&quot;返回应付金额，单位为分。输入均满足 README 中的有效范围。&quot;&quot;&quot;
+    subtotal = unit_price_cents * quantity
+    return (subtotal + shipping_cents) * (100 - discount_percent) // 100
+</code></pre>
+<p>在 lab 目录先运行：</p><pre><code>python -m unittest -v
+claude</code></pre>
+<p>把第 9 节的任务描述发给 Claude。观察“模型请求”“实际执行”“工具结果”和“下一步修改”的区别，然后尝试：</p>
+<ol><li><strong>查看上下文。</strong>使用 /context，确认工具结果如何占用输入。</li><li><strong>压缩后继续。</strong>使用 /compact，指定保留业务规则、失败原因和验证结果。</li><li><strong>检查项目指令。</strong>另开会话，使用 /memory，区分持久规则与上次聊天。</li><li><strong>比较工作区。</strong>在自建 Git 演示仓库中比较会话分叉与 worktree 的文件边界。</li></ol>
+<p class="validation"><strong>已经完成的验证：</strong>起始实现运行 4 个测试，3 个按预期失败、1 个通过；独立临时目录中的参考实现通过同一组 4 个测试。没有实际启动 Claude Code，也没有调用真实模型。你运行时的工具轨迹、延迟和交互由模型、账号、版本及配置决定。参考解答与验证记录在 reference/，可完成练习后查看。</p>
+<p>验收目标：你能指出模型凭哪条证据认定问题、修改发生在哪里、何时运行了测试，以及为什么“输出说修好了”需要与实际结果对应。</p></section>
+
+<section class="chapter" id="self-check"><div class="chapter-number">12 / CHECK YOUR UNDERSTANDING</div><h2>用八个问题检查是否理解了边界</h2>
+<details><summary>Claude Code 与 Claude 模型分别负责什么？</summary><p>模型根据上下文判断下一步；Claude Code 管理工具、上下文、执行与交互。真正的文件或业务变化由工具作用于实际环境。</p></details>
+<details><summary>为什么换一个会话后，有些约定还在，有些聊天细节没了？</summary><p>CLAUDE.md、适用规则与 auto memory 可以重新加载；旧聊天属于另一个 session。新会话不会自动拥有旧会话完整历史。</p></details>
+<details><summary>“不要修改生产配置”写进 CLAUDE.md 后，会形成什么约束？</summary><p>它成为模型应遵循的上下文指令。技术上的执行许可与访问边界由相应权限、Hook、沙箱和业务系统负责。</p></details>
+<details><summary>Skill、MCP、Hook、Plugin 各自增加什么？</summary><p>Skill 增加方法和资料；MCP 增加工具与数据连接；Hook 增加固定事件触发的处理逻辑；Plugin 负责把组件打包和分发。</p></details>
+<details><summary>普通子代理、forked subagent、context: fork skill 是否都继承主历史？</summary><p>不是统一行为。普通非 fork 子代理从委派任务开始；forked subagent 复制父对话背景；context: fork skill 在新的子代理里以技能正文为任务，不继承当前聊天。</p></details>
+<details><summary>为什么四个 Agent 可能仍然互相覆盖代码？</summary><p>上下文隔离不自动隔离目录。需要明确文件归属或 worktree，并有整合负责人；worktree 也不会自动解决合并和外部服务冲突。</p></details>
+<details><summary>能否在 Agent SDK 中打开实验变量就获得 Teams？</summary><p>当前不能。Teams 的 teammates 只在交互入口启动；程序化协作可用子代理、多个受控会话或应用自己的调度层。</p></details>
+<details><summary>恢复会话、回退文件，能撤销已经发出的订单或消息吗？</summary><p>不能据此保证外部操作撤销。应查询真实系统状态，用业务接口的幂等、事务或补偿处理外部影响。</p></details>
+<p class="source">延伸阅读：<a href="https://code.claude.com/docs/en/how-claude-code-works">工作原理</a> → <a href="https://code.claude.com/docs/en/context-window">上下文</a> → <a href="https://code.claude.com/docs/en/features-overview">扩展层</a> → <a href="https://code.claude.com/docs/en/sub-agents">协作</a> → <a href="https://code.claude.com/docs/en/agent-sdk/overview">Agent SDK</a>。文档会继续更新，复现时同时记录运行器、模型和扩展版本。</p></section>
+<!-- END ORIGINAL ARTICLE -->
+</div>
